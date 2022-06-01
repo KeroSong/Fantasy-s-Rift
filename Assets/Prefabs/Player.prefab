@@ -347,37 +347,6 @@ CapsuleCollider:
   m_Height: 2.0000005
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2097718967617845287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2097718967617845286}
-  m_Layer: 0
-  m_Name: BallSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2097718967617845286
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097718967617845287}
-  m_LocalRotation: {x: -0.21334592, y: -0, z: -0, w: 0.97697675}
-  m_LocalPosition: {x: 0, y: 1, z: 1.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2097718967837185044}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -24.637, y: 0, z: 0}
 --- !u!1 &2097718967837185047
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,9 +357,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2097718967837185044}
   - component: {fileID: 2097718967837185045}
-  - component: {fileID: 2097718967837185032}
-  - component: {fileID: 2097718967837185033}
-  - component: {fileID: 2097718967837185034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -415,7 +381,6 @@ Transform:
   - {fileID: 2097718966032230691}
   - {fileID: 2097718966441644402}
   - {fileID: 2097718966644121451}
-  - {fileID: 2097718967617845286}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -433,60 +398,6 @@ CapsuleCollider:
   m_Height: 2.3
   m_Direction: 1
   m_Center: {x: 0, y: 1.15, z: 0}
---- !u!114 &2097718967837185032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097718967837185047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d572ed7ae704be49b02f9040eed5355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TranslationSpeed: 10
-  m_TranslationAcc: 10
-  m_ForceMagnitude: 10
-  m_RotationSpeed: 200
-  m_RotationAcc: 50
-  m_TorqueMagnitude: 0
-  m_GroundLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &2097718967837185033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097718967837185047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0783705bd58717e448f0146c299ed8d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InputAxisName: Fire1
-  m_InitSpeed: 10
-  m_SpawnTransform: {fileID: 2097718967617845286}
-  m_ProjectilePrefab: {fileID: 5088136134642605295, guid: 3c24cc34deab97349b0e9f47b4344727, type: 3}
-  m_ShootPeriod: 0.1
---- !u!54 &2097718967837185034
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097718967837185047}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!1 &2097718967880845287
 GameObject:
   m_ObjectHideFlags: 0

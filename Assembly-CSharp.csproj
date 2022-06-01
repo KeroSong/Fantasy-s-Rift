@@ -71,6 +71,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Scripts\MyTools.cs" />
     <Compile Include="Assets\Scripts\EventManager\Event.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\CustomLockCameraY.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />

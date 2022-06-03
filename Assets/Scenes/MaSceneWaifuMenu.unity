@@ -133,6 +133,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2882568643049796367, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
   m_PrefabInstance: {fileID: 719318373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &527524737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9007857880886230493, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+  m_PrefabInstance: {fileID: 719318373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &719318373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,6 +263,10 @@ PrefabInstance:
       propertyPath: m_PausePanel
       value: 
       objectReference: {fileID: 1327466442}
+    - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
+      propertyPath: m_PlayerPanel
+      value: 
+      objectReference: {fileID: 527524737}
     - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
       propertyPath: m_GameOverPanel
       value: 

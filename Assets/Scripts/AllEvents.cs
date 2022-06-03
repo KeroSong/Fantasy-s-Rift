@@ -9,6 +9,9 @@ using SDD.Events;
 public class GameMenuEvent : SDD.Events.Event
 {
 }
+public class GameNewPartyEvent : SDD.Events.Event
+{
+}
 public class GamePlayEvent : SDD.Events.Event
 {
 }
@@ -51,6 +54,9 @@ public class NewPartyClickedEvent : SDD.Events.Event
 {
 }
 public class SettingsClickedEvent : SDD.Events.Event
+{
+}
+public class PlayButtonClickedEvent : SDD.Events.Event
 {
 }
 public class QuitClickedEvent : SDD.Events.Event

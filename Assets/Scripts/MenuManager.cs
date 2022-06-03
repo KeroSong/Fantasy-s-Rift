@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
 {
     [SerializeField] GameObject m_MainMenuPanel;
     [SerializeField] GameObject m_SavePanel;
+    [SerializeField] GameObject m_PlayerPanel;
     [SerializeField] GameObject m_SettingsPanel;
     [SerializeField] GameObject m_PausePanel;
     [SerializeField] GameObject m_VictoryBatlePanel;
@@ -16,12 +17,13 @@ public class MenuManager : MonoBehaviour,IEventHandler
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_MainMenuPanel, m_SavePanel, m_SettingsPanel, m_PausePanel, m_VictoryBatlePanel, m_GameOverPanel};
+        m_Panels = new List<GameObject>() {m_MainMenuPanel, m_SavePanel, m_PlayerPanel, m_SettingsPanel, m_PausePanel, m_VictoryBatlePanel, m_GameOverPanel};
     }
 
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
+        EventManager.Instance.AddListener<GameNewPartyEvent>(GameNewParty);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSaveEvent>(GameSave);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
@@ -32,6 +34,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
     public void UnsubscribeEvents()
     {
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
+        EventManager.Instance.RemoveListener<GameNewPartyEvent>(GameNewParty);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSaveEvent>(GameSave);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
@@ -52,6 +55,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
     void GameMenu(GameMenuEvent e)
     {
         OpenPanel(m_MainMenuPanel);
+    }
+
+    void GameNewParty(GameNewPartyEvent e)
+    {
+        OpenPanel(m_PlayerPanel);
     }
 
     void GamePlay(GamePlayEvent e)

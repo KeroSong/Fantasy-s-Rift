@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public enum GAMESTATE {menu, play, save, settings, pause, gameover, victoryBatle}
+public enum GAMESTATE {menu, menuPlayer, play, save, settings, pause, gameover, victoryBatle}
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
         {
             case GAMESTATE.menu:
                 EventManager.Instance.Raise(new GameMenuEvent());
+                break;
+            case GAMESTATE.menuPlayer:
+                EventManager.Instance.Raise(new GameNewPartyEvent());
                 break;
             case GAMESTATE.play:
                 EventManager.Instance.Raise(new GamePlayEvent());
@@ -133,18 +136,23 @@ public class GameManager : MonoBehaviour
         SetState(GAMESTATE.menu);
     }*/
 
-    void NewParty()
-    {
-        SetState(GAMESTATE.play);
-    }
-
     void Save()
     {
         SetState(GAMESTATE.save);
     }
 
+    void NewParty()
+    {
+        SetState(GAMESTATE.menuPlayer);
+    }
+
     void Settings()
     {
         SetState(GAMESTATE.settings);
+    }
+
+    void Game()
+    {
+        SetState(GAMESTATE.play);
     }
 }

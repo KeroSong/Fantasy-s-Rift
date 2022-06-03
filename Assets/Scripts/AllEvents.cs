@@ -9,19 +9,25 @@ using SDD.Events;
 public class GameMenuEvent : SDD.Events.Event
 {
 }
+public class GameLoadEvent : SDD.Events.Event
+{
+}
 public class GameNewPartyEvent : SDD.Events.Event
 {
 }
 public class GamePlayEvent : SDD.Events.Event
 {
 }
-public class GameSaveEvent : SDD.Events.Event
-{
-}
 public class GameSettingsEvent : SDD.Events.Event
 {
 }
+public class GameQuitEvent : SDD.Events.Event
+{
+}
 public class GamePauseEvent : SDD.Events.Event
+{
+}
+public class GameSaveEvent : SDD.Events.Event
 {
 }
 public class GameResumeEvent : SDD.Events.Event
@@ -47,19 +53,25 @@ public class GameStatisticsChangedEvent : SDD.Events.Event
 public class EscapeButtonClickedEvent : SDD.Events.Event
 {
 }
-public class ContinuePartyClickedEvent : SDD.Events.Event
+public class ContinuePartyButtonClickedEvent : SDD.Events.Event
 {
 }
-public class NewPartyClickedEvent : SDD.Events.Event
+public class NewPartyButtonClickedEvent : SDD.Events.Event
 {
 }
-public class SettingsClickedEvent : SDD.Events.Event
+public class SettingsButtonClickedEvent : SDD.Events.Event
 {
 }
 public class PlayButtonClickedEvent : SDD.Events.Event
 {
 }
-public class QuitClickedEvent : SDD.Events.Event
+public class QuitButtonClickedEvent : SDD.Events.Event
+{
+}
+public class SaveButtonClickedEvent : SDD.Events.Event
+{
+}
+public class LoadButtonClickedEvent : SDD.Events.Event
 {
 }
 public class ResumeButtonClickedEvent : SDD.Events.Event

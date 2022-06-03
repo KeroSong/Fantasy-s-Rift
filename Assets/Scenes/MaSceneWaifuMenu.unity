@@ -138,6 +138,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9007857880886230493, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
   m_PrefabInstance: {fileID: 719318373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &617730030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678916334478701159, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+  m_PrefabInstance: {fileID: 719318373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &719318373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,6 +150,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5941394805709288642, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6924040114875053152, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -256,9 +265,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
+      propertyPath: m_LoadPanel
+      value: 
+      objectReference: {fileID: 617730030}
+    - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
       propertyPath: m_SavePanel
       value: 
       objectReference: {fileID: 1484836929}
+    - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
+      propertyPath: m_ScenePlay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
       propertyPath: m_PausePanel
       value: 

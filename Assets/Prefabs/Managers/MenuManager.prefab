@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MainMenuPanel: {fileID: 0}
   m_SavePanel: {fileID: 0}
+  m_PlayerPanel: {fileID: 0}
   m_SettingsPanel: {fileID: 0}
   m_PausePanel: {fileID: 0}
   m_VictoryBatlePanel: {fileID: 0}
   m_GameOverPanel: {fileID: 0}
+  m_ScenePlay: Assets\Scenes\SampleSceneTest

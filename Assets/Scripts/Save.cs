@@ -1,26 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SDD.Events;
 
 public class Save : MonoBehaviour
 {
     //SaveImage();
     public Scene scene = new Scene();
 
-    private void Update()
+    public void SubscribeEvents()
     {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            SaveToJSON();
-        }
-
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            LoadFromJSON();
-        }
+        EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveToJSON);
+        EventManager.Instance.AddListener<LoadButtonClickedEvent>(LoadFromJSON);
     }
 
-    public void SaveToJSON()
+    public void UnsubscribeEvents()
+    {
+        EventManager.Instance.RemoveListener<SaveButtonClickedEvent>(SaveToJSON);
+        EventManager.Instance.RemoveListener<LoadButtonClickedEvent>(LoadFromJSON);
+    }
+
+    private void OnEnable()
+    {
+        SubscribeEvents();    
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeEvents();
+    }
+
+    public void SaveToJSON(SaveButtonClickedEvent e)
     {
         string data = JsonUtility.ToJson(scene);
         string filePath = Application.persistentDataPath + "/SaveData.json";
@@ -28,7 +38,7 @@ public class Save : MonoBehaviour
         this.LOG("Sauvegarde effectuée");
     }
 
-    public void LoadFromJSON()
+    public void LoadFromJSON(LoadButtonClickedEvent e)
     {
         string filePath = Application.persistentDataPath + "/SaveData.json";
         string data = System.IO.File.ReadAllText(filePath);
@@ -40,7 +50,7 @@ public class Save : MonoBehaviour
 [System.Serializable]
 public class Scene
 {
-    public Chest chest = new Chest();
+    public List<Chest> chest = new List<Chest>();
     public SavePlayer player = new SavePlayer();
 }
 
@@ -71,8 +81,3 @@ public class Chest
 {
     public bool OpenClose;
 }
-
-/*void SaveImage()
-{
-    ScreenCapture.CaptureScreenshot("SomeLevel");
-}*/

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public enum GAMESTATE {menu, load, menuPlayer, play, settings, quit, pause, save, gameover, victoryBatle}
+public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, save, gameover, victoryBatle}
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GAMESTATE.menuPlayer:
                 EventManager.Instance.Raise(new GameNewPartyEvent());
+                break;
+            case GAMESTATE.selectPlayer:
+                EventManager.Instance.Raise(new GameSelectPlayerEvent());
                 break;
             case GAMESTATE.play:
                 EventManager.Instance.Raise(new GamePlayEvent());
@@ -86,6 +89,7 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.AddListener<NewPartyButtonClickedEvent>(NewPartyClicked);
         EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitClicked);
+        EventManager.Instance.AddListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
         /*EventManager.Instance.AddListener<ScoreHasBeenGainedEvent>(ScoreHasBeenGained);
         EventManager.Instance.AddListener<ReplayButtonClickedEvent>(ReplayButtonClicked);
@@ -98,6 +102,7 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.RemoveListener<NewPartyButtonClickedEvent>(NewPartyClicked);
         EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitClicked);
+        EventManager.Instance.RemoveListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
         /*EventManager.Instance.RemoveListener<ScoreHasBeenGainedEvent>(ScoreHasBeenGained);
         EventManager.Instance.RemoveListener<ReplayButtonClickedEvent>(ReplayButtonClicked);
@@ -134,6 +139,11 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    void SelectPlayerButtonClicked(SelectPlayerButtonClickedEvent e)
+    {
+        SelectPlayer();
+    }
+
     void PlayButtonClicked(PlayButtonClickedEvent e)
     {
         Play();
@@ -162,6 +172,11 @@ public class GameManager : MonoBehaviour
     void Settings()
     {
         SetState(GAMESTATE.settings);
+    }
+
+    void SelectPlayer()
+    {
+        SetState(GAMESTATE.selectPlayer);
     }
 
     void Play()

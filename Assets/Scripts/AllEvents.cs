@@ -15,6 +15,9 @@ public class GameLoadEvent : SDD.Events.Event
 public class GameNewPartyEvent : SDD.Events.Event
 {
 }
+public class GameSelectPlayerEvent : SDD.Events.Event
+{
+}
 public class GamePlayEvent : SDD.Events.Event
 {
 }
@@ -60,6 +63,9 @@ public class NewPartyButtonClickedEvent : SDD.Events.Event
 {
 }
 public class SettingsButtonClickedEvent : SDD.Events.Event
+{
+}
+public class SelectPlayerButtonClickedEvent : SDD.Events.Event
 {
 }
 public class PlayButtonClickedEvent : SDD.Events.Event

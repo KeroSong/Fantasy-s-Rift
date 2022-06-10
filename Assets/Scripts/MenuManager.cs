@@ -8,7 +8,8 @@ public class MenuManager : MonoBehaviour,IEventHandler
 {
     [SerializeField] GameObject m_MainMenuPanel;
     [SerializeField] GameObject m_LoadPanel;
-    [SerializeField] GameObject m_PlayerPanel;
+    [SerializeField] GameObject m_PlayerSexePanel;
+    [SerializeField] GameObject m_PlayerClassPanel;
     [SerializeField] GameObject m_SettingsPanel;
     [SerializeField] GameObject m_PausePanel;
     [SerializeField] GameObject m_SavePanel;
@@ -21,7 +22,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_MainMenuPanel, m_LoadPanel, m_PlayerPanel, m_SettingsPanel, m_PausePanel, m_SavePanel, m_VictoryBatlePanel, m_GameOverPanel};
+        m_Panels = new List<GameObject>() {m_MainMenuPanel, m_LoadPanel, m_PlayerSexePanel, m_PlayerClassPanel, m_SettingsPanel, m_PausePanel, m_SavePanel, m_VictoryBatlePanel, m_GameOverPanel};
     }
 
     public void SubscribeEvents()
@@ -29,6 +30,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.AddListener<GameLoadEvent>(GameLoad);
         EventManager.Instance.AddListener<GameNewPartyEvent>(GameNewParty);
+        EventManager.Instance.AddListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
@@ -42,6 +44,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.RemoveListener<GameLoadEvent>(GameLoad);
         EventManager.Instance.RemoveListener<GameNewPartyEvent>(GameNewParty);
+        EventManager.Instance.RemoveListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
@@ -72,7 +75,12 @@ public class MenuManager : MonoBehaviour,IEventHandler
 
     void GameNewParty(GameNewPartyEvent e)
     {
-        OpenPanel(m_PlayerPanel);
+        OpenPanel(m_PlayerSexePanel);
+    }
+
+    void GameSelectPlayer(GameSelectPlayerEvent e)
+    {
+        OpenPanel(m_PlayerClassPanel);
     }
 
     void GamePlay(GamePlayEvent e)
@@ -141,7 +149,12 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new LoadButtonClickedEvent());
     }
 
-    public void PlayButtonHasBeenClicked()
+    public void SexeButtonHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new SelectPlayerButtonClickedEvent());
+    }
+
+    public void ClassButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new PlayButtonClickedEvent());
     }

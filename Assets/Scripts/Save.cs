@@ -10,14 +10,14 @@ public class Save : MonoBehaviour
 
     public void SubscribeEvents()
     {
-        EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveToJSON);
-        EventManager.Instance.AddListener<LoadButtonClickedEvent>(LoadFromJSON);
+        EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveButtonClicked);
+        EventManager.Instance.AddListener<LoadButtonClickedEvent>(LoadButtonClicked);
     }
 
     public void UnsubscribeEvents()
     {
-        EventManager.Instance.RemoveListener<SaveButtonClickedEvent>(SaveToJSON);
-        EventManager.Instance.RemoveListener<LoadButtonClickedEvent>(LoadFromJSON);
+        EventManager.Instance.RemoveListener<SaveButtonClickedEvent>(SaveButtonClicked);
+        EventManager.Instance.RemoveListener<LoadButtonClickedEvent>(LoadButtonClicked);
     }
 
     private void OnEnable()
@@ -30,7 +30,7 @@ public class Save : MonoBehaviour
         UnsubscribeEvents();
     }
 
-    public void SaveToJSON(SaveButtonClickedEvent e)
+    public void SaveButtonClicked(SaveButtonClickedEvent e)
     {
         string data = JsonUtility.ToJson(scene);
         string filePath = Application.persistentDataPath + "/SaveData.json";
@@ -38,7 +38,7 @@ public class Save : MonoBehaviour
         this.LOG("Sauvegarde effectuée");
     }
 
-    public void LoadFromJSON(LoadButtonClickedEvent e)
+    public void LoadButtonClicked(LoadButtonClickedEvent e)
     {
         string filePath = Application.persistentDataPath + "/SaveData.json";
         string data = System.IO.File.ReadAllText(filePath);

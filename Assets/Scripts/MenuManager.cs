@@ -11,20 +11,17 @@ public class MenuManager : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_PlayerSexePanel;
     [SerializeField] GameObject m_PlayerClassPanel;
     [SerializeField] GameObject m_SettingsPanel;
-    [SerializeField] GameObject m_PausePanel;
-    [SerializeField] GameObject m_SavePanel;
-    [SerializeField] GameObject m_VictoryBatlePanel;
-    [SerializeField] GameObject m_GameOverPanel;
-
     [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
     [SerializeField] int m_SceneFight;
+    [SerializeField] int m_ScenePause;
+    [SerializeField] int m_ScenePauseFight;
 
     List<GameObject> m_Panels;
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_MainMenuPanel, m_LoadPanel, m_PlayerSexePanel, m_PlayerClassPanel, m_SettingsPanel, m_PausePanel, m_SavePanel, m_VictoryBatlePanel, m_GameOverPanel};
+        m_Panels = new List<GameObject>() {m_MainMenuPanel, m_LoadPanel, m_PlayerSexePanel, m_PlayerClassPanel, m_SettingsPanel};
     }
 
     public void SubscribeEvents()
@@ -35,8 +32,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
-        EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
-        EventManager.Instance.AddListener<GameSaveEvent>(GameSave);
         /*EventManager.Instance.AddListener<GameVictoryEvent>(GameVictory);
         EventManager.Instance.AddListener<GameOverEvent>(GameOver);*/
     }
@@ -49,8 +44,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
-        EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
-        EventManager.Instance.RemoveListener<GameSaveEvent>(GameSave);
         /*EventManager.Instance.RemoveListener<GameVictoryEvent>(GameVictory);
         EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);*/
     }
@@ -94,17 +87,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
     {
         OpenPanel(null);
         SceneManager.LoadScene(m_ScenePlay);
-    }
-
-    void GamePause(GamePauseEvent e)
-    {
-        SceneManager.LoadScene(m_SceneMenu);
-        OpenPanel(m_PausePanel);
-    }
-
-    void GameSave(GameSaveEvent e)
-    {
-        OpenPanel(m_SavePanel);
     }
 
     /*void GameVictory(GameVictoryEvent e)
@@ -159,19 +141,9 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new PlayButtonClickedEvent());
     }
 
-    /*public void PauseHasBeenPress()
-    {
-        EventManager.Instance.Raise(new );
-    }*/
-
     public void MenuButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
-    }
-
-    public void SaveHasBeenClicked()
-    {
-        EventManager.Instance.Raise(new SaveButtonClickedEvent());
     }
 
     /*public void ReplayButtonHasBeenClicked()

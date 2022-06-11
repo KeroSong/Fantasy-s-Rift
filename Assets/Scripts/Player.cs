@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SDD.Events;
 
 public class Player : MonoBehaviour
 {
@@ -72,6 +73,11 @@ public class Player : MonoBehaviour
         velocity.y +=  gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown("p"))
+        {
+            EventManager.Instance.Raise(new PauseHasBeenPressEvent());
+        }
 
     }
 }

@@ -5,37 +5,53 @@ using UnityEngine.UI;
 
 public class CreatePlayer : MonoBehaviour
 {
-    [SerializeField] Image m_WarriorButton;
+    [SerializeField] Image m_WarriorImage;
     [SerializeField] Sprite m_WarriorWoman;
+    [SerializeField] Image m_ArcherImage;
+    [SerializeField] Sprite m_ArcherWoman;
+    [SerializeField] Image m_WizardImage;
+    [SerializeField] Sprite m_WizardWoman;
 
-    string i;
-
-    public SavePlayer player = new SavePlayer();
-
-    /*public void ManHasBeenClicked()
+    void Start()
     {
-        player.sexe = false;
-    }*/
+        SetText();
+    }
 
-    public void WomanHasBeenClicked()
+    void SetText()
     {
-        player.sexe = true;
-        //m_WarriorButton.sprite = m_WarriorWoman;
-        this.LOG(player.sexe.ToString());
+        PlayerPrefs.SetString("Nom", "Henry");
+        PlayerPrefs.SetInt("sexe", 0);
+        PlayerPrefs.SetInt("classe", 0);
+        //PlayerPrefs.SetFloat("Santé", 50.0F);
+        //PlayerPrefs.SetFloat("Santé", 50.0F);
+        //PlayerPrefs.SetFloat("Santé", 50.0F);
+        //PlayerPrefs.SetFloat("Santé", 50.0F);
+        //PlayerPrefs.SetFloat("Santé", 50.0F);
+        //PlayerPrefs.SetFloat("Santé", 50.0F);
     }
 
     void Update()
     {
-        this.LOG(player.sexe.ToString());
+        if (PlayerPrefs.GetInt("sexe") == 1)
+        {
+            m_WarriorImage.sprite = m_WarriorWoman;
+            m_ArcherImage.sprite = m_ArcherWoman;
+            m_WizardImage.sprite = m_WizardWoman;
+        }
     }
-}
 
-[System.Serializable]
-public class SavePlayer
-{
-    public Vector3 position;
-    public string nom;
-    public bool sexe;
-    public int classe;
-    public Inventory inventory = new Inventory();
+    public void WomanHasBeenClicked()
+    {
+        PlayerPrefs.SetInt("sexe", 1);
+    }
+
+    public void ArcherHasBeenClicked()
+    {
+        PlayerPrefs.SetInt("classe", 1);
+    }
+
+    public void WizardHasBeenClicked()
+    {
+        PlayerPrefs.SetInt("classe", 2);
+    }
 }

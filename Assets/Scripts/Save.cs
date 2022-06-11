@@ -31,6 +31,10 @@ public class Save : MonoBehaviour
 
     public void SaveButtonClicked(SaveButtonClickedEvent e)
     {
+        scene.player.nom = PlayerPrefs.GetString("Nom");
+        scene.player.sexe = PlayerPrefs.GetInt("sexe");
+        scene.player.classe = PlayerPrefs.GetInt("classe");
+
         string data = JsonUtility.ToJson(scene);
         string filePath = Application.persistentDataPath + "/SaveData.json";
         System.IO.File.WriteAllText(filePath, data);
@@ -50,7 +54,17 @@ public class Save : MonoBehaviour
 public class Scene
 {
     public List<Chest> chest = new List<Chest>();
-    //public MenuManager player = MenuManager();
+    public SavePlayer player = new SavePlayer();
+}
+
+[System.Serializable]
+public class SavePlayer
+{
+    public Vector3 position;
+    public string nom;
+    public int sexe;
+    public int classe;
+    public Inventory inventory = new Inventory();
 }
 
 [System.Serializable]

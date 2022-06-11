@@ -21,6 +21,9 @@ public class GameSelectPlayerEvent : SDD.Events.Event
 public class GamePlayEvent : SDD.Events.Event
 {
 }
+public class GameFightEvent : SDD.Events.Event
+{
+}
 public class GameSettingsEvent : SDD.Events.Event
 {
 }
@@ -28,6 +31,9 @@ public class GameQuitEvent : SDD.Events.Event
 {
 }
 public class GamePauseEvent : SDD.Events.Event
+{
+}
+public class GamePauseFightEvent :SDD.Events.Event
 {
 }
 public class GameSaveEvent : SDD.Events.Event
@@ -71,13 +77,25 @@ public class SelectPlayerButtonClickedEvent : SDD.Events.Event
 public class PlayButtonClickedEvent : SDD.Events.Event
 {
 }
+public class FightButtonClickedEvent : SDD.Events.Event
+{
+}
 public class QuitButtonClickedEvent : SDD.Events.Event
 {
 }
 public class SaveButtonClickedEvent : SDD.Events.Event
 {
 }
+public class SavePartyButtonClickedEvent : SDD.Events.Event
+{
+}
 public class LoadButtonClickedEvent : SDD.Events.Event
+{
+}
+public class PauseHasBeenPressEvent : SDD.Events.Event
+{
+}
+public class PauseFightHasBeenPressEvent : SDD.Events.Event
 {
 }
 public class ResumeButtonClickedEvent : SDD.Events.Event

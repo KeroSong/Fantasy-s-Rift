@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2115765190288314421}
-  - component: {fileID: 8853846688153216984}
+  - component: {fileID: 4605623434638832119}
   m_Layer: 0
-  m_Name: MenuManager
+  m_Name: PlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8853846688153216984
+--- !u!114 &4605623434638832119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,16 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3720306986768345726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0584143ad0f5974fbf79404455d13b7, type: 3}
+  m_Script: {fileID: 11500000, guid: d9ad2bb6ba10c3a41a36f5f0da6d2d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MainMenuPanel: {fileID: 0}
-  m_LoadPanel: {fileID: 0}
-  m_PlayerSexePanel: {fileID: 0}
-  m_PlayerClassPanel: {fileID: 0}
-  m_SettingsPanel: {fileID: 0}
-  m_PausePanel: {fileID: 0}
-  m_SavePanel: {fileID: 0}
-  m_VictoryBatlePanel: {fileID: 0}
-  m_GameOverPanel: {fileID: 0}
-  m_ScenePlay: 0
+  m_WarriorButton: {fileID: 0}
+  m_WarriorWoman: {fileID: 0}

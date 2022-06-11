@@ -5,7 +5,6 @@ using SDD.Events;
 
 public class Save : MonoBehaviour
 {
-    //SaveImage();
     public Scene scene = new Scene();
 
     public void SubscribeEvents()
@@ -51,14 +50,7 @@ public class Save : MonoBehaviour
 public class Scene
 {
     public List<Chest> chest = new List<Chest>();
-    public SavePlayer player = new SavePlayer();
-}
-
-[System.Serializable]
-public class SavePlayer
-{
-    public Vector3 position;
-    public Inventory inventory = new Inventory();
+    //public MenuManager player = MenuManager();
 }
 
 [System.Serializable]

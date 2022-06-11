@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_GameOverPanel;
 
     [SerializeField] int m_ScenePlay;
+    [SerializeField] int m_SceneMenu;
+    [SerializeField] int m_SceneFight;
 
     List<GameObject> m_Panels;
 
@@ -78,6 +80,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
         OpenPanel(m_PlayerSexePanel);
     }
 
+    void GameSetting(GameSettingsEvent e)
+    {
+        OpenPanel(m_SettingsPanel);
+    }
+
     void GameSelectPlayer(GameSelectPlayerEvent e)
     {
         OpenPanel(m_PlayerClassPanel);
@@ -89,13 +96,9 @@ public class MenuManager : MonoBehaviour,IEventHandler
         SceneManager.LoadScene(m_ScenePlay);
     }
 
-    void GameSetting(GameSettingsEvent e)
-    {
-        OpenPanel(m_SettingsPanel);
-    }
-
     void GamePause(GamePauseEvent e)
     {
+        SceneManager.LoadScene(m_SceneMenu);
         OpenPanel(m_PausePanel);
     }
 
@@ -119,6 +122,8 @@ public class MenuManager : MonoBehaviour,IEventHandler
         m_Panels.ForEach(item => { if (item != null) item.SetActive(panel == item); });
     }
 
+    
+
     public void ContinuePartyHasBeenClicked()
     {
         EventManager.Instance.Raise(new ContinuePartyButtonClickedEvent());
@@ -139,11 +144,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new QuitButtonClickedEvent());
     }
 
-    public void SaveHasBeenClicked()
-    {
-        EventManager.Instance.Raise(new SaveButtonClickedEvent());
-    }
-
     public void LoadHasBeenClicked()
     {
         EventManager.Instance.Raise(new LoadButtonClickedEvent());
@@ -159,13 +159,23 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new PlayButtonClickedEvent());
     }
 
+    /*public void PauseHasBeenPress()
+    {
+        EventManager.Instance.Raise(new );
+    }*/
+
+    public void MenuButtonHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
+    }
+
+    public void SaveHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new SaveButtonClickedEvent());
+    }
+
     /*public void ReplayButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new ReplayButtonClickedEvent());
-    }*/
-
-    /*public void MenuButtonHasBeenClicked()
-    {
-        EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
     }*/
 }

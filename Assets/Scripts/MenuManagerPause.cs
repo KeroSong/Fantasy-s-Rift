@@ -8,6 +8,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 {
     [SerializeField] GameObject m_SavePanel;
     [SerializeField] GameObject m_PausePanel;
+    [SerializeField] GameObject m_ConfirmedPanel;
 
     [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
@@ -16,13 +17,14 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_SavePanel, m_PausePanel};
+        m_Panels = new List<GameObject>() {m_SavePanel, m_PausePanel, m_ConfirmedPanel};
     }
 
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<GameSaveEvent>(GameSave);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
+        EventManager.Instance.AddListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
     }
@@ -31,6 +33,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     {
         EventManager.Instance.RemoveListener<GameSaveEvent>(GameSave);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
+        EventManager.Instance.RemoveListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
     }
@@ -54,6 +57,11 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     {
         OpenPanel(null);
         SceneManager.LoadScene(m_ScenePlay);
+    }
+
+    void GameConfirmed(GameConfirmedEvent e)
+    {
+        OpenPanel(m_ConfirmedPanel);
     }
 
     void GameMenu(GameMenuEvent e)
@@ -87,6 +95,11 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     public void PlayButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new PlayButtonClickedEvent());
+    }
+
+    public void ConfirmedButtonHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new ConfirmedButtonClickedEvent());
     }
 
     public void MenuButtonHasBeenClicked()

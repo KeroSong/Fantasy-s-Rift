@@ -23,6 +23,9 @@ public class GameManagerPause : MonoBehaviour
             case GAMESTATE.play:
                 EventManager.Instance.Raise(new GamePlayEvent());
                 break;
+            case GAMESTATE.confirmed:
+                EventManager.Instance.Raise(new GameConfirmedEvent());
+                break;
             case GAMESTATE.menu:
                 EventManager.Instance.Raise(new GameMenuEvent());
                 break;
@@ -51,6 +54,7 @@ public class GameManagerPause : MonoBehaviour
     {
         EventManager.Instance.AddListener<SavePartyButtonClickedEvent>(SaveButtonClicked);
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
+        EventManager.Instance.AddListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
@@ -59,6 +63,7 @@ public class GameManagerPause : MonoBehaviour
     {
         EventManager.Instance.RemoveListener<SavePartyButtonClickedEvent>(SaveButtonClicked);
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
+        EventManager.Instance.RemoveListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
@@ -83,6 +88,11 @@ public class GameManagerPause : MonoBehaviour
         Play();
     }
 
+    void ConfirmedButtonClicked(ConfirmedButtonClickedEvent e)
+    {
+        Confirmed();
+    }
+
     void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
     {
         Menu();
@@ -101,6 +111,11 @@ public class GameManagerPause : MonoBehaviour
     void Play()
     {
         SetState(GAMESTATE.play);
+    }
+
+    void Confirmed()
+    {
+        SetState(GAMESTATE.confirmed);
     }
 
     void Menu()

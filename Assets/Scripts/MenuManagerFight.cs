@@ -8,6 +8,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
 {
     [SerializeField] GameObject m_LoadPanel;
     [SerializeField] GameObject m_PausePanel;
+    [SerializeField] GameObject m_ConfirmedPanel;
     [SerializeField] GameObject m_GameOverPanel;
     [SerializeField] GameObject m_VictoryFightPanel;
 
@@ -18,13 +19,14 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanel, m_GameOverPanel, m_VictoryFightPanel};
+        m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanel, m_ConfirmedPanel, m_GameOverPanel, m_VictoryFightPanel};
     }
 
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<GameLoadEvent>(GameLoad);
         EventManager.Instance.AddListener<GameFightEvent>(GameFight);
+        EventManager.Instance.AddListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
         EventManager.Instance.AddListener<GameVictoryFightEvent>(GameVictoryFight);
@@ -35,6 +37,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     {
         EventManager.Instance.RemoveListener<GameLoadEvent>(GameLoad);
         EventManager.Instance.RemoveListener<GameFightEvent>(GameFight);
+        EventManager.Instance.RemoveListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
         EventManager.Instance.RemoveListener<GameVictoryFightEvent>(GameVictoryFight);
@@ -59,6 +62,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     void GameFight(GameFightEvent e)
     {
         OpenPanel(null);
+    }
+
+    void GameConfirmed(GameConfirmedEvent e)
+    {
+        OpenPanel(m_ConfirmedPanel);
     }
 
     void GameMenu(GameMenuEvent e)
@@ -101,6 +109,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     public void FightButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new FightButtonClickedEvent());
+    }
+
+    public void ConfirmedButtonHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new ConfirmedButtonClickedEvent());
     }
 
     public void MenuButtonHasBeenClicked()

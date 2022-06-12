@@ -15,7 +15,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
     [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
     [SerializeField] int m_SceneFight;
-    [SerializeField] int m_ScenePause;
 
     List<GameObject> m_Panels;
 
@@ -32,7 +31,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
-        EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
     }
 
     public void UnsubscribeEvents()
@@ -43,7 +41,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
-        EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
     }
 
     private void OnEnable()
@@ -85,12 +82,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
     {
         OpenPanel(null);
         SceneManager.LoadScene(m_ScenePlay);
-    }
-
-    void GamePause(GamePauseEvent e)
-    {
-        OpenPanel(null);
-        SceneManager.LoadScene(m_ScenePause);
     }
 
     void OpenPanel(GameObject panel)

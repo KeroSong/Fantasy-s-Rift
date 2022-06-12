@@ -23,6 +23,9 @@ public class GameManagerFight : MonoBehaviour
             case GAMESTATE.fight:
                 EventManager.Instance.Raise(new GameFightEvent());
                 break;
+            case GAMESTATE.confirmed:
+                EventManager.Instance.Raise(new GameConfirmedEvent());
+                break;
             case GAMESTATE.menu:
                 EventManager.Instance.Raise(new GameMenuEvent());
                 break;
@@ -57,6 +60,7 @@ public class GameManagerFight : MonoBehaviour
     {
         EventManager.Instance.AddListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
         EventManager.Instance.AddListener<FightButtonClickedEvent>(FightButtonClicked);
+        EventManager.Instance.AddListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
@@ -65,6 +69,7 @@ public class GameManagerFight : MonoBehaviour
     {
         EventManager.Instance.RemoveListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
         EventManager.Instance.RemoveListener<FightButtonClickedEvent>(FightButtonClicked);
+        EventManager.Instance.RemoveListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
@@ -91,6 +96,11 @@ public class GameManagerFight : MonoBehaviour
         Fight();
     }
 
+    void ConfirmedButtonClicked(ConfirmedButtonClickedEvent e)
+    {
+        Confirmed();
+    }
+
     void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
     {
         Menu();
@@ -111,6 +121,11 @@ public class GameManagerFight : MonoBehaviour
     void Fight()
     {
         SetState(GAMESTATE.fight);
+    }
+
+    void Confirmed()
+    {
+        SetState(GAMESTATE.confirmed);
     }
 
     void Menu()

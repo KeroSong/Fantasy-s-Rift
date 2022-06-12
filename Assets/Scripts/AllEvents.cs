@@ -36,6 +36,9 @@ public class GamePauseEvent : SDD.Events.Event
 public class GameSaveEvent : SDD.Events.Event
 {
 }
+public class GameConfirmedEvent : SDD.Events.Event
+{
+}
 public class GameResumeEvent : SDD.Events.Event
 {
 }
@@ -99,6 +102,9 @@ public class ReplayButtonClickedEvent : SDD.Events.Event
 {
 }
 public class MainMenuButtonClickedEvent : SDD.Events.Event
+{
+}
+public class ConfirmedButtonClickedEvent : SDD.Events.Event
 {
 }
 #endregion

@@ -74,10 +74,5 @@ public class Player : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown("p"))
-        {
-            EventManager.Instance.Raise(new PauseHasBeenPressEvent());
-        }
-
     }
 }

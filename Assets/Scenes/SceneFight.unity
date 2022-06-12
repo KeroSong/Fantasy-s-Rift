@@ -279,6 +279,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1810724615}
     - target: {fileID: 8676536709709525907, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: m_ConfirmedPanel
+      value: 
+      objectReference: {fileID: 1981117764}
+    - target: {fileID: 8676536709709525907, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
       propertyPath: m_VictoryFightPanel
       value: 
       objectReference: {fileID: 1810724614}
@@ -507,6 +511,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 218427521041424505, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1372262453}
+    - target: {fileID: 218427521041424505, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MenuButtonHasBeenClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 218427521041424505, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManagerFight, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4524240143867312272, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -531,6 +547,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuManagerFight, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5165543570680982416, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmedButtonHasBeenClicked
+      objectReference: {fileID: 0}
     - target: {fileID: 6924040114875053152, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
       propertyPath: m_Name
       value: CanvasFight
@@ -538,6 +558,18 @@ PrefabInstance:
     - target: {fileID: 6924040114875053152, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441175909545516947, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1372262453}
+    - target: {fileID: 8441175909545516947, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseButtonHasBeenClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441175909545516947, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManagerFight, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8484994945250730825, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
       propertyPath: m_Pivot.x
@@ -643,5 +675,10 @@ GameObject:
 --- !u!1 &1810724617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1473235400270908797, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+  m_PrefabInstance: {fileID: 1810724613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1981117764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2392124382870440556, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
   m_PrefabInstance: {fileID: 1810724613}
   m_PrefabAsset: {fileID: 0}

@@ -4,19 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using SDD.Events;
 
-public class MenuManagerPauseFight : MonoBehaviour,IEventHandler
+public class MenuManagerFight : MonoBehaviour,IEventHandler
 {
     [SerializeField] GameObject m_LoadPanel;
-    [SerializeField] GameObject m_PausePanelFight;
+    [SerializeField] GameObject m_PausePanel;
+    [SerializeField] GameObject m_GameOverPanel;
+    [SerializeField] GameObject m_VictoryFightPanel;
 
+    [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
-    [SerializeField] int m_SceneFight;
 
     List<GameObject> m_Panels;
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanelFight};
+        m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanel, m_GameOverPanel, m_VictoryFightPanel};
     }
 
     public void SubscribeEvents()
@@ -24,7 +26,9 @@ public class MenuManagerPauseFight : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameLoadEvent>(GameLoad);
         EventManager.Instance.AddListener<GameFightEvent>(GameFight);
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
-        EventManager.Instance.AddListener<GamePauseFightEvent>(GamePauseFight);
+        EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
+        EventManager.Instance.AddListener<GameVictoryFightEvent>(GameVictoryFight);
+        EventManager.Instance.AddListener<GameOverEvent>(GameOver);
     }
 
     public void UnsubscribeEvents()
@@ -32,7 +36,9 @@ public class MenuManagerPauseFight : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameLoadEvent>(GameLoad);
         EventManager.Instance.RemoveListener<GameFightEvent>(GameFight);
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
-        EventManager.Instance.RemoveListener<GamePauseFightEvent>(GamePauseFight);
+        EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
+        EventManager.Instance.RemoveListener<GameVictoryFightEvent>(GameVictoryFight);
+        EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);
     }
 
     private void OnEnable()
@@ -53,7 +59,6 @@ public class MenuManagerPauseFight : MonoBehaviour,IEventHandler
     void GameFight(GameFightEvent e)
     {
         OpenPanel(null);
-        SceneManager.LoadScene(m_SceneFight);
     }
 
     void GameMenu(GameMenuEvent e)
@@ -61,9 +66,19 @@ public class MenuManagerPauseFight : MonoBehaviour,IEventHandler
         SceneManager.LoadScene(m_SceneMenu);
     }
 
-    void GamePauseFight(GamePauseFightEvent e)
+    void GamePause(GamePauseEvent e)
     {
-        OpenPanel(m_PausePanelFight);
+        OpenPanel(m_PausePanel);
+    }
+
+    void GameVictoryFight(GameVictoryFightEvent e)
+    {
+        OpenPanel(m_VictoryFightPanel);
+    }
+
+    void GameOver(GameOverEvent e)
+    {
+        OpenPanel(m_GameOverPanel);
     }
 
     void OpenPanel(GameObject panel)
@@ -88,13 +103,13 @@ public class MenuManagerPauseFight : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new FightButtonClickedEvent());
     }
 
-    public void MenuFightButtonHasBeenClicked()
+    public void MenuButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
     }
 
-    public void PauseFightButtonHasBeenClicked()
+    public void PauseButtonHasBeenClicked()
     {
-        EventManager.Instance.Raise(new PauseFightHasBeenPressEvent());
+        EventManager.Instance.Raise(new PauseHasBeenPressEvent());
     }
 }

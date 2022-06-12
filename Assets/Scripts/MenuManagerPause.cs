@@ -58,6 +58,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 
     void GameMenu(GameMenuEvent e)
     {
+        OpenPanel(null);
         SceneManager.LoadScene(m_SceneMenu);
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, pauseFight, save, fight, gameover, victoryBatle}
+public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, save, fight, gameover, victoryFight}
 
 public class GameManager : MonoBehaviour
 {
@@ -47,11 +47,8 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.quit:
                 EventManager.Instance.Raise(new GameQuitEvent());
                 break;
-            case GAMESTATE.gameover:
-                EventManager.Instance.Raise(new GameOverEvent());
-                break;
-            case GAMESTATE.victoryBatle:
-                EventManager.Instance.Raise(new GameVictoryEvent());
+            case GAMESTATE.pause:
+                EventManager.Instance.Raise(new GamePauseEvent());
                 break;
             default:
                 break;
@@ -74,7 +71,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*if(IsPlaying)
+        {
+            SetScoreAndTimer(m_Score,Mathf.Max(m_CountdownTimer - Time.deltaTime, 0));
+            if (m_CountdownTimer == 0)
+                GameOver();
+
+        }*/
     }
 
     public void SubscribeEvents()
@@ -86,9 +89,9 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.AddListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
+        EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         /*EventManager.Instance.AddListener<ScoreHasBeenGainedEvent>(ScoreHasBeenGained);
-        EventManager.Instance.AddListener<ReplayButtonClickedEvent>(ReplayButtonClicked);
-        EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);*/
+        EventManager.Instance.AddListener<ReplayButtonClickedEvent>(ReplayButtonClicked);*/
     }
 
     public void UnsubscribeEvents()
@@ -100,9 +103,9 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.RemoveListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
+        EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         /*EventManager.Instance.RemoveListener<ScoreHasBeenGainedEvent>(ScoreHasBeenGained);
-        EventManager.Instance.RemoveListener<ReplayButtonClickedEvent>(ReplayButtonClicked);
-        EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);*/
+        EventManager.Instance.RemoveListener<ReplayButtonClickedEvent>(ReplayButtonClicked);*/
     }
 
     private void OnEnable()
@@ -150,14 +153,14 @@ public class GameManager : MonoBehaviour
         Pause();
     }
 
+    void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
+    {
+        Menu();
+    }
+
     /*void ReplayButtonClicked(ReplayButtonClickedEvent e)
     {
         NewParty();
-    }*/
-
-    /*void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
-    {
-        SetState(GAMESTATE.menu);
     }*/
 
     void Load()
@@ -188,5 +191,10 @@ public class GameManager : MonoBehaviour
     void Pause()
     {
         SetState(GAMESTATE.pause);
+    }
+
+    void Menu()
+    {
+        SetState(GAMESTATE.menu);
     }
 }

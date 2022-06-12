@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8357229400174778934}
   m_Layer: 0
-  m_Name: ManagersPauseFight
+  m_Name: ManagersFight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,12 +28,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2039663370497766832}
-  - {fileID: 7524025170134396754}
+  - {fileID: 9084249806413201807}
+  - {fileID: 7367981679164496913}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &736845398581142030
+--- !u!1001 &7522743016264685105
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -86,16 +86,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697293388585485605, guid: 8239bfb3f88234140bf74b61f5748deb, type: 3}
       propertyPath: m_Name
-      value: GameManagerPauseFight
+      value: GameManagerFight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8239bfb3f88234140bf74b61f5748deb, type: 3}
---- !u!4 &2039663370497766832 stripped
+--- !u!4 &9084249806413201807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1618934093656512446, guid: 8239bfb3f88234140bf74b61f5748deb, type: 3}
-  m_PrefabInstance: {fileID: 736845398581142030}
+  m_PrefabInstance: {fileID: 7522743016264685105}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8445938409577447271
+--- !u!1001 &8871213270877998116
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -148,12 +148,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3720306986768345726, guid: 824da1470152ec7438ed88f64f774750, type: 3}
       propertyPath: m_Name
-      value: MenuManagerPauseFight
+      value: MenuManagerFight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824da1470152ec7438ed88f64f774750, type: 3}
---- !u!4 &7524025170134396754 stripped
+--- !u!4 &7367981679164496913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2115765190288314421, guid: 824da1470152ec7438ed88f64f774750, type: 3}
-  m_PrefabInstance: {fileID: 8445938409577447271}
+  m_PrefabInstance: {fileID: 8871213270877998116}
   m_PrefabAsset: {fileID: 0}

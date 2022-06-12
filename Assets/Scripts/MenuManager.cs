@@ -11,11 +11,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_PlayerSexePanel;
     [SerializeField] GameObject m_PlayerClassPanel;
     [SerializeField] GameObject m_SettingsPanel;
+
     [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
     [SerializeField] int m_SceneFight;
     [SerializeField] int m_ScenePause;
-    [SerializeField] int m_ScenePauseFight;
 
     List<GameObject> m_Panels;
 
@@ -32,8 +32,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
-        /*EventManager.Instance.AddListener<GameVictoryEvent>(GameVictory);
-        EventManager.Instance.AddListener<GameOverEvent>(GameOver);*/
+        EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
     }
 
     public void UnsubscribeEvents()
@@ -44,8 +43,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
-        /*EventManager.Instance.RemoveListener<GameVictoryEvent>(GameVictory);
-        EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);*/
+        EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
     }
 
     private void OnEnable()
@@ -89,15 +87,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
         SceneManager.LoadScene(m_ScenePlay);
     }
 
-    /*void GameVictory(GameVictoryEvent e)
+    void GamePause(GamePauseEvent e)
     {
-        OpenPanel(m_VictoryBatlePanel);
-    }*/
-
-    /*void GameOver(GameOverEvent e)
-    {
-        OpenPanel(m_GameOverPanel);
-    }*/
+        OpenPanel(null);
+        SceneManager.LoadScene(m_ScenePause);
+    }
 
     void OpenPanel(GameObject panel)
     {

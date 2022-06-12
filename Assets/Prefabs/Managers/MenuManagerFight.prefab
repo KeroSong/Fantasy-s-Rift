@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2115765190288314421}
   - component: {fileID: 249282775590731703}
   m_Layer: 0
-  m_Name: MenuManagerPauseFight
+  m_Name: MenuManagerFight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LoadPanel: {fileID: 0}
-  m_PausePanelFight: {fileID: 0}
+  m_PausePanel: {fileID: 0}
+  m_ConfirmedPanel: {fileID: 0}
+  m_GameOverPanel: {fileID: 0}
+  m_VictoryFightPanel: {fileID: 0}
+  m_ScenePlay: 0
   m_SceneMenu: 0
-  m_SceneFight: 0
+  m_AudioMixer: {fileID: 24100000, guid: 2be1cada580f92545af136448d207c61, type: 2}

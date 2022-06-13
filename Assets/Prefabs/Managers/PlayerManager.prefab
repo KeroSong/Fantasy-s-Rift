@@ -44,5 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ad2bb6ba10c3a41a36f5f0da6d2d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WarriorButton: {fileID: 0}
-  m_WarriorWoman: {fileID: 0}
+  m_WarriorImage: {fileID: 0}
+  m_WarriorMan: {fileID: 21300000, guid: d561c44271c00ba44ae1949d5d64a1a5, type: 3}
+  m_WarriorWoman: {fileID: 21300000, guid: 0babacd9df7f2a549bc7ba14c81235c4, type: 3}
+  m_ArcherImage: {fileID: 0}
+  m_ArcherMan: {fileID: 21300000, guid: 3f5d3a2497e126e41914f0a520a7d34a, type: 3}
+  m_ArcherWoman: {fileID: 21300000, guid: cf6b8a66d46c37b4e9f371ace4843edd, type: 3}
+  m_WizardImage: {fileID: 0}
+  m_WizardMan: {fileID: 21300000, guid: 1b2a0c679631710489abc0c089d2ebaa, type: 3}
+  m_WizardWoman: {fileID: 21300000, guid: cb9806453fdbd9e44bc263a368b8ab29, type: 3}

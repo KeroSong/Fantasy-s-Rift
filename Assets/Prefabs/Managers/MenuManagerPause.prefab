@@ -44,17 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0076b08cfd5a44949a61e6e50841ffbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MainMenuPanel: {fileID: 0}
-  m_LoadPanel: {fileID: 0}
-  m_PlayerSexePanel: {fileID: 0}
-  m_PlayerClassPanel: {fileID: 0}
-  m_SettingsPanel: {fileID: 0}
-  m_PausePanel: {fileID: 0}
   m_SavePanel: {fileID: 0}
-  m_VictoryBatlePanel: {fileID: 0}
-  m_GameOverPanel: {fileID: 0}
+  m_PausePanel: {fileID: 0}
+  m_ConfirmedPanel: {fileID: 0}
   m_ScenePlay: 0
   m_SceneMenu: 0
-  m_SceneFight: 0
-  m_ScenePause: 0
-  m_ScenePauseFight: 0
+  m_AudioMixer: {fileID: 24100000, guid: 2be1cada580f92545af136448d207c61, type: 2}

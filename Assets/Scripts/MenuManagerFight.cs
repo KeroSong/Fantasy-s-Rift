@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 using SDD.Events;
 
 public class MenuManagerFight : MonoBehaviour,IEventHandler
@@ -15,11 +18,42 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
 
+    Resolution[] m_Resolutions;
+    [SerializeField] Dropdown m_ResolutionDropdown;
+    [SerializeField] AudioMixer m_AudioMixer;
+
     List<GameObject> m_Panels;
 
     private void Awake()
     {
         m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanel, m_ConfirmedPanel, m_GameOverPanel, m_VictoryFightPanel};
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        m_Resolutions = Screen.resolutions.Select(resolution => new Resolution {width = resolution.width, height = resolution.height}).Distinct().ToArray();
+        m_ResolutionDropdown.ClearOptions();
+
+        List<string> Options = new List<string>();
+
+        int currentResolutionIndex = 0;
+        for(int i = 0; i < m_Resolutions.Length; i++)
+        {
+            string option = m_Resolutions[i].width + "x" + m_Resolutions[i].height;
+            Options.Add(option);
+
+            if (m_Resolutions[i].width == Screen.width && m_Resolutions[i].height == Screen.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        m_ResolutionDropdown.AddOptions(Options);
+        m_ResolutionDropdown.value = currentResolutionIndex;
+        m_ResolutionDropdown.RefreshShownValue();
+
+        Screen.fullScreen = true;
     }
 
     public void SubscribeEvents()
@@ -124,5 +158,24 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     public void PauseButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new PauseHasBeenPressEvent());
+    }
+
+
+
+    //settings parameters
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = m_Resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetFullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+    }
+
+    public void SetSound(float sound)
+    {
+        m_AudioMixer.SetFloat("Sound", sound);
     }
 }

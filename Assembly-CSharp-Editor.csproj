@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Blink\Art\Characters\LowPoly\Editor\MaterialTilingOffset.cs" />
+    <Compile Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Scripts\Editor\PT_Create_Prefab_Editor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

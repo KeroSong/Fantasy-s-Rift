@@ -57,11 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+    <Compile Include="Assets\Scripts\MenuManagerPause.cs" />
+    <Compile Include="Assets\Scripts\MenuManagerFight.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\EventManager\EventManager.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\AimingRig\AimReticle.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement2D.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\InvokeEventFromInspector.cs" />
+    <Compile Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Scripts\PT_Create_Prefab.cs" />
+    <Compile Include="Assets\Scripts\Fight.cs" />
+    <Compile Include="Assets\Scripts\GameManagerFight.cs" />
+    <Compile Include="Assets\Scripts\GameManagerPause.cs" />
     <Compile Include="Assets\Scripts\EasingFunctions.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\SimpleElevator.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\CinemachineFadeOutNearbyObjects.cs" />
@@ -71,7 +77,9 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Scripts\CreatePlayer.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
+    <Compile Include="Assets\Scripts\MenuManagerPlay.cs" />
     <Compile Include="Assets\Scripts\MyTools.cs" />
     <Compile Include="Assets\Scripts\EventManager\Event.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\CustomLockCameraY.cs" />
@@ -96,13 +104,23 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\BossLookAt.cs" />
     <Compile Include="Assets\Scripts\HudManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\GameManagerPlay.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Plants_Shader.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Weapons\Sources\Shaders\PT_Medieval_Weapons_Shader_Toon.shader" />
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\FadeOut.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Weapons\Sources\Shaders\PT_Medieval_Weapons_Shader_PBR.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_PBR.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Opaque_Shader.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Foliage_Shader.shader" />
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\ScreenCutoutShader.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Flowers_Shader.shader" />
     <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_Toon.shader" />
+    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Rock_Shader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

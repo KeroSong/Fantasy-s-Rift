@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\GameManagerPlay.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
+    <Compile Include="Assets\Scripts\MonsterCollision.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />

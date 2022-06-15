@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public class Player : MonoBehaviour
+public class PlayerAnimation : MonoBehaviour
 {
-    public CharacterController controller;
+    /*public CharacterController controller;*/
     public Transform cam;
 
     public float speed = 6f;
@@ -20,6 +20,13 @@ public class Player : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    Animator playerAnimator;
+
+    private void Awake()
+    {
+        playerAnimator = GetComponent<Animator>();
+    }
 
 
     // Update is called once per frame
@@ -41,24 +48,26 @@ public class Player : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f,angle,0f);
 
-
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f)* Vector3.forward;
-
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                controller.Move(moveDir.normalized * sprintSpeed * Time.deltaTime);
+                playerAnimator.SetFloat("Sprint", direction.magnitude);
             }
             else
             {
-                controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                playerAnimator.SetFloat("Sprint", 0);
             }
-            
+
+            playerAnimator.SetBool("Run", true);
+
         }
-        
+        else
+        {
+            playerAnimator.SetBool("Run",false);
+        }
 
-        velocity.y +=  gravity * Time.deltaTime;
+        /*velocity.y +=  gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);*/
 
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public class Player : MonoBehaviour
+public class PlayerOrigin : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
@@ -20,6 +20,13 @@ public class Player : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    Animator playerAnimator;
+
+    private void Awake()
+    {
+        playerAnimator = GetComponent<Animator>();
+    }
 
 
     // Update is called once per frame
@@ -47,14 +54,21 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 controller.Move(moveDir.normalized * sprintSpeed * Time.deltaTime);
+                playerAnimator.SetFloat("Sprint", direction.magnitude);
             }
             else
             {
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                playerAnimator.SetFloat("Sprint", 0);
             }
             
+
+            playerAnimator.SetBool("Run", true);
         }
-        
+        else
+        {
+            playerAnimator.SetBool("Run",false);
+        }
 
         velocity.y +=  gravity * Time.deltaTime;
 

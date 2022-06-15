@@ -85,6 +85,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\CustomLockCameraY.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
+    <Compile Include="Assets\Scripts\MonsterCollision.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\2D\LoseSightWhenTargetsFallsOffThePlatform.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\AllEvents.cs" />
@@ -107,7 +108,9 @@
     <Compile Include="Assets\Scripts\GameManagerPlay.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
-    <Compile Include="Assets\Scripts\MonsterCollision.cs" />
+    <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
+    <Compile Include="Assets\Scripts\PlayerOrigin.cs" />
+    <Compile Include="Assets\Scripts\IADragon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />

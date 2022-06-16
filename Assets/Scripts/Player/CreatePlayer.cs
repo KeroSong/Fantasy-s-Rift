@@ -17,6 +17,7 @@ public class CreatePlayer : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("Difficulté", 1);
         SetPlayer();
         SetAI1();
         SetAI2();

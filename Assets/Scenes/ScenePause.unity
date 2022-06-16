@@ -642,6 +642,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuManagerPause, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4554211895153702056, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554211895153702056, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2111259157}
+    - target: {fileID: 4554211895153702056, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetDifficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554211895153702056, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManagerPause, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554211895153702056, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4605067565624944392, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0

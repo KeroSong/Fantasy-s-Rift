@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 5383346551300294817}
   - component: {fileID: 5638331182351054919}
   m_Layer: 5
-  m_Name: WarriorText
+  m_Name: TextWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 6732272094642368636}
   - component: {fileID: 4980806942618443460}
   m_Layer: 5
-  m_Name: ArcherText
+  m_Name: TextArcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 5928942789562903595}
   - component: {fileID: 5304221269664949962}
   m_Layer: 5
-  m_Name: WizardText
+  m_Name: TextWizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -164,11 +164,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
     }
 
-    /*public void ReplayButtonHasBeenClicked()
-    {
-        EventManager.Instance.Raise(new ReplayButtonClickedEvent());
-    }*/
-
 
 
     //settings parameters
@@ -181,6 +176,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
     public void SetFullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+    }
+
+    public void SetDifficulty(float difficulte)
+    {
+        PlayerPrefs.SetInt("Difficulté", (int)difficulte);
     }
 
     public void SetSound(float sound)

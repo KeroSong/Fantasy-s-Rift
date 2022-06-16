@@ -29,8 +29,50 @@ MonoBehaviour:
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
-  - itemName: Leather Helmet
+  - itemName: Leather Chest
     itemID: 1
+    itemDesc: 'This chest is created out of leather.
+
+      + 10 Health
+
+      +
+      10 Armor'
+    itemIcon: {fileID: 21300000, guid: ddc7f83956c1b9246be544da79db11d5, type: 3}
+    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 3}
+    itemValue: 1
+    itemType: 6
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 10
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 10
+    - attributeName: Armor
+      attributeValue: 10
+  - itemName: Iron Helmet
+    itemID: 2
+    itemDesc: 'This helmet is created out of iron.
+
+      + 20 Health
+
+      + 20
+      Armor'
+    itemIcon: {fileID: 21300000, guid: 4789bc89db353584088e0e3d8c847b53, type: 3}
+    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 3}
+    itemValue: 1
+    itemType: 4
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 62
+    itemAttributes:
+    - attributeName: Health
+      attributeValue: 20
+    - attributeName: Armor
+      attributeValue: 20
+  - itemName: Leather Helmet
+    itemID: 4
     itemDesc: 'This helmet is created out of leather.
 
       + 10 Health
@@ -45,48 +87,6 @@ MonoBehaviour:
     maxStack: 1
     indexItemInList: 999
     rarity: 23
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 10
-    - attributeName: Armor
-      attributeValue: 10
-  - itemName: Iron Helmet
-    itemID: 2
-    itemDesc: 'This helmet is created out of iron.
-
-      + 20 Health
-
-      + 20
-      Armor'
-    itemIcon: {fileID: 21300000, guid: 52b1e3fc60614e446b61e1c6bb148f57, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 3}
-    itemValue: 1
-    itemType: 4
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 62
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 20
-    - attributeName: Armor
-      attributeValue: 20
-  - itemName: Leather Chest
-    itemID: 3
-    itemDesc: 'This chest is created out of leather.
-
-      + 10 Health
-
-      +
-      10 Armor'
-    itemIcon: {fileID: 21300000, guid: fcd8bd2db18e92d42a7d14fc0e395888, type: 3}
-    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 3}
-    itemValue: 1
-    itemType: 6
-    itemWeight: 0
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 10
     itemAttributes:
     - attributeName: Health
       attributeValue: 10
@@ -449,7 +449,7 @@ MonoBehaviour:
     itemID: 26
     itemDesc: 
     itemIcon: {fileID: 21300000, guid: 61133c9d383f3764bb714ef99ae8dc37, type: 3}
-    itemModel: {fileID: 100000, guid: 4cb7c2a50f87abf459d60c25eedc60b7, type: 2}
+    itemModel: {fileID: 0}
     itemValue: 1
     itemType: 15
     itemWeight: 0
@@ -561,6 +561,18 @@ MonoBehaviour:
     itemAttributes:
     - attributeName: Slots
       attributeValue: 24
+  - itemName: Pistol01
+    itemID: 35
+    itemDesc: THIS IS A UFPS PISTOL
+    itemIcon: {fileID: 21300000, guid: 435211a123255834d8dbd986692317b8, type: 3}
+    itemModel: {fileID: 100000, guid: 40da790cc27843b45b9c255c8d996b43, type: 3}
+    itemValue: 1
+    itemType: 16
+    itemWeight: 0
+    maxStack: 1
+    indexItemInList: 999
+    rarity: 0
+    itemAttributes: []
   - itemName: Pistol01
     itemID: 35
     itemDesc: THIS IS A UFPS PISTOL

@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 4789736171166736842}
   - component: {fileID: 8529569972439828160}
   m_Layer: 5
-  m_Name: ManText
+  m_Name: TextMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 8496442637312066907}
   - component: {fileID: 6001658608175612398}
   m_Layer: 5
-  m_Name: WomanText
+  m_Name: TextWoman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

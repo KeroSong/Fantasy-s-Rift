@@ -187,6 +187,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         Screen.fullScreen = isFullScreen;
     }
 
+    public void SetDifficulty(float difficulte)
+    {
+        PlayerPrefs.SetInt("Difficulté", (int)difficulte);
+    }
+
     public void SetSound(float sound)
     {
         m_AudioMixer.SetFloat("Sound", sound);

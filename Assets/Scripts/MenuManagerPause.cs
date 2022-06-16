@@ -12,6 +12,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_SavePanel;
     [SerializeField] GameObject m_PausePanel;
     [SerializeField] GameObject m_ConfirmedPanel;
+    [SerializeField] GameObject m_SettingsPanel;
 
     [SerializeField] int m_ScenePlay;
     [SerializeField] int m_SceneMenu;
@@ -24,7 +25,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_SavePanel, m_PausePanel, m_ConfirmedPanel};
+        m_Panels = new List<GameObject>() {m_SavePanel, m_PausePanel, m_ConfirmedPanel, m_SettingsPanel};
     }
 
     // Start is called before the first frame update
@@ -60,6 +61,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
+        EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
     }
 
@@ -69,6 +71,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
+        EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
     }
 
@@ -104,6 +107,11 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
         SceneManager.LoadScene(m_SceneMenu);
     }
 
+    void GameSetting(GameSettingsEvent e)
+    {
+        OpenPanel(m_SettingsPanel);
+    }
+
     void GamePause(GamePauseEvent e)
     {
         OpenPanel(m_PausePanel);
@@ -119,6 +127,11 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     public void SavePartyHasBeenClicked()
     {
         EventManager.Instance.Raise(new SavePartyButtonClickedEvent());
+    }
+
+    public void LoadHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new LoadButtonClickedEvent());
     }
 
     public void SaveHasBeenClicked()
@@ -139,6 +152,11 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     public void MenuButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
+    }
+
+    public void SettingsHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new SettingsButtonClickedEvent());
     }
 
     public void PauseButtonHasBeenClicked()

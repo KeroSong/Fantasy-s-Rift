@@ -29,6 +29,9 @@ public class GameManagerPause : MonoBehaviour
             case GAMESTATE.menu:
                 EventManager.Instance.Raise(new GameMenuEvent());
                 break;
+            case GAMESTATE.settings:
+                EventManager.Instance.Raise(new GameSettingsEvent());
+                break;
             case GAMESTATE.pause:
                 EventManager.Instance.Raise(new GamePauseEvent());
                 break;
@@ -56,6 +59,7 @@ public class GameManagerPause : MonoBehaviour
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.AddListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
+        EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
 
@@ -65,6 +69,7 @@ public class GameManagerPause : MonoBehaviour
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.RemoveListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
+        EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
 
@@ -98,6 +103,11 @@ public class GameManagerPause : MonoBehaviour
         Menu();
     }
 
+    void SettingsClicked(SettingsButtonClickedEvent e)
+    {
+        Settings();
+    }
+
     void PauseHasBeenPress(PauseHasBeenPressEvent e)
     {
         Pause();
@@ -121,6 +131,11 @@ public class GameManagerPause : MonoBehaviour
     void Menu()
     {
         SetState(GAMESTATE.menu);
+    }
+
+    void Settings()
+    {
+        SetState(GAMESTATE.settings);
     }
 
     void Pause()

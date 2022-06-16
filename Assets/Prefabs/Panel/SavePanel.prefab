@@ -233,10 +233,13 @@ MonoBehaviour:
       nom: 
       sexe: 0
       classe: 0
-      inventory:
-        goldCoins: 0
-        isFull: 0
-        items: []
+      health: 0
+      mana: 0
+      level: 0
+      experience: 0
+    inventory:
+      goldCoins: 0
+      items: []
 --- !u!1 &4210736633570555478
 GameObject:
   m_ObjectHideFlags: 0

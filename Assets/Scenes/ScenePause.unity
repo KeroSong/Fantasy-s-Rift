@@ -241,6 +241,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2601478915253071578, guid: d68d5deae4a025d4aaf072869fae74db, type: 3}
+      propertyPath: m_SettingsPanel
+      value: 
+      objectReference: {fileID: 567141441962000090}
+    - target: {fileID: 2601478915253071578, guid: d68d5deae4a025d4aaf072869fae74db, type: 3}
       propertyPath: m_ConfirmedPanel
       value: 
       objectReference: {fileID: 1202362567}
@@ -735,3 +739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &567141441962000090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1601721455609510393, guid: b10fc71ddecbb404ea846609be694cb2, type: 3}
+  m_PrefabInstance: {fileID: 567141441962000088}
+  m_PrefabAsset: {fileID: 0}

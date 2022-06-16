@@ -12,6 +12,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_LoadPanel;
     [SerializeField] GameObject m_PausePanel;
     [SerializeField] GameObject m_ConfirmedPanel;
+    [SerializeField] GameObject m_SettingsPanel;
     [SerializeField] GameObject m_GameOverPanel;
     [SerializeField] GameObject m_VictoryFightPanel;
 
@@ -26,7 +27,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
 
     private void Awake()
     {
-        m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanel, m_ConfirmedPanel, m_GameOverPanel, m_VictoryFightPanel};
+        m_Panels = new List<GameObject>() {m_LoadPanel, m_PausePanel, m_ConfirmedPanel, m_SettingsPanel, m_GameOverPanel, m_VictoryFightPanel};
     }
 
     // Start is called before the first frame update
@@ -62,6 +63,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameFightEvent>(GameFight);
         EventManager.Instance.AddListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
+        EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
         EventManager.Instance.AddListener<GameVictoryFightEvent>(GameVictoryFight);
         EventManager.Instance.AddListener<GameOverEvent>(GameOver);
@@ -73,6 +75,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameFightEvent>(GameFight);
         EventManager.Instance.RemoveListener<GameConfirmedEvent>(GameConfirmed);
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
+        EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
         EventManager.Instance.RemoveListener<GameVictoryFightEvent>(GameVictoryFight);
         EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);
@@ -106,6 +109,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     void GameMenu(GameMenuEvent e)
     {
         SceneManager.LoadScene(m_SceneMenu);
+    }
+
+    void GameSetting(GameSettingsEvent e)
+    {
+        OpenPanel(m_SettingsPanel);
     }
 
     void GamePause(GamePauseEvent e)
@@ -153,6 +161,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     public void MenuButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new MainMenuButtonClickedEvent());
+    }
+
+    public void SettingsHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new SettingsButtonClickedEvent());
     }
 
     public void PauseButtonHasBeenClicked()

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public class MonsterCollision : MonoBehaviour
+public class InnCollision : MonoBehaviour
 {
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            EventManager.Instance.Raise(new FightCollisionEvent());
+            EventManager.Instance.Raise(new InnCollisionEvent());
         }
     }
 

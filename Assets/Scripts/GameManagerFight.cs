@@ -29,6 +29,9 @@ public class GameManagerFight : MonoBehaviour
             case GAMESTATE.menu:
                 EventManager.Instance.Raise(new GameMenuEvent());
                 break;
+            case GAMESTATE.settings:
+                EventManager.Instance.Raise(new GameSettingsEvent());
+                break;
             case GAMESTATE.pause:
                 EventManager.Instance.Raise(new GamePauseEvent());
                 break;
@@ -56,12 +59,22 @@ public class GameManagerFight : MonoBehaviour
         SetState(GAMESTATE.fight);
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("p"))
+        {
+            EventManager.Instance.Raise(new PauseHasBeenPressEvent());
+        }
+    }
+
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
         EventManager.Instance.AddListener<FightButtonClickedEvent>(FightButtonClicked);
         EventManager.Instance.AddListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
+        EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
 
@@ -71,6 +84,7 @@ public class GameManagerFight : MonoBehaviour
         EventManager.Instance.RemoveListener<FightButtonClickedEvent>(FightButtonClicked);
         EventManager.Instance.RemoveListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
+        EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
     }
 
@@ -106,6 +120,11 @@ public class GameManagerFight : MonoBehaviour
         Menu();
     }
 
+    void SettingsClicked(SettingsButtonClickedEvent e)
+    {
+        Settings();
+    }
+
     void PauseHasBeenPress(PauseHasBeenPressEvent e)
     {
         Pause();
@@ -131,6 +150,11 @@ public class GameManagerFight : MonoBehaviour
     void Menu()
     {
         SetState(GAMESTATE.menu);
+    }
+
+    void Settings()
+    {
+        SetState(GAMESTATE.settings);
     }
 
     void Pause()

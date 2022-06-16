@@ -3104,13 +3104,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7015778940177295473}
   - component: {fileID: 4016402807544541707}
+  - component: {fileID: 2606035710545495835}
   m_Layer: 0
-  m_Name: female knight
+  m_Name: WomanWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7015778940177295473
 Transform:
   m_ObjectHideFlags: 0
@@ -3144,7 +3145,7 @@ Animator:
   m_GameObject: {fileID: 7644540868155634379}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
-  m_Controller: {fileID: 9100000, guid: 4c7fe8e1a3919c549a79a706afefd1ce, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1917c3c15e6e4694ba8b329d3522e4ae, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3154,6 +3155,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2606035710545495835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644540868155634379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a882f24c15a2a40aeb62ad115fb36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  speed: 6
+  sprintSpeed: 10
+  turnSmoothTime: 0.1
+  gravity: -9.81
+  groudCheck: {fileID: 7015778940177295473}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &7660032199063297870
 GameObject:
   m_ObjectHideFlags: 0

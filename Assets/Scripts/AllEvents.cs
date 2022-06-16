@@ -48,20 +48,23 @@ public class GameOverEvent : SDD.Events.Event
 public class GameVictoryFightEvent : SDD.Events.Event
 {
 }
-public class GameStatisticsChangedEvent : SDD.Events.Event
+public class GameShopEvent : SDD.Events.Event
+{
+}
+public class GameInnEvent : SDD.Events.Event
+{
+}
+/*public class GameStatisticsChangedEvent : SDD.Events.Event
 {
 	//public int eBestScore { get; set; }
 	public int eScore { get; set; }
 	public float eTimer { get; set; }
 	//public int eNLives { get; set; }
 	//public int eNEnemiesLeftBeforeVictory { get; set; }
-}
+}*/
 #endregion
 
 #region MenuManager Events
-public class EscapeButtonClickedEvent : SDD.Events.Event
-{
-}
 public class ContinuePartyButtonClickedEvent : SDD.Events.Event
 {
 }
@@ -95,23 +98,38 @@ public class LoadButtonClickedEvent : SDD.Events.Event
 public class PauseHasBeenPressEvent : SDD.Events.Event
 {
 }
-public class ResumeButtonClickedEvent : SDD.Events.Event
-{
-}
-public class ReplayButtonClickedEvent : SDD.Events.Event
-{
-}
 public class MainMenuButtonClickedEvent : SDD.Events.Event
 {
 }
 public class ConfirmedButtonClickedEvent : SDD.Events.Event
 {
 }
+/*public class EscapeButtonClickedEvent : SDD.Events.Event
+{
+}
+public class ResumeButtonClickedEvent : SDD.Events.Event
+{
+}
+public class ReplayButtonClickedEvent : SDD.Events.Event
+{
+}*/
 #endregion
 
-#region Score events
+#region Collision Events
+public class FightCollisionEvent : SDD.Events.Event
+{
+}
+public class ShopCollisionEvent : SDD.Events.Event
+{
+}
+public class InnCollisionEvent : SDD.Events.Event
+{
+}
+#endregion
+
+/*#region Score Events
 public class ScoreHasBeenGainedEvent:SDD.Events.Event
 {
 	public int eScore;
 }
-#endregion
+#endregion*/

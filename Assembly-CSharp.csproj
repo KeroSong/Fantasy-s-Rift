@@ -66,7 +66,7 @@
     <Compile Include="Assets\InventoryMaster\Scripts\Inventory\InventoryDesign.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManagerFight.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManager.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Item\Item.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Items\Item.cs" />
     <Compile Include="Assets\Scripts\EventManager\EventManager.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\AimingRig\AimReticle.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\Item\ConsumeItem.cs" />
@@ -122,11 +122,11 @@
     <Compile Include="Assets\Scripts\Collision\InnCollision.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\Inventory\DragInventory.cs" />
     <Compile Include="Assets\Scripts\EventManager\IEventHandler.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Item\ItemDataBaseList.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Items\ItemDataBaseList.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\CraftSystem\LeftClick.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\FirstPerson\FirstPersonController.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\CraftSystem\BlueprintDatabase.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\Item\SlotCover.cs" />
@@ -144,12 +144,14 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\BossLookAt.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\CraftSystem\CraftSystem.cs" />
     <Compile Include="Assets\Scripts\Manager\HudManager.cs" />
+    <Compile Include="Assets\Scripts\Tools\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManagerPlay.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\Inventory\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Tools\ProgressBar.cs" />
+    <Compile Include="Assets\Scripts\Player\player1mech.cs" />
+    <Compile Include="Assets\Scripts\Tools\ProgressBarRound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />

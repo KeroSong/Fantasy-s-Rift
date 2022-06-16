@@ -5,6 +5,12 @@ using SDD.Events;
 
 public class GameManagerFight : MonoBehaviour
 {
+    [SerializeField] ProgressBar pbHealth, pbMana;
+    [SerializeField] ProgressBarRound pbClassOne, pbClassTwo;
+    [SerializeField] float framerate=0.5f;
+    [SerializeField] float classOneSpeed;
+    [SerializeField] float classTwoSpeed;
+
     private static GameManagerFight m_Instance;
     public static GameManagerFight Instance { get {
             //if (m_Instance == null) m_Instance = CreateInstance(); // Impossible dans Unity
@@ -57,6 +63,8 @@ public class GameManagerFight : MonoBehaviour
     void Start()
     {
         SetState(GAMESTATE.fight);
+        StartCoroutine(RoundOne());
+        StartCoroutine(RoundTwo());
     }
 
     // Update is called once per frame
@@ -161,4 +169,34 @@ public class GameManagerFight : MonoBehaviour
     {
         SetState(GAMESTATE.pause);
     }
+
+    void GameOver()
+    {
+        SetState(GAMESTATE.gameover);
+    }
+
+
+    IEnumerator RoundOne()
+    {
+        while (pbClassOne.Val < 100)
+        {
+            pbClassOne.Val = pbClassOne.Val + classOneSpeed;
+            yield return new WaitForSeconds(framerate);
+        }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().isDead();
+        GameOver();
+    }
+    IEnumerator RoundTwo()
+    {
+        while (pbClassTwo.Val < 100)
+        {
+            pbClassTwo.Val = pbClassTwo.Val + classTwoSpeed;
+            yield return new WaitForSeconds(framerate);
+        }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().isDead();
+        GameOver();
+    }
+
 }

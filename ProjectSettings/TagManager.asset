@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Panel
+  - Slot
+  - Slots
+  - Canvas
+  - Item
+  - DraggingItem
+  - ItemIcon
+  - Player2
   layers:
   - Default
   - TransparentFX

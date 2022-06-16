@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794686921713c96438d7bb2d96c240c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShopPanel: {fileID: 1948094373860267570, guid: cfe812ba799b10944a9e0f00de147722, type: 3}
-  m_InnPanel: {fileID: 1948094373860267570, guid: fa351e1fe3b9f6c43ab0b054251e28f5, type: 3}
+  m_InventoryPanel: {fileID: 0}
+  m_EquipmentPanel: {fileID: 0}
+  m_ShopPanel: {fileID: 0}
+  m_InnPanel: {fileID: 0}
   m_ScenePause: 0
   m_SceneFight: 0

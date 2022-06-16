@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 1722615749}
     - target: {fileID: 2601478915253071578, guid: d68d5deae4a025d4aaf072869fae74db, type: 3}
       propertyPath: m_ScenePlay
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2601478915253071578, guid: d68d5deae4a025d4aaf072869fae74db, type: 3}
       propertyPath: m_PausePanel

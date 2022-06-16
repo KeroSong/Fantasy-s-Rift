@@ -1635,6 +1635,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPlay
       objectReference: {fileID: 0}
+    - target: {fileID: 3056855535450862042, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929123355271976573, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b137a7715801bc44d93c1795a575debe, type: 3}
 --- !u!1001 &451261120
@@ -8012,11 +8020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667518219719141085, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000019045524
+      value: -0.000000021975618
       objectReference: {fileID: 0}
     - target: {fileID: 3667518219719141085, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000009054564
+      value: 0.00000001044758
       objectReference: {fileID: 0}
     - target: {fileID: 3667518219860045049, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_XDamping
@@ -8144,15 +8152,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667518220796331535, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4128655
+      value: 0.41286546
       objectReference: {fileID: 0}
     - target: {fileID: 3667518220796331535, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015671437
+      value: 0.00000001567143
       objectReference: {fileID: 0}
     - target: {fileID: 3667518220796331535, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000071039232
+      value: -0.000000007103919
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
@@ -8233,7 +8241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094251526}
-  m_LocalRotation: {x: 0.41286552, y: -0.000000015674642, z: 0.000000007103218, w: 0.91079205}
+  m_LocalRotation: {x: 0.4128655, y: 0.000000015684309, z: -0.000000007097842, w: 0.91079205}
   m_LocalPosition: {x: 0.2, y: 29.9, z: 2.2599993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8398,11 +8406,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1105392033375878905, guid: 8c790823d3667184faeb6be8c49acf0b, type: 3}
       propertyPath: m_SceneFight
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1105392033375878905, guid: 8c790823d3667184faeb6be8c49acf0b, type: 3}
       propertyPath: m_ScenePause
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4697188101505436269, guid: 8c790823d3667184faeb6be8c49acf0b, type: 3}
       propertyPath: Player

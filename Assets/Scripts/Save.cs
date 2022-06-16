@@ -86,7 +86,7 @@ public class Scene
 {
     public List<Chest> chest = new List<Chest>();
     public SavePlayer player = new SavePlayer();
-    public Inventory inventory = new Inventory();
+    public Inventorys inventory = new Inventorys();
 }
 
 [System.Serializable]
@@ -103,7 +103,7 @@ public class SavePlayer
 }
 
 [System.Serializable]
-public class Inventory
+public class Inventorys
 {
     public int goldCoins;
     public List<Items> items = new List<Items>();

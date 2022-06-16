@@ -23,6 +23,8 @@ public class GameManagerPlay : MonoBehaviour
 
     GAMESTATE m_State;
     public bool IsPlaying { get { return m_State == GAMESTATE.play; } }
+    public bool IsInventory { get { return m_State == GAMESTATE.inventory; } }
+    public bool IsEquipment { get { return m_State == GAMESTATE.equipment; } }
 
     //int m_Score;
     //[SerializeField] int m_VictoryScore;
@@ -40,6 +42,12 @@ public class GameManagerPlay : MonoBehaviour
                 break;
             case GAMESTATE.pause:
                 EventManager.Instance.Raise(new GamePauseEvent());
+                break;
+            case GAMESTATE.inventory:
+                EventManager.Instance.Raise(new GameInventoryEvent());
+                break;
+            case GAMESTATE.equipment:
+                EventManager.Instance.Raise(new GameEquipmentEvent());
                 break;
             case GAMESTATE.fight:
                 EventManager.Instance.Raise(new GameFightEvent());
@@ -114,7 +122,7 @@ public class GameManagerPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsPlaying)
+        if(IsPlaying || IsInventory || IsEquipment)
         {
             /*SetScoreAndTimer(m_Score,Mathf.Max(m_CountdownTimer - Time.deltaTime, 0));
             if (m_CountdownTimer == 0)
@@ -123,6 +131,16 @@ public class GameManagerPlay : MonoBehaviour
             if (Input.GetKeyDown("p"))
             {
                 Pause();
+            }
+
+            if (Input.GetKeyDown("i"))
+            {
+                Inventory();
+            }
+
+            if (Input.GetKeyDown("c"))
+            {
+                Equipment();
             }
 
             PlayerPrefs.SetFloat("PositionX", (float)Player.transform.position.x);
@@ -185,6 +203,16 @@ public class GameManagerPlay : MonoBehaviour
     void Pause()
     {
         SetState(GAMESTATE.pause);
+    }
+
+    void Inventory()
+    {
+        SetState(GAMESTATE.inventory);
+    }
+
+    void Equipment()
+    {
+        SetState(GAMESTATE.equipment);
     }
 
     void Fight()

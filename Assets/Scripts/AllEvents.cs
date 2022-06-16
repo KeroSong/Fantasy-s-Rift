@@ -48,6 +48,12 @@ public class GameOverEvent : SDD.Events.Event
 public class GameVictoryFightEvent : SDD.Events.Event
 {
 }
+public class GameInventoryEvent : SDD.Events.Event
+{
+}
+public class GameEquipmentEvent : SDD.Events.Event
+{
+}
 public class GameShopEvent : SDD.Events.Event
 {
 }

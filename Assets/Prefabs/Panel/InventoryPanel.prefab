@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1369231023492630092}
   - component: {fileID: 1369231023492630094}
   - component: {fileID: 1369231023492630093}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory4
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,8 +87,8 @@ GameObject:
   - component: {fileID: 1369231023524918177}
   - component: {fileID: 1369231023524918179}
   - component: {fileID: 1369231023524918178}
-  m_Layer: 0
-  m_Name: 25
+  m_Layer: 5
+  m_Name: SlotInventory25
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,8 +164,8 @@ GameObject:
   - component: {fileID: 1369231023532252582}
   - component: {fileID: 1369231023532252581}
   - component: {fileID: 1369231023532252580}
-  m_Layer: 0
-  m_Name: Title - Inventory
+  m_Layer: 5
+  m_Name: TextInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,96 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9345e047cc26912468c550a0d8d5b5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1369231023666947358
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 179470, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1369231023666947359}
-  - component: {fileID: 1369231023666947345}
-  - component: {fileID: 1369231023666947344}
-  - component: {fileID: 1369231023666947346}
-  m_Layer: 0
-  m_Name: CloseInventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1369231023666947359
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22479470, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231023666947358}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1369231025508115326}
-  m_Father: {fileID: 1369231025452450540}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148, y: 183}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1369231023666947345
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22279470, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231023666947358}
-  m_CullTransparentMesh: 1
---- !u!114 &1369231023666947344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 11479470, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231023666947358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e0f1b09ccfd210478d620bff26d892f, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &1369231023666947346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231023666947358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c8d7bf94d52f740bfcf3601c31bffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1369231023872522252
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,8 +256,8 @@ GameObject:
   - component: {fileID: 1369231023872522253}
   - component: {fileID: 1369231023872522255}
   - component: {fileID: 1369231023872522254}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory14
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,8 +332,8 @@ GameObject:
   - component: {fileID: 1369231023950176917}
   - component: {fileID: 1369231023950176919}
   - component: {fileID: 1369231023950176918}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory7
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,8 +408,8 @@ GameObject:
   - component: {fileID: 1369231023963476614}
   - component: {fileID: 1369231023963476664}
   - component: {fileID: 1369231023963476615}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory13
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,8 +484,8 @@ GameObject:
   - component: {fileID: 1369231023973872409}
   - component: {fileID: 1369231023973872411}
   - component: {fileID: 1369231023973872410}
-  m_Layer: 0
-  m_Name: 21
+  m_Layer: 5
+  m_Name: SlotInventory21
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -650,8 +560,8 @@ GameObject:
   - component: {fileID: 1369231024004880519}
   - component: {fileID: 1369231024004880569}
   - component: {fileID: 1369231024004880568}
-  m_Layer: 0
-  m_Name: 17
+  m_Layer: 5
+  m_Name: SlotInventory17
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,8 +636,8 @@ GameObject:
   - component: {fileID: 1369231024033508628}
   - component: {fileID: 1369231024033508630}
   - component: {fileID: 1369231024033508629}
-  m_Layer: 0
-  m_Name: 20
+  m_Layer: 5
+  m_Name: SlotInventory20
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,8 +712,8 @@ GameObject:
   - component: {fileID: 1369231024058838148}
   - component: {fileID: 1369231024058838150}
   - component: {fileID: 1369231024058838149}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory6
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,8 +788,8 @@ GameObject:
   - component: {fileID: 1369231024150455414}
   - component: {fileID: 1369231024150455400}
   - component: {fileID: 1369231024150455415}
-  m_Layer: 0
-  m_Name: 19
+  m_Layer: 5
+  m_Name: SlotInventory19
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,8 +864,8 @@ GameObject:
   - component: {fileID: 1369231024235155521}
   - component: {fileID: 1369231024235155523}
   - component: {fileID: 1369231024235155522}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory1
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,8 +940,8 @@ GameObject:
   - component: {fileID: 1369231024472973138}
   - component: {fileID: 1369231024472973140}
   - component: {fileID: 1369231024472973139}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory10
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1106,8 +1016,8 @@ GameObject:
   - component: {fileID: 1369231024495438463}
   - component: {fileID: 1369231024495438449}
   - component: {fileID: 1369231024495438448}
-  m_Layer: 0
-  m_Name: 22
+  m_Layer: 5
+  m_Name: SlotInventory22
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1182,8 +1092,8 @@ GameObject:
   - component: {fileID: 1369231024525313078}
   - component: {fileID: 1369231024525313064}
   - component: {fileID: 1369231024525313079}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory11
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1258,8 +1168,8 @@ GameObject:
   - component: {fileID: 1369231024526901018}
   - component: {fileID: 1369231024526901020}
   - component: {fileID: 1369231024526901019}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory8
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,8 +1244,8 @@ GameObject:
   - component: {fileID: 1369231024580091686}
   - component: {fileID: 1369231024580091736}
   - component: {fileID: 1369231024580091687}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory15
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1410,8 +1320,8 @@ GameObject:
   - component: {fileID: 1369231024614804260}
   - component: {fileID: 1369231024614804262}
   - component: {fileID: 1369231024614804261}
-  m_Layer: 0
-  m_Name: 18
+  m_Layer: 5
+  m_Name: SlotInventory18
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1486,8 +1396,8 @@ GameObject:
   - component: {fileID: 1369231024640479682}
   - component: {fileID: 1369231024640479684}
   - component: {fileID: 1369231024640479683}
-  m_Layer: 0
-  m_Name: 24
+  m_Layer: 5
+  m_Name: SlotInventory24
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1562,8 +1472,8 @@ GameObject:
   - component: {fileID: 1369231024651837415}
   - component: {fileID: 1369231024651836441}
   - component: {fileID: 1369231024651836440}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory12
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1638,8 +1548,8 @@ GameObject:
   - component: {fileID: 1369231024674186359}
   - component: {fileID: 1369231024674186345}
   - component: {fileID: 1369231024674186344}
-  m_Layer: 0
-  m_Name: 16
+  m_Layer: 5
+  m_Name: SlotInventory16
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1714,8 +1624,8 @@ GameObject:
   - component: {fileID: 1369231024823692312}
   - component: {fileID: 1369231024823692314}
   - component: {fileID: 1369231024823692313}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory3
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,8 +1699,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1369231024930060889}
   - component: {fileID: 1369231024930060890}
-  m_Layer: 0
-  m_Name: Slots - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotsInventory
   m_TagString: Slots
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1876,8 +1786,8 @@ GameObject:
   - component: {fileID: 1369231025414310441}
   - component: {fileID: 1369231025414310443}
   - component: {fileID: 1369231025414310442}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory5
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1952,8 +1862,8 @@ GameObject:
   - component: {fileID: 1369231025418678230}
   - component: {fileID: 1369231025418678216}
   - component: {fileID: 1369231025418678231}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory9
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,7 +1940,7 @@ GameObject:
   - component: {fileID: 1369231025452450543}
   - component: {fileID: 1369231025452450542}
   - component: {fileID: 1369231025452450541}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Panel
   m_Icon: {fileID: 0}
@@ -2051,13 +1961,13 @@ RectTransform:
   m_Children:
   - {fileID: 1369231023532252579}
   - {fileID: 1369231024930060889}
-  - {fileID: 1369231023666947359}
+  - {fileID: 3997418693444722737}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 417, y: 40}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 340, y: 409}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1369231025452450528
@@ -2156,8 +2066,8 @@ MonoBehaviour:
   slotDesign: {fileID: 1369231024235155522}
   inventoryDesign: {fileID: 1369231025452450543}
   showInventoryCross: 1
-  inventoryCrossImage: {fileID: 1369231023666947344}
-  inventoryCrossRectTransform: {fileID: 1369231023666947359}
+  inventoryCrossImage: {fileID: 0}
+  inventoryCrossRectTransform: {fileID: 0}
   inventoryCrossPosX: 148
   inventoryCrossPosY: 183
   inventoryTitle: INVENTORY
@@ -2177,8 +2087,8 @@ GameObject:
   - component: {fileID: 1369231025481053047}
   - component: {fileID: 1369231025481053033}
   - component: {fileID: 1369231025481053032}
-  m_Layer: 0
-  m_Name: 23
+  m_Layer: 5
+  m_Name: SlotInventory23
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2242,86 +2152,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1369231025508115325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 179472, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1369231025508115326}
-  - component: {fileID: 1369231025508115312}
-  - component: {fileID: 1369231025508115327}
-  m_Layer: 0
-  m_Name: CloseInventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1369231025508115326
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22479472, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231025508115325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1369231023666947359}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 76.4, y: -7.2}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1369231025508115312
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 22279472, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231025508115325}
-  m_CullTransparentMesh: 1
---- !u!114 &1369231025508115327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 11479472, guid: c09ae6926a2cd6148958f03f14572c54, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369231025508115325}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 72b8737a62ccf674e97cfe524706f948, type: 3}
-    m_FontSize: 0
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: x
 --- !u!1 &1369231025548345887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,8 +2163,8 @@ GameObject:
   - component: {fileID: 1369231025548345872}
   - component: {fileID: 1369231025548345874}
   - component: {fileID: 1369231025548345873}
-  m_Layer: 0
-  m_Name: Slot - Inventory(Clone)
+  m_Layer: 5
+  m_Name: SlotInventory2
   m_TagString: Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2398,3 +2228,109 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8162863280174486618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3997418693444722737}
+  - component: {fileID: 7654936938224686607}
+  - component: {fileID: 1017055797323624897}
+  - component: {fileID: 6364377563690757319}
+  m_Layer: 5
+  m_Name: CloseInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3997418693444722737
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162863280174486618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1369231025452450540}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 148, y: 183}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7654936938224686607
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162863280174486618}
+  m_CullTransparentMesh: 1
+--- !u!114 &1017055797323624897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162863280174486618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4e0f1b09ccfd210478d620bff26d892f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6364377563690757319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162863280174486618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3803302953795343053, guid: 2f3065d1aee50e74b91667c81fa5c130, type: 3}
+          m_TargetAssemblyTypeName: MenuManagerPlay, Assembly-CSharp
+          m_MethodName: CloseInventory
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

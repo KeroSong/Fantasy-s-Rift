@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 435081129472798217}
   m_Layer: 5
   m_Name: PlayerSexPanel
-  m_TagString: Untagged
+  m_TagString: Panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

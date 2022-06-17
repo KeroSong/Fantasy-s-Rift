@@ -31,8 +31,6 @@ public class StorageInventory : MonoBehaviour
     bool showTimer;
 
     public int itemAmount;
-
-    Tooltip tooltip;
     Inventory inv;
 
     GameObject player;
@@ -85,9 +83,6 @@ public class StorageInventory : MonoBehaviour
             timer = GameObject.FindGameObjectWithTag("Timer");
             timer.SetActive(false);
         }
-        if (GameObject.FindGameObjectWithTag("Tooltip") != null)
-            tooltip = GameObject.FindGameObjectWithTag("Tooltip").GetComponent<Tooltip>();
-
     }
 
     public void setImportantVariables()
@@ -127,7 +122,6 @@ public class StorageInventory : MonoBehaviour
                 inventory.SetActive(false);
                 inv.deleteAllItems();
             }
-            tooltip.deactivateTooltip();
             timerImage.fillAmount = 0;
             timer.SetActive(false);
             showTimer = false;
@@ -157,7 +151,6 @@ public class StorageInventory : MonoBehaviour
             setListofStorage();
             inventory.SetActive(false);
             inv.deleteAllItems();
-            tooltip.deactivateTooltip();
         }
 
 

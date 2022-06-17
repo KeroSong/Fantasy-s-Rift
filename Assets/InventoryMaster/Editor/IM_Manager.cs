@@ -18,22 +18,10 @@ public class IM_Manager : EditorWindow
         folderIcon = Resources.Load<Texture>("EditorWindowTextures/folder-icon");
 
         Object itemDatabase = Resources.Load("ItemDatabase");
-        if (itemDatabase == null)
-            inventoryItemList = CreateItemDatabase.createItemDatabase();
-        else
-            inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
         Object attributeDatabase = Resources.Load("AttributeDatabase");
-        if (attributeDatabase == null)
-            itemAttributeList = CreateAttributeDatabase.createItemAttributeDatabase();
-        else
-            itemAttributeList = (ItemAttributeList)Resources.Load("AttributeDatabase");
 
         Object inputManager = Resources.Load("InputManager");
-        if (inputManager == null)
-            inputManagerDatabase = CreateInputManager.createInputManager();
-        else
-            inputManagerDatabase = (InputManager)Resources.Load("InputManager");
 
 
     }
@@ -45,7 +33,6 @@ public class IM_Manager : EditorWindow
 
     bool showInputManager;
     bool showItemDataBase;
-    bool showBluePrintDataBase;
 
     //Itemdatabase
     static ItemDataBaseList inventoryItemList = null;
@@ -72,20 +59,7 @@ public class IM_Manager : EditorWindow
     public int toolbarInt = 0;
     public string[] toolbarStrings = new string[] { "Create Items", "Manage Items" };
 
-    //Blueprintdatabase
-    static BlueprintDatabase bluePrintDatabase = null;
-    List<bool> manageItem1 = new List<bool>();
-    int amountOfFinalItem;
-    //    float timeToCraft;
-    int finalItemID;
-    int amountofingredients;
-    int[] ingredients;
-    int[] amount;
-    ItemDataBaseList itemdatabase;
-    Vector2 scrollPosition1;
-
     public int toolbarInt1 = 0;
-    public string[] toolbarStrings1 = new string[] { "Create Blueprints", "Manage Blueprints" };
 
     void OnGUI()
     {
@@ -95,7 +69,6 @@ public class IM_Manager : EditorWindow
         {
             showInputManager = !showInputManager;
             showItemDataBase = false;
-            showBluePrintDataBase = false;
         }
 
         if (showInputManager)
@@ -106,23 +79,11 @@ public class IM_Manager : EditorWindow
         {
             showInputManager = false;
             showItemDataBase = !showItemDataBase;
-            showBluePrintDataBase = false;
-        }
-
-        if (GUILayout.Button("Blueprintdatabase"))
-        {
-            showInputManager = false;
-            showItemDataBase = false;
-            showBluePrintDataBase = !showBluePrintDataBase;
         }
         EditorGUILayout.EndHorizontal();
 
         if (showItemDataBase)
             ItemDataBase();
-
-        if (showBluePrintDataBase)
-            BluePrintDataBase();
-
     }
 
 
@@ -184,12 +145,9 @@ public class IM_Manager : EditorWindow
                     inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemID = inventoryItemList.itemList.Count - 1;                                             //itemID getting set automaticly ...its unique...better do not change it :D  
 
                     GUILayout.BeginHorizontal();
-                    GUILayout.Label("Item Description");                                                                                                                        //label ItemDescription
                     GUILayout.Space(47);
-                    inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemDesc = EditorGUILayout.TextArea(inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemDesc, GUILayout.Width(position.width - 180), GUILayout.Height(70));     //Text area for the itemDesc
                     GUILayout.EndHorizontal();
                     inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemIcon = (Sprite)EditorGUILayout.ObjectField("Item Icon", inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemIcon, typeof(Sprite), false, GUILayout.Width(position.width - 33));         //objectfield for the itemicon for your new item
-                    inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemModel = (GameObject)EditorGUILayout.ObjectField("Item Model", inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemModel, typeof(GameObject), false, GUILayout.Width(position.width - 33));      //objectfield for the itemmodel for your new item
 
                     inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemType = (ItemType)EditorGUILayout.EnumPopup("Item Type", inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].itemType, GUILayout.Width(position.width - 33));                                      //the itemtype which you want to have can be selected with the enumpopup
                     inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].maxStack = EditorGUILayout.IntField("Max Stack", inventoryItemList.itemList[inventoryItemList.itemList.Count - 1].maxStack, GUILayout.Width(position.width - 33));
@@ -290,12 +248,9 @@ public class IM_Manager : EditorWindow
                             GUILayout.Label("" + i);
                             GUILayout.EndHorizontal();
                             GUILayout.BeginHorizontal();
-                            GUILayout.Label("Item Description");                                                                                                                        //label ItemDescription
                             GUILayout.Space(47);
-                            inventoryItemList.itemList[i].itemDesc = EditorGUILayout.TextArea(inventoryItemList.itemList[i].itemDesc, GUILayout.Width(position.width - 195), GUILayout.Height(70));     //Text area for the itemDesc
                             GUILayout.EndHorizontal();
                             inventoryItemList.itemList[i].itemIcon = (Sprite)EditorGUILayout.ObjectField("Item Icon", inventoryItemList.itemList[i].itemIcon, typeof(Sprite), false, GUILayout.Width(position.width - 45));         //objectfield for the itemicon for your new item
-                            inventoryItemList.itemList[i].itemModel = (GameObject)EditorGUILayout.ObjectField("Item Model", inventoryItemList.itemList[i].itemModel, typeof(GameObject), false, GUILayout.Width(position.width - 45));      //objectfield for the itemmodel for your new item
                             inventoryItemList.itemList[i].itemType = (ItemType)EditorGUILayout.EnumPopup("Item Type", inventoryItemList.itemList[i].itemType, GUILayout.Width(position.width - 45));                                      //the itemtype which you want to have can be selected with the enumpopup
                             inventoryItemList.itemList[i].maxStack = EditorGUILayout.IntField("Max Stack", inventoryItemList.itemList[i].maxStack, GUILayout.Width(position.width - 45));
                             inventoryItemList.itemList[i].rarity = EditorGUILayout.IntSlider("Rarity", inventoryItemList.itemList[i].rarity, 0, 100);
@@ -396,147 +351,6 @@ public class IM_Manager : EditorWindow
 
         EditorGUILayout.EndVertical();
 
-    }
-
-    void BluePrintDataBase()
-    {
-        EditorGUILayout.BeginVertical("Box");
-        if (inventoryItemList == null)
-            inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
-        if (bluePrintDatabase == null)
-            bluePrintDatabase = (BlueprintDatabase)Resources.Load("BlueprintDatabase");
-
-        GUILayout.BeginHorizontal();
-        toolbarInt1 = GUILayout.Toolbar(toolbarInt1, toolbarStrings1, GUILayout.Width(position.width - 20));                                                    //creating a toolbar(tabs) to navigate what you wanna do
-        GUILayout.EndHorizontal();
-        scrollPosition1 = EditorGUILayout.BeginScrollView(scrollPosition1);
-        GUILayout.Space(10);
-
-        if (toolbarInt1 == 0)                                                                                                                              //if equal 0 than it is "Create Item"
-        {
-            GUI.color = Color.white;
-            try
-            {
-                GUILayout.BeginVertical("Box");
-                string[] items = new string[inventoryItemList.itemList.Count];                                                      //create a string array in length of the itemcount
-                for (int i = 1; i < items.Length; i++)                                                                              //go through the item array
-                {
-                    items[i] = inventoryItemList.itemList[i].itemName;                                                              //and paste all names into the array
-                }
-                EditorGUILayout.BeginHorizontal();
-                finalItemID = EditorGUILayout.Popup("Final Item", finalItemID, items, EditorStyles.popup);
-                amountOfFinalItem = EditorGUILayout.IntField("Value", amountOfFinalItem);
-                EditorGUILayout.EndHorizontal();
-                //timeToCraft = EditorGUILayout.FloatField("Time to craft", timeToCraft);
-                EditorGUILayout.Space();
-                EditorGUI.BeginChangeCheck();
-                amountofingredients = EditorGUILayout.IntSlider("Ingredients", amountofingredients, 1, 50, GUILayout.Width(position.width - 38));
-                if (EditorGUI.EndChangeCheck())
-                {
-                    ingredients = new int[amountofingredients];
-                    amount = new int[amountofingredients];
-                }
-                for (int i = 0; i < amountofingredients; i++)
-                {
-                    EditorGUILayout.BeginHorizontal();
-                    ingredients[i] = EditorGUILayout.Popup("Ingredient " + i, ingredients[i], items, EditorStyles.popup, GUILayout.Width((position.width / 2) - 20));
-                    amount[i] = EditorGUILayout.IntField("Value", amount[i], GUILayout.Width((position.width / 2) - 20));
-
-                    EditorGUILayout.EndHorizontal();
-                }
-                GUI.color = Color.green;
-                if (GUILayout.Button("Add Blueprint", GUILayout.Width(position.width - 35), GUILayout.Height(50)))
-                    addBlueprint();
-
-                GUILayout.EndVertical();
-
-            }
-            catch { }
-
-        }
-
-        if (toolbarInt1 == 1)
-        {
-
-            if (bluePrintDatabase == null)
-            {
-                bluePrintDatabase = (BlueprintDatabase)Resources.Load("BlueprintDatabase");
-                if (bluePrintDatabase == null)
-                {
-                    bluePrintDatabase = CreateBlueprintDatabase.createBlueprintDatabase();
-                    bluePrintDatabase = (BlueprintDatabase)Resources.Load("BlueprintDatabase");
-                }
-            }
-
-            if (bluePrintDatabase.blueprints.Count == 1)
-            {
-                GUILayout.Label("There is no Blueprint in the Database!");
-            }
-            else
-            {
-                GUILayout.BeginVertical();
-                for (int i = 1; i < bluePrintDatabase.blueprints.Count; i++)
-                {
-                    try
-                    {
-                        manageItem1.Add(false);
-                        GUILayout.BeginVertical("Box", GUILayout.Width(position.width - 23));
-                        manageItem1[i] = EditorGUILayout.Foldout(manageItem1[i], "" + bluePrintDatabase.blueprints[i].finalItem.itemName);                    //create for every item which you have in the itemdatabase a foldout
-                        if (manageItem1[i])                                                                                                      //if you press on it you get this
-                        {
-                            EditorGUI.indentLevel++;
-                            EditorUtility.SetDirty(bluePrintDatabase);                                                                          //message the scriptableobject that you change something now                                                                                                
-                            GUI.color = Color.red;                                                                                              //all upcoming GUIelements get changed to red
-                            if (GUILayout.Button("Delete Blueprint", GUILayout.Width(position.width - 38)))                                           //create button that deletes the item
-                            {
-                                bluePrintDatabase.blueprints.RemoveAt(i);                                                                         //remove the item out of the itemdatabase
-                                EditorUtility.SetDirty(bluePrintDatabase);                                                                      //and message the database again that you changed something
-                            }
-
-                            GUI.color = Color.white;
-                            EditorUtility.SetDirty(bluePrintDatabase);
-                            bluePrintDatabase.blueprints[i].amountOfFinalItem = EditorGUILayout.IntField("Amount of final items", bluePrintDatabase.blueprints[i].amountOfFinalItem, GUILayout.Width(position.width - 35));
-                            //bluePrintDatabase.blueprints[i].timeToCraft = EditorGUILayout.FloatField("Time to craft", bluePrintDatabase.blueprints[i].timeToCraft);
-                            EditorUtility.SetDirty(bluePrintDatabase);
-                            string[] items = new string[inventoryItemList.itemList.Count];                                                      //create a string array in length of the itemcount
-                            for (int z = 1; z < items.Length; z++)                                                                              //go through the item array
-                            {
-                                items[z] = inventoryItemList.itemList[z].itemName;                                                              //and paste all names into the array
-                            }
-                            GUILayout.Label("Ingredients");
-                            for (int k = 0; k < bluePrintDatabase.blueprints[i].ingredients.Count; k++)
-                            {
-                                GUILayout.BeginHorizontal();
-                                GUI.color = Color.red;
-                                if (GUILayout.Button("-"))
-                                    bluePrintDatabase.blueprints[i].ingredients.RemoveAt(k);
-                                GUI.color = Color.white;
-                                bluePrintDatabase.blueprints[i].ingredients[k] = EditorGUILayout.Popup("Ingredient " + (k + 1), bluePrintDatabase.blueprints[i].ingredients[k], items, EditorStyles.popup);
-                                bluePrintDatabase.blueprints[i].amount[k] = EditorGUILayout.IntField("Value", bluePrintDatabase.blueprints[i].amount[k]);
-
-                                GUILayout.EndHorizontal();
-                            }
-
-                            GUI.color = Color.green;
-                            if (GUILayout.Button("+"))
-                            {
-                                bluePrintDatabase.blueprints[i].ingredients.Add(0);
-                                bluePrintDatabase.blueprints[i].amount.Add(0);
-                            }
-                            GUI.color = Color.white;
-                            EditorGUI.indentLevel--;
-                            EditorUtility.SetDirty(bluePrintDatabase);                                                                                              //message scriptable object that you have changed something
-                        }
-                        GUILayout.EndVertical();
-                    }
-                    catch { }
-                }
-                GUILayout.EndVertical();
-            }
-
-        }
-        EditorGUILayout.EndScrollView();
-        EditorGUILayout.EndVertical();
     }
 
     void Header()
@@ -649,13 +463,4 @@ public class IM_Manager : EditorWindow
         addAttributeName = "";
         EditorUtility.SetDirty(itemAttributeList);
     }
-
-    void addBlueprint()                                          //add new blueprint to the database
-    {
-        EditorUtility.SetDirty(bluePrintDatabase);          //message scriptable object for incoming changes
-        Blueprint newBlueprint = new Blueprint(ingredients.ToList<int>(), amountOfFinalItem, amount.ToList<int>(), inventoryItemList.getItemByID(finalItemID));           //create a empty mask of an item        
-        bluePrintDatabase.blueprints.Add(newBlueprint);     //and add this to the itemdatabase        
-        EditorUtility.SetDirty(bluePrintDatabase);          //message scriptable object that you added something
-    }
-
 }

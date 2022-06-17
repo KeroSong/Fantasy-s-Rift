@@ -42,8 +42,6 @@ public class Save : MonoBehaviour
         scene.player.classe = PlayerPrefs.GetInt("classe");
         scene.player.health = PlayerPrefs.GetInt("Santé");
         scene.player.mana = PlayerPrefs.GetInt("Mana");
-        scene.player.level = PlayerPrefs.GetInt("Niveau");
-        scene.player.experience = PlayerPrefs.GetInt("Expérience");
 
         string data = JsonUtility.ToJson(scene);
         string filePath = Application.persistentDataPath + "/SaveData.json";
@@ -68,8 +66,6 @@ public class Save : MonoBehaviour
             PlayerPrefs.SetInt("classe", scene.player.classe);
             PlayerPrefs.SetInt("Santé", scene.player.health);
             PlayerPrefs.SetInt("Mana", scene.player.mana);
-            PlayerPrefs.SetInt("Niveau", scene.player.level);
-            PlayerPrefs.SetInt("Expérience", scene.player.experience);
 
             EventManager.Instance.Raise(new PlayButtonClickedEvent());
         }
@@ -84,7 +80,6 @@ public class Save : MonoBehaviour
 [System.Serializable]
 public class Scene
 {
-    public List<Chest> chest = new List<Chest>();
     public SavePlayer player = new SavePlayer();
     public Inventorys inventory = new Inventorys();
 }
@@ -98,26 +93,16 @@ public class SavePlayer
     public int classe;
     public int health;
     public int mana;
-    public int level;
-    public int experience;
 }
 
-[System.Serializable]
 public class Inventorys
 {
     public int goldCoins;
     public List<Items> items = new List<Items>();
 }
 
-[System.Serializable]
 public class Items
 {
     public string name;
-    //public string desc;
-}
-
-[System.Serializable]
-public class Chest
-{
-    public bool OpenClose;
+    public int quantity;
 }

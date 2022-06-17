@@ -125,6 +125,18 @@ public class ReplayButtonClickedEvent : SDD.Events.Event
 public class FightCollisionEvent : SDD.Events.Event
 {
 }
+public class FightSoulEaterCollisionEvent : SDD.Events.Event
+{
+}
+public class FightTheNightmareCollisionEvent : SDD.Events.Event
+{
+}
+public class FightTerrorBringerCollisionEvent : SDD.Events.Event
+{
+}
+public class FightUsurperCollisionEvent : SDD.Events.Event
+{
+}
 public class ShopCollisionEvent : SDD.Events.Event
 {
 }

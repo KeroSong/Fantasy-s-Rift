@@ -152,7 +152,11 @@ public class GameManagerPlay : MonoBehaviour
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
-        EventManager.Instance.AddListener<FightCollisionEvent>(EnemyCollision);
+        EventManager.Instance.AddListener<FightCollisionEvent>(FightCollision);
+        EventManager.Instance.AddListener<FightSoulEaterCollisionEvent>(FightSoulEaterCollision);
+        EventManager.Instance.AddListener<FightTheNightmareCollisionEvent>(FightTheNightmareCollision);
+        EventManager.Instance.AddListener<FightTerrorBringerCollisionEvent>(FightTerrorBringerCollision);
+        EventManager.Instance.AddListener<FightUsurperCollisionEvent>(FightUsurperCollision);
         EventManager.Instance.AddListener<ShopCollisionEvent>(ShopCollision);
         EventManager.Instance.AddListener<InnCollisionEvent>(InnCollision);
     }
@@ -160,7 +164,11 @@ public class GameManagerPlay : MonoBehaviour
     public void UnsubscribeEvents()
     {
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
-        EventManager.Instance.RemoveListener<FightCollisionEvent>(EnemyCollision);
+        EventManager.Instance.RemoveListener<FightCollisionEvent>(FightCollision);
+        EventManager.Instance.RemoveListener<FightSoulEaterCollisionEvent>(FightSoulEaterCollision);
+        EventManager.Instance.RemoveListener<FightTheNightmareCollisionEvent>(FightTheNightmareCollision);
+        EventManager.Instance.RemoveListener<FightTerrorBringerCollisionEvent>(FightTerrorBringerCollision);
+        EventManager.Instance.RemoveListener<FightUsurperCollisionEvent>(FightUsurperCollision);
         EventManager.Instance.RemoveListener<ShopCollisionEvent>(ShopCollision);
         EventManager.Instance.RemoveListener<InnCollisionEvent>(InnCollision);
     }
@@ -180,8 +188,33 @@ public class GameManagerPlay : MonoBehaviour
         Play();
     }
 
-    void EnemyCollision(FightCollisionEvent e)
+    void FightCollision(FightCollisionEvent e)
     {
+        PlayerPrefs.SetString("Ennemi", "Gobelin");
+        Fight();
+    }
+
+    void FightSoulEaterCollision(FightSoulEaterCollisionEvent e)
+    {
+        PlayerPrefs.SetString("Ennemi", "SoulEater");
+        Fight();
+    }
+
+    void FightTheNightmareCollision(FightTheNightmareCollisionEvent e)
+    {
+        PlayerPrefs.SetString("Ennemi", "TheNightmare");
+        Fight();
+    }
+
+    void FightTerrorBringerCollision(FightTerrorBringerCollisionEvent e)
+    {
+        PlayerPrefs.SetString("Ennemi", "TerrorBringer");
+        Fight();
+    }
+
+    void FightUsurperCollision(FightUsurperCollisionEvent e)
+    {
+        PlayerPrefs.SetString("Ennemi", "Usurper");
         Fight();
     }
 

@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05aef9fbc2692e479415cb8bde897d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_LocationEnemy1: {fileID: 0}
+  m_LocationEnemy2: {fileID: 0}
+  m_LocationEnemy3: {fileID: 0}
+  m_Goblin: {fileID: 9046993928882158753, guid: b1653e8a5bc6eec4bb8799a159c0f770, type: 3}
+  m_DragonSoulEater: {fileID: 170346, guid: 88e480c990c9d6a458b5fc85fe1da2aa, type: 3}
+  m_DragonTheNightmare: {fileID: 132742, guid: a3e7850e56f7e2d4a8cb9e150f10c835, type: 3}
+  m_DragonTerrorBringer: {fileID: 196076, guid: 20a769104331d8b48ac7d1ea0d49cdf3, type: 3}
+  m_DragonUsurper: {fileID: 139696, guid: eb58e8f2831a51f45a44a261e6710cdd, type: 3}

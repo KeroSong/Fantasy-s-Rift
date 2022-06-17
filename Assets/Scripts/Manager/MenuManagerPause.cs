@@ -19,6 +19,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 
     Resolution[] m_Resolutions;
     [SerializeField] Dropdown m_ResolutionDropdown;
+    [SerializeField] Slider m_DifficultySlider;
     [SerializeField] AudioMixer m_AudioMixer;
 
     List<GameObject> m_Panels;
@@ -53,6 +54,8 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
         m_ResolutionDropdown.RefreshShownValue();
 
         Screen.fullScreen = true;
+
+        m_DifficultySlider.value = PlayerPrefs.GetInt("Difficulté");
     }
 
     public void SubscribeEvents()
@@ -109,6 +112,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 
     void GameSetting(GameSettingsEvent e)
     {
+        Destroy(m_SettingsPanel.GetComponent<Image>());
         OpenPanel(m_SettingsPanel);
     }
 

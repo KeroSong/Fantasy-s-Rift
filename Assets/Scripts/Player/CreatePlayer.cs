@@ -21,6 +21,7 @@ public class CreatePlayer : MonoBehaviour
         SetAI1();
         SetAI2();
         SetAI3();
+        Mecha();
     }
 
     void SetPlayer()
@@ -70,6 +71,14 @@ public class CreatePlayer : MonoBehaviour
         PlayerPrefs.SetInt("sexe_AI3", 1);
         PlayerPrefs.SetInt("classe_AI3", 2);
         PlayerPrefs.SetFloat("VitesseJaugeAI3", (float)0.5);
+    }
+
+    void Mecha()
+    {
+        PlayerPrefs.SetInt("Mecha1Tete", 0);
+        PlayerPrefs.SetInt("Mecha1Corps", 1);
+        PlayerPrefs.SetInt("Mecha2Tete", 2);
+        PlayerPrefs.SetInt("Mecha2Corps", 3);
     }
 
     void Update()

@@ -60,7 +60,6 @@
     <Compile Include="Assets\InventoryMaster\Editor\StorageInventoryEditor.cs" />
     <Compile Include="Assets\InventoryMaster\Editor\EquipmentSystemEditor.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Scripts\Editor\PT_Create_Prefab_Editor.cs" />
-    <Compile Include="Assets\InventoryMaster\Editor\InventoryEditor.cs" />
     <Compile Include="Assets\InventoryMaster\Editor\InventoryDesignEditor.cs" />
     <Compile Include="Assets\InventoryMaster\Editor\IM_Manager.cs" />
   </ItemGroup>

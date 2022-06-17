@@ -61,7 +61,7 @@
     <Compile Include="Assets\Scripts\Manager\MenuManagerPause.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemType.cs" />
     <Compile Include="Assets\InventoryMaster\Scripts\Inventory\StorageInventory.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\InventoryDesign.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\InventoryDesign.cs" />
     <Compile Include="Assets\Scripts\Collision\DragonUsurperCollision.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManagerFight.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManager.cs" />
@@ -80,7 +80,7 @@
     <Compile Include="Assets\Scripts\Collision\DragonSoulEaterCollision.cs" />
     <Compile Include="Assets\Scripts\Tools\EasingFunctions.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\SimpleElevator.cs" />
-    <Compile Include="Assets\Scripts\Ramdom\RandomLootSystem.cs" />
+    <Compile Include="Assets\Scripts\Random\RandomLootSystem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\CinemachineFadeOutNearbyObjects.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ThirdPersonFollowDistanceModifier.cs" />
@@ -88,10 +88,12 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\IventoryItem.cs" />
     <Compile Include="Assets\Scripts\Ennemy\IADragon.cs" />
     <Compile Include="Assets\Scripts\Player\CreatePlayer.cs" />
     <Compile Include="Assets\Scripts\Save\Save.cs" />
     <Compile Include="Assets\Scripts\Collision\DragonTheNightmareCollision.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\InventoryEditor.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManagerPlay.cs" />
     <Compile Include="Assets\Scripts\Tools\MyTools.cs" />
     <Compile Include="Assets\Scripts\EventManager\Event.cs" />
@@ -103,7 +105,7 @@
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\AllEvents.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\2D\MouseScrollZoom2D.cs" />
-    <Compile Include="Assets\Scripts\Ramdom\RandomEnemySystem.cs" />
+    <Compile Include="Assets\Scripts\Random\RandomEnemySystem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\MixingCameraBlend.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemAttributeList.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
@@ -127,7 +129,6 @@
     <Compile Include="Assets\Scripts\Ennemy\IAEnnemy.cs" />
     <Compile Include="Assets\Scripts\Tools\ProgressBarRound.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\DualTarget\PointAtAimTarget.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\CloseInventory.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\BossLookAt.cs" />
     <Compile Include="Assets\Scripts\Manager\HudManager.cs" />
     <Compile Include="Assets\Scripts\Tools\ProgressBar.cs" />

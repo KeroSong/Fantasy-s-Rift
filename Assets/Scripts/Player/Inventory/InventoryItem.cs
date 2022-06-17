@@ -78,6 +78,7 @@ public class InventoryItem : MonoBehaviour
 
         inventaire.items = m_IdListe;
 
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = JsonUtility.ToJson(inventaire);
         System.IO.File.WriteAllText(filePath, data);
     }
@@ -97,6 +98,7 @@ public class InventoryItem : MonoBehaviour
 
         inventaire.items = m_IdListe;
 
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = JsonUtility.ToJson(inventaire);
         System.IO.File.WriteAllText(filePath, data);
     }
@@ -123,6 +125,7 @@ public class InventoryItem : MonoBehaviour
         inventaire.items = m_IdListe;
         inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
         
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = JsonUtility.ToJson(inventaire);
         System.IO.File.WriteAllText(filePath, data);
     }
@@ -139,6 +142,7 @@ public class InventoryItem : MonoBehaviour
         inventaire.items = m_IdListe;
         inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
         
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = JsonUtility.ToJson(inventaire);
         System.IO.File.WriteAllText(filePath, data);
     }

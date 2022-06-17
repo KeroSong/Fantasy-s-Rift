@@ -58,6 +58,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressBarHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 2795353963939372003, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -104,7 +108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2181.8926
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -124,11 +128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -578
+      value: -573
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 425
+      value: 421.9185
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -141,6 +145,14 @@ PrefabInstance:
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690077801157441841, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382332078908204907, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
@@ -160,6 +172,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressBarMana
       objectReference: {fileID: 0}
+    - target: {fileID: 193232447644336812, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795353963939372003, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795353963939372003, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_FillCenter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795353963939372003, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -206,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2181.8926
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -226,11 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -578
+      value: -573
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 325
+      value: 338
       objectReference: {fileID: 0}
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -243,6 +271,10 @@ PrefabInstance:
     - target: {fileID: 3405027328000070116, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382332078908204907, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4994104212939242133, guid: 4a455d6c200ffb744b5024ddaa16527c, type: 3}
       propertyPath: m_Color.b

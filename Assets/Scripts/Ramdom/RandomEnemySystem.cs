@@ -18,7 +18,7 @@ public class RandomEnemySystem : MonoBehaviour
 
     private void Awake()
     {
-        m_Goblins = new List<GameObject>() {m_Goblin1, m_Goblin2, m_Goblin3, m_Goblin4, m_Goblin5};
+        m_Goblins = new List<GameObject>() { m_Goblin1, m_Goblin2, m_Goblin3, m_Goblin4, m_Goblin5 };
     }
 
     // Use this for initialization
@@ -31,7 +31,7 @@ public class RandomEnemySystem : MonoBehaviour
             float x = Random.Range((float)-235.8, (float)-27.4);
             float z = Random.Range((float)121.5, (float)-57.6);
 
-            m_Goblins[counter].transform.position;
+            //m_Goblins[counter].transform.position;
         }
     }
 }

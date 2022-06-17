@@ -72,11 +72,13 @@ public class GameManagerFight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         PlayerPrefs.SetFloat("JaugeMecha1", 0);
         PlayerPrefs.SetFloat("JaugeMecha2", 0);
 
         SetState(GAMESTATE.fight);
-
+        StartCoroutine(RoundOne());
+        StartCoroutine(RoundTwo());
         if (PlayerPrefs.GetInt("classe") == 0)
         {
             //guerrier
@@ -112,6 +114,7 @@ public class GameManagerFight : MonoBehaviour
         }
         else if (PlayerPrefs.GetString("Ennemi") == "SoulEater")
         {
+            this.LOG(PlayerPrefs.GetString("Ennemi").ToString());
             EnemyAppears(m_DragonSoulEater);
         }
         else if (PlayerPrefs.GetString("Ennemi") == "TheNightmare")
@@ -126,9 +129,8 @@ public class GameManagerFight : MonoBehaviour
         {
             EnemyAppears(m_DragonUsurper);
         }
-
-        StartCoroutine(RoundOne());
-        StartCoroutine(RoundTwo());
+        
+        
     }
 
     // Update is called once per frame

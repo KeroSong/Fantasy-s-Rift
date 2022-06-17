@@ -34,8 +34,6 @@ public class CreatePlayer : MonoBehaviour
         PlayerPrefs.SetString("Nom", "Henry");
         PlayerPrefs.SetInt("sexe", 0);
         PlayerPrefs.SetInt("classe", 0);
-        PlayerPrefs.SetFloat("JaugeMecha1", 0);
-        PlayerPrefs.SetFloat("JaugeMecha2", 0);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.9);
         //PlayerPrefs.SetFloat("Santé", 50.0F);
         //PlayerPrefs.SetFloat("Santé", 50.0F);
@@ -75,6 +73,8 @@ public class CreatePlayer : MonoBehaviour
 
     void Mecha()
     {
+        PlayerPrefs.SetFloat("JaugeMecha1", 0);
+        PlayerPrefs.SetFloat("JaugeMecha2", 0);
         PlayerPrefs.SetInt("Mecha1Tete", 0);
         PlayerPrefs.SetInt("Mecha1Corps", 1);
         PlayerPrefs.SetInt("Mecha2Tete", 2);

@@ -43,6 +43,13 @@ public class Save : MonoBehaviour
         scene.player.health = PlayerPrefs.GetInt("Santé");
         scene.player.mana = PlayerPrefs.GetInt("Mana");
 
+        /*for (int i = 0; i < 25; i++)
+        {
+            Items item = new Items();
+            item
+        }*/
+        scene.mecha1
+
         string data = JsonUtility.ToJson(scene);
         string filePath = Application.persistentDataPath + "/SaveData.json";
         System.IO.File.WriteAllText(filePath, data);
@@ -67,6 +74,19 @@ public class Save : MonoBehaviour
             PlayerPrefs.SetInt("Santé", scene.player.health);
             PlayerPrefs.SetInt("Mana", scene.player.mana);
 
+            if (scene.player.classe == 0)
+            {
+                PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.9);
+            }
+            else if (scene.player.classe == 1)
+            {
+                PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)1);
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.5);
+            }
+
             EventManager.Instance.Raise(new PlayButtonClickedEvent());
         }
         else
@@ -82,6 +102,8 @@ public class Scene
 {
     public SavePlayer player = new SavePlayer();
     public Inventorys inventory = new Inventorys();
+    public Mecha mecha1 = new Mecha();
+    public Mecha mecha2 = new Mecha();
 }
 
 [System.Serializable]
@@ -105,4 +127,10 @@ public class Items
 {
     public string name;
     public int quantity;
+}
+
+public class Mecha
+{
+    public int head;
+    public int body;
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3537718321178261761}
   - component: {fileID: 3222996777386998981}
   - component: {fileID: 8032341045100338072}
+  - component: {fileID: 3464061451094927440}
   m_Layer: 5
   m_Name: VictoryFightPanel
   m_TagString: Panel
@@ -76,3 +77,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3464061451094927440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948094373860267570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e40da20480416e4fb3c934c04d1c637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfLoot: 10

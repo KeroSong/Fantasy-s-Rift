@@ -14,6 +14,8 @@ public class GameManagerPlay : MonoBehaviour
     [SerializeField] GameObject m_WomanArcher;
     [SerializeField] GameObject m_WomanWizard;
 
+    [SerializeField] GameObject m_MapCamera;
+
     List<GameObject> m_Characters;
 
     private static GameManagerPlay m_Instance;
@@ -117,6 +119,8 @@ public class GameManagerPlay : MonoBehaviour
                 SelectCharacter(m_WomanWizard);
             }
         }
+
+        m_MapCamera.SetActive(false);
     }
 
     // Update is called once per frame
@@ -141,6 +145,11 @@ public class GameManagerPlay : MonoBehaviour
             if (Input.GetKeyDown("c"))
             {
                 Equipment();
+            }
+
+            if (Input.GetKeyDown("m"))
+            {
+                Map();
             }
 
             PlayerPrefs.SetFloat("PositionX", (float)Player.transform.position.x);
@@ -261,5 +270,17 @@ public class GameManagerPlay : MonoBehaviour
     void Inn()
     {
         SetState(GAMESTATE.inn);
+    }
+
+    void Map()
+    {
+        if (!m_MapCamera.activeSelf)
+        {
+            m_MapCamera.SetActive(true);
+        }
+        else
+        {
+            m_MapCamera.SetActive(false);
+        }
     }
 }

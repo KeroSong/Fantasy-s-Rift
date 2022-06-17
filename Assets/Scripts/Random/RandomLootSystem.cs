@@ -9,12 +9,16 @@ public class RandomLootSystem : MonoBehaviour
     void Start()
     {
         inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
+        int count = inventoryItemList.itemList.Count;
 
         int Gold = Random.Range(20, 50);
-        int RandomId = Random.Range(1, inventoryItemList.itemList.Count - 2);
+        int RandomId = Random.Range(1, count - 2);
 
-        this.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[36];
+        this.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[count - 1];
         this.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<ItemOnObject>().item.itemValue = Gold;
         this.transform.GetChild(5).GetChild(1).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[RandomId];
+
+        PlayerPrefs.SetInt("Gold", Gold);
+        PlayerPrefs.SetInt("IdItem", RandomId);
     }
 }

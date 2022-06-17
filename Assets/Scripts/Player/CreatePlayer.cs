@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,11 @@ public class CreatePlayer : MonoBehaviour
     [SerializeField] Sprite m_WizardMan;
     [SerializeField] Sprite m_WizardWoman;
 
+    Inventaire m_All;
+    List<int> m_IdInventory;
+    List<int> m_IdEquipment1;
+    List<int> m_IdEquipment2;
+
     void Start()
     {
         SetPlayer();
@@ -22,6 +28,27 @@ public class CreatePlayer : MonoBehaviour
         SetAI2();
         SetAI3();
         Mecha();
+
+
+        m_IdInventory.Add(34);
+        for (int i = 1; i < 25; i++)
+        {
+            m_IdInventory.Add(0);
+        }
+
+        for (int i = 0; i < 8; i++)
+        {
+            m_IdEquipment1.Add(0);
+            m_IdEquipment2.Add(0);
+        }
+
+        m_All.items = m_IdInventory;
+        m_All.equip1 = m_IdInventory;
+        m_All.equip2 = m_IdInventory;
+
+        string data = JsonUtility.ToJson(m_All);
+        string filePath = Application.persistentDataPath + "/All.json";
+        System.IO.File.WriteAllText(filePath, data);
     }
 
     void SetPlayer()
@@ -30,19 +57,19 @@ public class CreatePlayer : MonoBehaviour
         PlayerPrefs.SetFloat("PositionY", (float)11.93);
         PlayerPrefs.SetFloat("PositionZ", (float)10.4);
         PlayerPrefs.SetInt("Santé", 20);
-        PlayerPrefs.SetInt("Mana", 10);
         PlayerPrefs.SetString("Nom", "Henry");
         PlayerPrefs.SetInt("sexe", 0);
         PlayerPrefs.SetInt("classe", 0);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.9);
-        PlayerPrefs.SetInt("Gold", 0);
+        PlayerPrefs.SetInt("GainGold", 0);
+        PlayerPrefs.SetInt("LostGold", 0);
         PlayerPrefs.SetInt("IdItem", 0);
+        PlayerPrefs.SetInt("OrTotal", 0);
     }
 
     void SetAI1()
     {
         PlayerPrefs.SetInt("Santé_AI1", 20);
-        PlayerPrefs.SetInt("Mana_AI1", 10);
         PlayerPrefs.SetString("Nom_AI1", "Henry");
         PlayerPrefs.SetInt("sexe_AI1", 0);
         PlayerPrefs.SetInt("classe_AI1", 0);
@@ -52,7 +79,6 @@ public class CreatePlayer : MonoBehaviour
     void SetAI2()
     {
         PlayerPrefs.SetInt("Santé_AI2", 15);
-        PlayerPrefs.SetInt("Mana_AI2", 15);
         PlayerPrefs.SetString("Nom_AI2", "Henry");
         PlayerPrefs.SetInt("sexe_AI2", 1);
         PlayerPrefs.SetInt("classe_AI2", 1);
@@ -62,7 +88,6 @@ public class CreatePlayer : MonoBehaviour
     void SetAI3()
     {
         PlayerPrefs.SetInt("Santé_AI3", 10);
-        PlayerPrefs.SetInt("Mana_AI3", 20);
         PlayerPrefs.SetString("Nom_AI3", "Henry");
         PlayerPrefs.SetInt("sexe_AI3", 1);
         PlayerPrefs.SetInt("classe_AI3", 2);
@@ -109,7 +134,6 @@ public class CreatePlayer : MonoBehaviour
     {
         PlayerPrefs.SetInt("classe", 1);
         PlayerPrefs.SetInt("Santé", 15);
-        PlayerPrefs.SetInt("Mana", 15);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)1);
     }
 
@@ -117,7 +141,6 @@ public class CreatePlayer : MonoBehaviour
     {
         PlayerPrefs.SetInt("classe", 2);
         PlayerPrefs.SetInt("Santé", 10);
-        PlayerPrefs.SetInt("Mana", 20);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.5);
     }
 }

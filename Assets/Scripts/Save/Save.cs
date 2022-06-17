@@ -6,7 +6,13 @@ using SDD.Events;
 
 public class Save : MonoBehaviour
 {
+    [SerializeField] GameObject m_InventoryPanel;
+    [SerializeField] GameObject m_EquipmentPanel;
+    static InventoryItem inventory;
+    static EquipmentItem equipment;
+
     public Scene scene = new Scene();
+    public Inventaire inventaire = new Inventaire();
 
     public void SubscribeEvents()
     {
@@ -41,13 +47,6 @@ public class Save : MonoBehaviour
         scene.player.sexe = PlayerPrefs.GetInt("sexe");
         scene.player.classe = PlayerPrefs.GetInt("classe");
         scene.player.health = PlayerPrefs.GetInt("Santé");
-        scene.player.mana = PlayerPrefs.GetInt("Mana");
-
-        /*for (int i = 0; i < 25; i++)
-        {
-            Items item = new Items();
-            item
-        }*/
 
         scene.mecha1.head = PlayerPrefs.GetInt("Mecha1Tete");
         scene.mecha1.body = PlayerPrefs.GetInt("Mecha1Corps");
@@ -76,7 +75,6 @@ public class Save : MonoBehaviour
             PlayerPrefs.SetInt("sexe", scene.player.sexe);
             PlayerPrefs.SetInt("classe", scene.player.classe);
             PlayerPrefs.SetInt("Santé", scene.player.health);
-            PlayerPrefs.SetInt("Mana", scene.player.mana);
 
             PlayerPrefs.SetInt("Mecha1Tete", scene.mecha1.head);
             PlayerPrefs.SetInt("Mecha1Corps", scene.mecha1.body);
@@ -106,16 +104,13 @@ public class Save : MonoBehaviour
         
 }
 
-[System.Serializable]
 public class Scene
 {
     public SavePlayer player = new SavePlayer();
-    public Inventorys inventory = new Inventorys();
     public Mecha mecha1 = new Mecha();
     public Mecha mecha2 = new Mecha();
 }
 
-[System.Serializable]
 public class SavePlayer
 {
     public Vector3 position;
@@ -123,23 +118,22 @@ public class SavePlayer
     public int sexe;
     public int classe;
     public int health;
-    public int mana;
-}
-
-public class Inventorys
-{
-    public int goldCoins;
-    public List<Items> items = new List<Items>();
-}
-
-public class Items
-{
-    public string name;
-    public int quantity;
 }
 
 public class Mecha
 {
     public int head;
     public int body;
+}
+
+public class Inventaire
+{
+    public List<int> items = new List<int>();
+    public List<int> equip1 = new List<int>();
+    public List<int> equip2 = new List<int>();
+}
+
+public class Items
+{
+    public int IdItem;
 }

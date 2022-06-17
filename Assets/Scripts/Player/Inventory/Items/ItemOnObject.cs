@@ -18,7 +18,14 @@ public class ItemOnObject : MonoBehaviour                   //Saves the Item in 
 
     void Update()
     {
-        text.text = "" + item.maxStack;                     //sets the itemValue         
+        if (GetComponent<ConsumeItem>().item.itemID == 34)
+        {
+            text.text = "" + item.itemValue;
+        }
+        else
+        {
+            text.text = "" + item.maxStack;
+        }
         image.sprite = item.itemIcon;
         GetComponent<ConsumeItem>().item = item;
     }

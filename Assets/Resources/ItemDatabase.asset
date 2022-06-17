@@ -379,32 +379,10 @@ MonoBehaviour:
     itemAttributes:
     - attributeName: Damage
       attributeValue: 20
-  - itemName: Potion de soin
-    itemID: 34
-    itemIcon: {fileID: 21300000, guid: 6dc5762501dd2df4da399f6c16a85907, type: 3}
-    itemValue: 1
-    itemType: 2
-    maxStack: 50
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: Health
-      attributeValue: 5
-  - itemName: Potion de mana
-    itemID: 35
-    itemIcon: {fileID: 21300000, guid: 1af77a087230dec4d86d092b83297d08, type: 3}
-    itemValue: 50
-    itemType: 2
-    maxStack: 1
-    indexItemInList: 999
-    rarity: 0
-    itemAttributes:
-    - attributeName: Mana
-      attributeValue: 5
   - itemName: Or
-    itemID: 36
+    itemID: 34
     itemIcon: {fileID: 21300000, guid: 700663f8514d3a84e8dd6f9140b9a552, type: 3}
-    itemValue: 1
+    itemValue: 0
     itemType: 10
     maxStack: 9999
     indexItemInList: 999

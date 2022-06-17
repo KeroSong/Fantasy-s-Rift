@@ -14,6 +14,12 @@ public class Save : MonoBehaviour
     public Scene scene = new Scene();
     public Inventaire inventaire = new Inventaire();
 
+    void Start()
+    {
+
+        this.LOG("coucou update");
+    }
+
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveButtonClicked);
@@ -128,6 +134,7 @@ public class Mecha
 
 public class Inventaire
 {
+    public int Gold;
     public List<int> items = new List<int>();
     public List<int> equip1 = new List<int>();
     public List<int> equip2 = new List<int>();

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +15,6 @@ public class CreatePlayer : MonoBehaviour
     [SerializeField] Sprite m_WizardMan;
     [SerializeField] Sprite m_WizardWoman;
 
-    Inventaire m_All;
-    List<int> m_IdInventory;
-    List<int> m_IdEquipment1;
-    List<int> m_IdEquipment2;
-
     void Start()
     {
         SetPlayer();
@@ -28,27 +22,6 @@ public class CreatePlayer : MonoBehaviour
         SetAI2();
         SetAI3();
         Mecha();
-
-
-        m_IdInventory.Add(34);
-        for (int i = 1; i < 25; i++)
-        {
-            m_IdInventory.Add(0);
-        }
-
-        for (int i = 0; i < 8; i++)
-        {
-            m_IdEquipment1.Add(0);
-            m_IdEquipment2.Add(0);
-        }
-
-        m_All.items = m_IdInventory;
-        m_All.equip1 = m_IdInventory;
-        m_All.equip2 = m_IdInventory;
-
-        string data = JsonUtility.ToJson(m_All);
-        string filePath = Application.persistentDataPath + "/All.json";
-        System.IO.File.WriteAllText(filePath, data);
     }
 
     void SetPlayer()

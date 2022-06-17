@@ -7,6 +7,9 @@ using SDD.Events;
 
 public class InventoryItem : MonoBehaviour
 {
+    [SerializeField] GameObject m_EquipmentPanel;
+    [SerializeField] GameObject m_ShopPanel;
+
     static ItemDataBaseList inventoryItemList;
     [SerializeField] Sprite image;
 
@@ -17,7 +20,7 @@ public class InventoryItem : MonoBehaviour
     {
         inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
-        string filePath = Application.persistentDataPath + "/All.json";
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = System.IO.File.ReadAllText(filePath);
         inventaire = JsonUtility.FromJson<Inventaire>(data);
 
@@ -57,7 +60,7 @@ public class InventoryItem : MonoBehaviour
         {
             LostGold(Gold);
         }
-    } 
+    }
 
     void AddItemToInventory()
     {
@@ -76,8 +79,36 @@ public class InventoryItem : MonoBehaviour
         inventaire.items = m_IdListe;
 
         string data = JsonUtility.ToJson(inventaire);
-        string filePath = Application.persistentDataPath + "/All.json";
         System.IO.File.WriteAllText(filePath, data);
+    }
+
+    void RemoveItemToInventory(int id)
+    {
+        int i = 0;
+        foreach (int Id in m_IdListe)
+        {
+            if (Id == id)
+            {
+                m_IdListe[i] = 0;
+                break;
+            }
+            i++;
+        }
+
+        inventaire.items = m_IdListe;
+
+        string data = JsonUtility.ToJson(inventaire);
+        System.IO.File.WriteAllText(filePath, data);
+    }
+
+    public void EquipeItem(int id)
+    {
+            this.LOG(id.ToString());
+        /*if (m_EquipmentPanel.isActiveAndEnabled)
+        {
+            //int id = item.GetComponent<ItemOnObject>().item.itemValue;
+            //RemoveItemToInventory(id);
+        }*/
     }
 
     void GainGold(int Gold)
@@ -90,9 +121,9 @@ public class InventoryItem : MonoBehaviour
         }
 
         inventaire.items = m_IdListe;
+        inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
         
         string data = JsonUtility.ToJson(inventaire);
-        string filePath = Application.persistentDataPath + "/All.json";
         System.IO.File.WriteAllText(filePath, data);
     }
 
@@ -106,9 +137,9 @@ public class InventoryItem : MonoBehaviour
         }
 
         inventaire.items = m_IdListe;
+        inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
         
         string data = JsonUtility.ToJson(inventaire);
-        string filePath = Application.persistentDataPath + "/All.json";
         System.IO.File.WriteAllText(filePath, data);
     }
 }

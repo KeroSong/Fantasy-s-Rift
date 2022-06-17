@@ -65,6 +65,9 @@ public class GameManagerFight : MonoBehaviour
             case GAMESTATE.victoryFight:
                 EventManager.Instance.Raise(new GameVictoryFightEvent());
                 break;
+            case GAMESTATE.play:
+                EventManager.Instance.Raise(new GamePlayEvent());
+                break;
             default:
                 break;
         }
@@ -179,12 +182,12 @@ public class GameManagerFight : MonoBehaviour
         }
         else
         {
-            if (PlayerPrefs.GetInt("Difficulté") == 0)
+            if (PlayerPrefs.GetInt("Difficult?") == 0)
             {
                 PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer"))*2);
                 PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2"))*2);
             }
-            else if (PlayerPrefs.GetInt("Difficulté") == 1)
+            else if (PlayerPrefs.GetInt("Difficult?") == 1)
             {
                 PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")));
                 PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")));
@@ -208,6 +211,7 @@ public class GameManagerFight : MonoBehaviour
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
+        EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.AddListener<Button1Event>(Button1);
         EventManager.Instance.AddListener<Button2Event>(Button2);
         EventManager.Instance.AddListener<Button3Event>(Button3);
@@ -221,6 +225,7 @@ public class GameManagerFight : MonoBehaviour
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
+        EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.RemoveListener<Button1Event>(Button1);
         EventManager.Instance.RemoveListener<Button2Event>(Button2);
         EventManager.Instance.RemoveListener<Button3Event>(Button3);
@@ -266,6 +271,11 @@ public class GameManagerFight : MonoBehaviour
     void PauseHasBeenPress(PauseHasBeenPressEvent e)
     {
         Pause();
+    }
+
+    void PlayButtonClicked(PlayButtonClickedEvent e)
+    {
+        Play();
     }
 
     void EnemyAppears(GameObject enemy)
@@ -371,6 +381,11 @@ public class GameManagerFight : MonoBehaviour
     void Victory()
     {
         SetState(GAMESTATE.victoryFight);
+    }
+
+    void Play()
+    {
+        SetState(GAMESTATE.play);
     }
 
     IEnumerator RoundOne()

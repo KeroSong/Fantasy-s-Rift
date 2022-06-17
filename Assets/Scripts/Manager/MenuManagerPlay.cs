@@ -133,4 +133,14 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
         m_EquipmentPanel.transform.GetChild(0).gameObject.SetActive(false);
         m_EquipmentPanel.transform.GetChild(1).gameObject.SetActive(false);
     }
+
+    public void EquipeItem(int id)
+    {
+            this.LOG(id.ToString());
+        /*if (m_EquipmentPanel.isActiveAndEnabled)
+        {
+            //int id = item.GetComponent<ItemOnObject>().item.itemValue;
+            //RemoveItemToInventory(id);
+        }*/
+    }
 }

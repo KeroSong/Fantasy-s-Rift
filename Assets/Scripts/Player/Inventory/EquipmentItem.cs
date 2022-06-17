@@ -17,7 +17,7 @@ public class EquipmentItem : MonoBehaviour
     {
         inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
 
-        string filePath = Application.persistentDataPath + "/All.json";
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = System.IO.File.ReadAllText(filePath);
         inventaire = JsonUtility.FromJson<Inventaire>(data);
 

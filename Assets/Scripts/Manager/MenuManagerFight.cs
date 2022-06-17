@@ -70,6 +70,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);
         EventManager.Instance.AddListener<GameVictoryFightEvent>(GameVictoryFight);
         EventManager.Instance.AddListener<GameOverEvent>(GameOver);
+        EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
     }
 
     public void UnsubscribeEvents()
@@ -82,6 +83,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GamePauseEvent>(GamePause);
         EventManager.Instance.RemoveListener<GameVictoryFightEvent>(GameVictoryFight);
         EventManager.Instance.RemoveListener<GameOverEvent>(GameOver);
+        EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
     }
 
     private void OnEnable()
@@ -134,6 +136,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         OpenPanel(m_GameOverPanel);
     }
 
+    void GamePlay(GamePlayEvent e)
+    {
+        SceneManager.LoadScene(m_ScenePlay);
+    }
+
     void OpenPanel(GameObject panel)
     {
         m_Panels.ForEach(item => { if (item != null) item.SetActive(panel == item); });
@@ -174,6 +181,11 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     public void PauseButtonHasBeenClicked()
     {
         EventManager.Instance.Raise(new PauseHasBeenPressEvent());
+    }
+
+    public void PlayHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new PlayButtonClickedEvent());
     }
 
     public void Monster1Attack()

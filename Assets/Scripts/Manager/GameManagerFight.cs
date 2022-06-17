@@ -5,6 +5,7 @@ using SDD.Events;
 
 public class GameManagerFight : MonoBehaviour
 {
+<<<<<<< HEAD
     [SerializeField] GameObject m_Goblin1;
     [SerializeField] GameObject m_Goblin2;
     [SerializeField] GameObject m_Goblin3;
@@ -14,6 +15,13 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] GameObject m_DragonUsurper;
 
     List<GameObject> m_Enemy;
+=======
+    [SerializeField] ProgressBar pbHealth, pbMana;
+    [SerializeField] ProgressBarRound pbClassOne, pbClassTwo;
+    [SerializeField] float framerate=0.5f;
+    [SerializeField] float classOneSpeed;
+    [SerializeField] float classTwoSpeed;
+>>>>>>> a964f9ec1b2a3f4cbb03c1b3079d60846fc59e28
 
     private static GameManagerFight m_Instance;
     public static GameManagerFight Instance { get {
@@ -68,6 +76,7 @@ public class GameManagerFight : MonoBehaviour
     void Start()
     {
         SetState(GAMESTATE.fight);
+<<<<<<< HEAD
 
         if (PlayerPrefs.GetInt("classe") == 0)
         {
@@ -118,6 +127,10 @@ public class GameManagerFight : MonoBehaviour
         {
             EnemyAppears(m_DragonUsurper);
         }
+=======
+        StartCoroutine(RoundOne());
+        StartCoroutine(RoundTwo());
+>>>>>>> a964f9ec1b2a3f4cbb03c1b3079d60846fc59e28
     }
 
     // Update is called once per frame
@@ -227,4 +240,34 @@ public class GameManagerFight : MonoBehaviour
     {
         SetState(GAMESTATE.pause);
     }
+
+    void GameOver()
+    {
+        SetState(GAMESTATE.gameover);
+    }
+
+
+    IEnumerator RoundOne()
+    {
+        while (pbClassOne.Val < 100)
+        {
+            pbClassOne.Val = pbClassOne.Val + classOneSpeed;
+            yield return new WaitForSeconds(framerate);
+        }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().isDead();
+        GameOver();
+    }
+    IEnumerator RoundTwo()
+    {
+        while (pbClassTwo.Val < 100)
+        {
+            pbClassTwo.Val = pbClassTwo.Val + classTwoSpeed;
+            yield return new WaitForSeconds(framerate);
+        }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().isDead();
+        GameOver();
+    }
+
 }

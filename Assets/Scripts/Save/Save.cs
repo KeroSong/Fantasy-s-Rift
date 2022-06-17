@@ -48,7 +48,11 @@ public class Save : MonoBehaviour
             Items item = new Items();
             item
         }*/
-        scene.mecha1
+
+        scene.mecha1.head = PlayerPrefs.GetInt("Mecha1Tete");
+        scene.mecha1.body = PlayerPrefs.GetInt("Mecha1Corps");
+        scene.mecha2.head = PlayerPrefs.GetInt("Mecha2Tete");
+        scene.mecha2.body = PlayerPrefs.GetInt("Mecha2Corps");
 
         string data = JsonUtility.ToJson(scene);
         string filePath = Application.persistentDataPath + "/SaveData.json";
@@ -73,6 +77,11 @@ public class Save : MonoBehaviour
             PlayerPrefs.SetInt("classe", scene.player.classe);
             PlayerPrefs.SetInt("Santé", scene.player.health);
             PlayerPrefs.SetInt("Mana", scene.player.mana);
+
+            PlayerPrefs.SetInt("Mecha1Tete", scene.mecha1.head);
+            PlayerPrefs.SetInt("Mecha1Corps", scene.mecha1.body);
+            PlayerPrefs.SetInt("Mecha2Tete", scene.mecha2.head);
+            PlayerPrefs.SetInt("Mecha2Corps", scene.mecha2.body);
 
             if (scene.player.classe == 0)
             {

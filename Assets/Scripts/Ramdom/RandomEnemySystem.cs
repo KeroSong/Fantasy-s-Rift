@@ -1,42 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class RandomLootSystem : MonoBehaviour
+public class RandomEnemySystem : MonoBehaviour
 {
+    [SerializeField] int m_AmountOfEnemy = 5;
 
-    public int amountOfLoot = 10;
-    static ItemDataBaseList inventoryItemList;
+    [SerializeField] GameObject m_Goblin1;
+    [SerializeField] GameObject m_Goblin2;
+    [SerializeField] GameObject m_Goblin3;
+    [SerializeField] GameObject m_Goblin4;
+    [SerializeField] GameObject m_Goblin5;
+
+    List<GameObject> m_Goblins;
 
     int counter = 0;
+
+    private void Awake()
+    {
+        m_Goblins = new List<GameObject>() {m_Goblin1, m_Goblin2, m_Goblin3, m_Goblin4, m_Goblin5};
+    }
 
     // Use this for initialization
     void Start()
     {
-
-        inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
-
-        while (counter < amountOfLoot)
+        while (counter < m_AmountOfEnemy)
         {
             counter++;
 
-            int randomNumber = Random.Range(1, inventoryItemList.itemList.Count - 1);
+            float x = Random.Range((float)-235.8, (float)-27.4);
+            float z = Random.Range((float)121.5, (float)-57.6);
 
-            /*float x = Random.Range(5, terrain.terrainData.size.x - 5);
-            float z = Random.Range(5, terrain.terrainData.size.z - 5);*/
-
-
-            /*if (inventoryItemList.itemList[randomNumber].itemModel == null)
-                counter--;
-            else
-            {
-                GameObject randomLootItem = (GameObject)Instantiate(inventoryItemList.itemList[randomNumber].itemModel);
-                PickUpItem item = randomLootItem.AddComponent<PickUpItem>();
-                item.item = inventoryItemList.itemList[randomNumber];
-
-                randomLootItem.transform.localPosition = new Vector3(x, 0, z);
-            }*/
+            m_Goblins[counter].transform.position;
         }
-
     }
-
 }

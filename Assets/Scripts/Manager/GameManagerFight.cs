@@ -12,6 +12,14 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] GameObject m_DragonTheNightmare;
     [SerializeField] GameObject m_DragonTerrorBringer;
     [SerializeField] GameObject m_DragonUsurper;
+    [SerializeField] GameObject m_Choice1;
+    [SerializeField] GameObject m_Player1Monster1;
+    [SerializeField] GameObject m_Player1Monster2;
+    [SerializeField] GameObject m_Player1Monster3;
+    [SerializeField] GameObject m_Choice2;
+    [SerializeField] GameObject m_Player2Monster1;
+    [SerializeField] GameObject m_Player2Monster2;
+    [SerializeField] GameObject m_Player2Monster3;
 
     List<GameObject> m_Enemy;
     [SerializeField] ProgressBar pbHealth, pbMana;
@@ -19,6 +27,7 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] float framerate=0.5f;
     [SerializeField] float classOneSpeed;
     [SerializeField] float classTwoSpeed;
+    List<GameObject> m_Buttons;
 
     private static GameManagerFight m_Instance;
     public static GameManagerFight Instance { get {
@@ -67,6 +76,7 @@ public class GameManagerFight : MonoBehaviour
         else Destroy(gameObject);
 
         m_Enemy = new List<GameObject>() {m_Goblin1, m_Goblin2, m_Goblin3, m_DragonSoulEater, m_DragonTheNightmare, m_DragonTerrorBringer, m_DragonUsurper};
+        m_Buttons = new List<GameObject>() { m_Player1Monster1, m_Player1Monster2, m_Player1Monster3, m_Player2Monster1, m_Player2Monster2, m_Player2Monster3 };
     }
 
     // Start is called before the first frame update
@@ -129,8 +139,9 @@ public class GameManagerFight : MonoBehaviour
         {
             EnemyAppears(m_DragonUsurper);
         }
-        
-        
+        ButtonAttack(null);
+
+
     }
 
     // Update is called once per frame
@@ -140,6 +151,53 @@ public class GameManagerFight : MonoBehaviour
         {
             EventManager.Instance.Raise(new PauseHasBeenPressEvent());
         }
+
+        float jaugeMecha1 = PlayerPrefs.GetFloat("JaugeMecha1");
+        float jaugeMecha2 = PlayerPrefs.GetFloat("JaugeMecha2");
+
+        pbClassOne.Val = jaugeMecha1;
+        pbClassTwo.Val = jaugeMecha2;
+
+        if(pbClassTwo.Val == 100 || pbClassTwo.Val == 100)
+        {
+            if(pbClassTwo.Val == 100)
+            {
+                
+                m_Choice1.SetActive(true);
+                m_Player1Monster1.SetActive(true);
+                m_Player1Monster2.SetActive(true);
+                m_Player1Monster3.SetActive(true);
+
+            }
+            else
+            {
+                m_Choice2.SetActive(true);
+                m_Player2Monster1.SetActive(true);
+                m_Player2Monster2.SetActive(true);
+                m_Player2Monster3.SetActive(true);
+            }
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("Difficulté") == 0)
+            {
+                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer"))*2);
+                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2"))*2);
+            }
+            else if (PlayerPrefs.GetInt("Difficulté") == 1)
+            {
+                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")));
+                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")));
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")) * 0.5f);
+                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")) * 0.5f);
+            }
+            
+
+        }
+        Debug.Log(pbClassTwo.Val);
     }
 
     public void SubscribeEvents()
@@ -150,6 +208,9 @@ public class GameManagerFight : MonoBehaviour
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.AddListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
+        EventManager.Instance.AddListener<Button1Event>(Button1);
+        EventManager.Instance.AddListener<Button2Event>(Button2);
+        EventManager.Instance.AddListener<Button3Event>(Button3);
     }
 
     public void UnsubscribeEvents()
@@ -160,6 +221,9 @@ public class GameManagerFight : MonoBehaviour
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
         EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.RemoveListener<PauseHasBeenPressEvent>(PauseHasBeenPress);
+        EventManager.Instance.RemoveListener<Button1Event>(Button1);
+        EventManager.Instance.RemoveListener<Button2Event>(Button2);
+        EventManager.Instance.RemoveListener<Button3Event>(Button3);
     }
 
     private void OnEnable()
@@ -209,7 +273,66 @@ public class GameManagerFight : MonoBehaviour
         m_Enemy.ForEach(item => { if (item != null) item.SetActive(enemy == item); });
     }
 
+    void ButtonAttack(GameObject button)
+    {
+        m_Buttons.ForEach(item => { if (item != null) item.SetActive(button == item); });
+    }
 
+    void Button1(Button1Event e)
+    {
+        if(PlayerPrefs.GetFloat("JaugeMecha1") >= 100) 
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().attack();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().stopAttack();
+            PlayerPrefs.SetFloat("JaugeMecha1", 0);
+            m_Choice1.SetActive(false);
+
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().attack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().stopAttack();
+            PlayerPrefs.SetFloat("JaugeMecha2", 0);
+            m_Choice2.SetActive(false);
+        }
+
+    }
+
+    void Button2(Button2Event e)
+    {
+        if (PlayerPrefs.GetFloat("JaugeMecha1") >= 100)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().attack();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().stopAttack();
+            PlayerPrefs.SetFloat("JaugeMecha1", 0);
+            m_Choice1.SetActive(false);
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().attack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().stopAttack();
+            PlayerPrefs.SetFloat("JaugeMecha2", 0);
+            m_Choice2.SetActive(false);
+        }
+    }
+
+    void Button3(Button3Event e)
+    {
+        if (PlayerPrefs.GetFloat("JaugeMecha1") >= 100)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().attack();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().stopAttack();
+            PlayerPrefs.SetFloat("JaugeMecha1", 0);
+            m_Choice1.SetActive(false);
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().attack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().stopAttack();
+            PlayerPrefs.SetFloat("JaugeMecha2", 0);
+            m_Choice2.SetActive(false);
+        }
+    }
 
     void Load()
     {
@@ -245,7 +368,10 @@ public class GameManagerFight : MonoBehaviour
     {
         SetState(GAMESTATE.gameover);
     }
-
+    void Victory()
+    {
+        SetState(GAMESTATE.victoryFight);
+    }
 
     IEnumerator RoundOne()
     {
@@ -254,9 +380,9 @@ public class GameManagerFight : MonoBehaviour
             pbClassOne.Val = pbClassOne.Val + classOneSpeed;
             yield return new WaitForSeconds(framerate);
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
+        /*GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
         GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().isDead();
-        GameOver();
+        GameOver();*/
     }
     IEnumerator RoundTwo()
     {
@@ -265,9 +391,9 @@ public class GameManagerFight : MonoBehaviour
             pbClassTwo.Val = pbClassTwo.Val + classTwoSpeed;
             yield return new WaitForSeconds(framerate);
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
+        /*GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
         GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().isDead();
-        GameOver();
+        GameOver();*/
     }
 
 }

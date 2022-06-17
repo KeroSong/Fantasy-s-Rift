@@ -176,6 +176,21 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
         EventManager.Instance.Raise(new PauseHasBeenPressEvent());
     }
 
+    public void Monster1Attack()
+    {
+        EventManager.Instance.Raise(new Button1Event());
+    }
+
+    public void Monster2Attack()
+    {
+        EventManager.Instance.Raise(new Button2Event());
+    }
+
+    public void Monster3Attack()
+    {
+        EventManager.Instance.Raise(new Button3Event());
+    }
+
 
 
     //settings parameters

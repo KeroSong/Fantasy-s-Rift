@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class IAEnnemy : MonoBehaviour
 {
-    [SerializeField] Transform m_Target;
+    /*[SerializeField] Transform m_Target;*/
+    Transform target;
     [SerializeField] float idleDistance = 10f, walkDistance = 7f;
     NavMeshAgent agent;
     Animator ennemyAnimator;
@@ -19,6 +20,8 @@ public class IAEnnemy : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class IAEnnemy : MonoBehaviour
             agent.speed = 3f;
             ennemyAnimator.SetBool("walk", true);
         }
-        agent.SetDestination(m_Target.position);
+        agent.SetDestination(target.position);
 
         
     }

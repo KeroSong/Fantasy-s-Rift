@@ -26,8 +26,8 @@ public class CreatePlayer : MonoBehaviour
 
     void SetPlayer()
     {
-        PlayerPrefs.SetFloat("PositionX", (float)0.2);
-        PlayerPrefs.SetFloat("PositionY", (float)19.9);
+        PlayerPrefs.SetFloat("PositionX", (float)0.37);
+        PlayerPrefs.SetFloat("PositionY", (float)11.93);
         PlayerPrefs.SetFloat("PositionZ", (float)10.4);
         PlayerPrefs.SetInt("Santé", 20);
         PlayerPrefs.SetInt("Mana", 10);
@@ -35,10 +35,8 @@ public class CreatePlayer : MonoBehaviour
         PlayerPrefs.SetInt("sexe", 0);
         PlayerPrefs.SetInt("classe", 0);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.9);
-        //PlayerPrefs.SetFloat("Santé", 50.0F);
-        //PlayerPrefs.SetFloat("Santé", 50.0F);
-        //PlayerPrefs.SetFloat("Santé", 50.0F);
-        //PlayerPrefs.SetFloat("Santé", 50.0F);
+        PlayerPrefs.SetInt("Gold", 0);
+        PlayerPrefs.SetInt("IdItem", 0);
     }
 
     void SetAI1()

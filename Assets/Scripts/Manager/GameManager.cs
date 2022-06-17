@@ -9,16 +9,9 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager m_Instance;
     public static GameManager Instance { get {
-            //if (m_Instance == null) m_Instance = CreateInstance(); // Impossible dans Unity
             return m_Instance; } }
 
     GAMESTATE m_State;
-
-    //int m_Score;
-    //[SerializeField] int m_VictoryScore;
-
-    //float m_CountdownTimer;
-    //[SerializeField] float m_GameDuration;
 
     void SetState(GAMESTATE newState)
     {
@@ -64,18 +57,6 @@ public class GameManager : MonoBehaviour
         SetState(GAMESTATE.menu);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*if(IsPlaying)
-        {
-            SetScoreAndTimer(m_Score,Mathf.Max(m_CountdownTimer - Time.deltaTime, 0));
-            if (m_CountdownTimer == 0)
-                GameOver();
-
-        }*/
-    }
-
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
@@ -85,8 +66,6 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.AddListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
-        /*EventManager.Instance.AddListener<ScoreHasBeenGainedEvent>(ScoreHasBeenGained);
-        EventManager.Instance.AddListener<ReplayButtonClickedEvent>(ReplayButtonClicked);*/
     }
 
     public void UnsubscribeEvents()
@@ -98,8 +77,6 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.RemoveListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
-        /*EventManager.Instance.RemoveListener<ScoreHasBeenGainedEvent>(ScoreHasBeenGained);
-        EventManager.Instance.RemoveListener<ReplayButtonClickedEvent>(ReplayButtonClicked);*/
     }
 
     private void OnEnable()
@@ -146,11 +123,6 @@ public class GameManager : MonoBehaviour
     {
         Menu();
     }
-
-    /*void ReplayButtonClicked(ReplayButtonClickedEvent e)
-    {
-        NewParty();
-    }*/
 
     void Load()
     {

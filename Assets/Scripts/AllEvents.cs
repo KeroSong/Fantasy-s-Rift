@@ -110,6 +110,15 @@ public class MainMenuButtonClickedEvent : SDD.Events.Event
 public class ConfirmedButtonClickedEvent : SDD.Events.Event
 {
 }
+public class Button1Event : SDD.Events.Event
+{
+}
+public class Button2Event : SDD.Events.Event
+{
+}
+public class Button3Event : SDD.Events.Event
+{
+}
 /*public class EscapeButtonClickedEvent : SDD.Events.Event
 {
 }

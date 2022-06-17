@@ -14,11 +14,14 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
     [SerializeField] int m_ScenePause;
     [SerializeField] int m_SceneFight;
 
+    static ItemDataBaseList inventoryItemList;
+
     List<GameObject> m_Panels;
 
     private void Awake()
     {
         m_Panels = new List<GameObject>() {m_InventoryPanel, m_EquipmentPanel, m_ShopPanel, m_InnPanel};
+        inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
     }
 
     /*void Update()

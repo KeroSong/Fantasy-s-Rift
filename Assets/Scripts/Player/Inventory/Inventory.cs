@@ -81,8 +81,6 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public int positionNumberY;
 
-    InputManager inputManagerDatabase;
-
     //event delegates for consuming, gearing
     public delegate void ItemDelegate(Item item);
     public static event ItemDelegate ItemConsumed;
@@ -92,13 +90,6 @@ public class Inventory : MonoBehaviour
     public delegate void InventoryOpened();
     public static event InventoryOpened InventoryOpen;
     public static event InventoryOpened AllInventoriesClosed;
-
-    void Start()
-    {
-        updateItemList();
-
-        inputManagerDatabase = (InputManager)Resources.Load("InputManager");
-    }
 
     public void sortItems()
     {
@@ -141,12 +132,6 @@ public class Inventory : MonoBehaviour
     public void OnUpdateItemList()
     {
         updateItemList();
-    }
-
-    public void closeInventory()
-    {
-        this.gameObject.SetActive(false);
-        checkIfAllInventoryClosed();
     }
 
     public void openInventory()
@@ -587,8 +572,6 @@ public class Inventory : MonoBehaviour
                 item.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 item.transform.GetChild(0).GetComponent<Image>().sprite = itemOnObject.item.itemIcon;
                 itemOnObject.item.indexItemInList = ItemsInInventory.Count - 1;
-                if (inputManagerDatabase == null)
-                    inputManagerDatabase = (InputManager)Resources.Load("InputManager");
                 return item;
             }
         }
@@ -616,8 +599,6 @@ public class Inventory : MonoBehaviour
                 item.transform.SetParent(SlotContainer.transform.GetChild(i));
                 item.GetComponent<RectTransform>().localPosition = Vector3.zero;
                 itemOnObject.item.indexItemInList = 999;
-                if (inputManagerDatabase == null)
-                    inputManagerDatabase = (InputManager)Resources.Load("InputManager");
                 updateItemSize();
                 stackableSettings();
                 break;

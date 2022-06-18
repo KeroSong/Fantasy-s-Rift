@@ -16,7 +16,7 @@ public class player2mech : MonoBehaviour
     Inventaire inventaire;
     List<int> m_IdListe2;
 
-
+    /*test*/
     private void Awake()
     {
         MechAnimator = GetComponent<Animator>();

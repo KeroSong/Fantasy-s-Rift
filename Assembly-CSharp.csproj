@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Collision\DragonSoulEaterCollision.cs" />
     <Compile Include="Assets\Scripts\Tools\EasingFunctions.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\SimpleElevator.cs" />
+    <Compile Include="Assets\Scripts\Inn\Inn.cs" />
     <Compile Include="Assets\Scripts\Random\RandomLootSystem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\CinemachineFadeOutNearbyObjects.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\AttributeAId.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Ennemy\IADragon.cs" />
+    <Compile Include="Assets\Scripts\Player\player2mech.cs" />
     <Compile Include="Assets\Scripts\Player\CreatePlayer.cs" />
     <Compile Include="Assets\Scripts\Save\Save.cs" />
     <Compile Include="Assets\Scripts\Collision\DragonTheNightmareCollision.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\EquipmentItem.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\SetDragon.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovementNoCamera.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCamOnPlay.cs" />
@@ -140,7 +143,6 @@
     <Compile Include="Assets\Scripts\Manager\GameManagerPlay.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
-    <Compile Include="Assets\Scripts\Player\player2mech.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />

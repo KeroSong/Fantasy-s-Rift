@@ -89,9 +89,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5662214589661047875}
-  - component: {fileID: -6924863872112525612}
+  - component: {fileID: 5164933501016530434}
   m_Layer: 0
-  m_Name: Item
+  m_Name: ItemShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &-6924863872112525612
+--- !u!114 &5164933501016530434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3743509498523105966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e183a0fcf91889441a73da5cab2cf034, type: 3}
+  m_Script: {fileID: 11500000, guid: ce28b41d4c177c143b0dbb8e5fc25388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item:
@@ -137,7 +137,7 @@ MonoBehaviour:
     itemIcon: {fileID: 0}
     itemValue: 1
     itemType: 0
-    maxStack: 0
+    maxStack: 1
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 616645761861714652}
   - component: {fileID: 4883279713187901994}
   m_Layer: 0
-  m_Name: TextQuantity
+  m_Name: TextPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

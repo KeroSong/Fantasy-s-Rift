@@ -29,16 +29,14 @@ public class InventoryItem : MonoBehaviour
 
         Affichage(m_IdListe);
 
-        int Gold = PlayerPrefs.GetInt("OrTotal");
-
         if (PlayerPrefs.GetInt("GainGold") != 0)
         {
-            GainGold(Gold);
+            GainGold();
         }
 
         if (PlayerPrefs.GetInt("LostGold") != 0)
         {
-            LostGold(Gold);
+            LostGold();
         }
     }
 
@@ -91,8 +89,10 @@ public class InventoryItem : MonoBehaviour
         ListeSave(m_IdListe);
     }
 
-    void GainGold(int Gold)
+    public void GainGold()
     {
+        int Gold = ListeLoadGold();
+
         if (PlayerPrefs.GetInt("GainGold") < inventoryItemList.itemList[34].maxStack)
         {
             Gold = Gold + PlayerPrefs.GetInt("GainGold");
@@ -100,17 +100,12 @@ public class InventoryItem : MonoBehaviour
             PlayerPrefs.SetInt("OrTotal", Gold);
         }
 
-        inventaire.items = m_IdListe;
-        inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
-        
-        string filePath = Application.persistentDataPath + "/AllInventory.json";
-        string data = JsonUtility.ToJson(inventaire);
-        System.IO.File.WriteAllText(filePath, data);
+        ListeSaveGold();
     }
 
-    void LostGold(int Gold)
+    public void LostGold()
     {
-        m_IdListe = ListeLoad();
+        int Gold = ListeLoadGold();
 
         if (Gold - PlayerPrefs.GetInt("LostGold") > 0)
         {
@@ -142,6 +137,26 @@ public class InventoryItem : MonoBehaviour
     void ListeSave(List<int> m_IdListe)
     {
         inventaire.items = m_IdListe;
+
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
+        string data = JsonUtility.ToJson(inventaire);
+        System.IO.File.WriteAllText(filePath, data);
+    }
+
+    int ListeLoadGold()
+    {
+        inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
+
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
+        string data = System.IO.File.ReadAllText(filePath);
+        inventaire = JsonUtility.FromJson<Inventaire>(data);
+
+        return inventaire.Gold;
+    }
+
+    void ListeSaveGold()
+    {
+        inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
 
         string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = JsonUtility.ToJson(inventaire);

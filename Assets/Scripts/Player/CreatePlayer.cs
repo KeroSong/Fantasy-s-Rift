@@ -55,7 +55,7 @@ public class CreatePlayer : MonoBehaviour
         PlayerPrefs.SetString("Nom_AI2", "Henry");
         PlayerPrefs.SetInt("sexe_AI2", 1);
         PlayerPrefs.SetInt("classe_AI2", 1);
-        PlayerPrefs.SetFloat("VitesseJaugeAI2", (float)1);
+        PlayerPrefs.SetFloat("VitesseJaugeAI2", (float)0.98);
     }
 
     void SetAI3()

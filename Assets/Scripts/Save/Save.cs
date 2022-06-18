@@ -148,3 +148,8 @@ public class Items
 {
     public int IdItem;
 }
+
+public class Dragon
+{
+    public List<bool> listDragon = new List<bool>();
+}

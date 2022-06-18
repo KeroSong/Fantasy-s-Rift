@@ -34,12 +34,12 @@ public class EquipmentItem : MonoBehaviour
         {
             if (Id == 0)
             {
-                this.transform.GetChild(1).GetChild(2).GetChild(i).GetChild(0).transform.localPosition = new Vector3(1000,1000,0);
+                this.transform.GetChild(0).GetChild(1).GetChild(i).GetChild(0).transform.localPosition = new Vector3(1000,1000,0);
             }
             else
             {
-                this.transform.GetChild(1).GetChild(2).GetChild(i).GetChild(0).transform.localPosition = Vector3.zero;
-                this.transform.GetChild(1).GetChild(2).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
+                this.transform.GetChild(0).GetChild(1).GetChild(i).GetChild(0).transform.localPosition = Vector3.zero;
+                this.transform.GetChild(0).GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
             }
             i++;
         }
@@ -53,12 +53,12 @@ public class EquipmentItem : MonoBehaviour
         {
             if (Id == 0)
             {
-                this.transform.GetChild(2).GetChild(2).GetChild(i).GetChild(0).transform.localPosition = new Vector3(1000,1000,0);
+                this.transform.GetChild(1).GetChild(1).GetChild(i).GetChild(0).transform.localPosition = new Vector3(1000,1000,0);
             }
             else
             {
-                this.transform.GetChild(2).GetChild(2).GetChild(i).GetChild(0).transform.localPosition = Vector3.zero;
-                this.transform.GetChild(2).GetChild(2).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
+                this.transform.GetChild(1).GetChild(1).GetChild(i).GetChild(0).transform.localPosition = Vector3.zero;
+                this.transform.GetChild(1).GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
             }
             i++;
         }

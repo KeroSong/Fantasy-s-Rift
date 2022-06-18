@@ -65,7 +65,7 @@ public class EquipeItems : MonoBehaviour
         }
         else
         {
-            this.LOG("Comment vous avez fait pour vous équipez avec de l'or ? Pour la peine, vous ne pourrez pas le déséquiper.");
+            this.LOG("Comment vous avez fait pour vous équipez avec de l'or ? Pour la peine, vous ne pourrez pas le retirer.");
         }
     }
 

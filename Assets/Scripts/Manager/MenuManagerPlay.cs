@@ -122,4 +122,9 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
     {
         m_Panels.ForEach(item => { if (item != null) item.SetActive(panel == item); });
     }
+
+    public void PlayButtonHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new PlayButtonClickedEvent());
+    }
 }

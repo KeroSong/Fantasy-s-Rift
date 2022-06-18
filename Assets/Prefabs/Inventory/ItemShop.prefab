@@ -232,9 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31eaf319aca9b124a89483c3a927459b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InventoryPanel: {fileID: 1369231025452450539, guid: 825c338fcad8f0b45bbf8096756c175f, type: 3}
+  m_InventoryPanel: {fileID: 0}
   m_EquipmentPanel: {fileID: 6006386538436463783, guid: b2df0e2daf6a0fe4e996b0dd28180afd, type: 3}
-  m_ShopPanel: {fileID: 1948094373860267570, guid: cfe812ba799b10944a9e0f00de147722, type: 3}
+  m_ShopPanel: {fileID: 0}
 --- !u!114 &2380167475391180617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,13 +252,13 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7485702553493287788}
-          m_TargetAssemblyTypeName: 
+        - m_Target: {fileID: 6210914860498887498}
+          m_TargetAssemblyTypeName: EquipeItems, Assembly-CSharp
           m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

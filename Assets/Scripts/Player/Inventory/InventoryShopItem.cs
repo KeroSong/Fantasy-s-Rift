@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SDD.Events;
 
-public class InventoryItem : MonoBehaviour
+public class InventoryShopItem : MonoBehaviour
 {
 
     static ItemDataBaseList inventoryItemList;
@@ -52,10 +52,10 @@ public class InventoryItem : MonoBehaviour
             else
             {
                 this.transform.GetChild(1).GetChild(i).GetChild(0).transform.localPosition = Vector3.zero;
-                this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
+                this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObjectShop>().item = inventoryItemList.itemList[Id];
                 if (i == 0)
                 {
-                    this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemValue = ListeLoadGold();
+                    this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObjectShop>().item.itemValue = ListeLoadGold();
                 }
             }
             i++;
@@ -110,14 +110,19 @@ public class InventoryItem : MonoBehaviour
     {
         int Gold = ListeLoadGold();
 
-        if ((Gold - PlayerPrefs.GetInt("LostGold")) > 0)
+        if (Gold - PlayerPrefs.GetInt("LostGold") > 0)
         {
             Gold = Gold - PlayerPrefs.GetInt("LostGold");
             PlayerPrefs.SetInt("LostGold", 0);
             PlayerPrefs.SetInt("OrTotal", Gold);
         }
 
-        ListeSaveGold();
+        inventaire.items = m_IdListe;
+        inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
+        
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
+        string data = JsonUtility.ToJson(inventaire);
+        System.IO.File.WriteAllText(filePath, data);
     }
 
     List<int> ListeLoad()

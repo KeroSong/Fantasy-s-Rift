@@ -36,7 +36,7 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void UpdateValue()
     {
-        txt.text = val + "%";
+        txt.text = val*5 + "%";
         bar.fillAmount = val / 100;
     }
 

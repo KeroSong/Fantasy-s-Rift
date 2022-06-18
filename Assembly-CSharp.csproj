@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemAttribute.cs" />
+    <Compile Include="Assets\Scripts\Ennemy\IAFight.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManagerPause.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemType.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\StorageInventory.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\InventoryDesign.cs" />
     <Compile Include="Assets\Scripts\Collision\DragonUsurperCollision.cs" />
     <Compile Include="Assets\Scripts\Manager\MenuManagerFight.cs" />
@@ -68,20 +68,22 @@
     <Compile Include="Assets\Scripts\Player\Inventory\Items\Item.cs" />
     <Compile Include="Assets\Scripts\EventManager\EventManager.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\AimingRig\AimReticle.cs" />
-    <Compile Include="Assets\Scripts\Player\Inventory\Items\ConsumeItem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement2D.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\InvokeEventFromInspector.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\SetInventory.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Collision\ShopCollision.cs" />
     <Compile Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Scripts\PT_Create_Prefab.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManagerFight.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManagerPause.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\ShopItem.cs" />
     <Compile Include="Assets\Scripts\Collision\DragonSoulEaterCollision.cs" />
     <Compile Include="Assets\Scripts\Tools\EasingFunctions.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\SimpleElevator.cs" />
     <Compile Include="Assets\Scripts\Random\RandomLootSystem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\CinemachineFadeOutNearbyObjects.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\Items\AttributeAId.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ThirdPersonFollowDistanceModifier.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\BossCamera\CustomLockCameraY.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\InventoryShopItem.cs" />
     <Compile Include="Assets\Scripts\Collision\MonsterCollision.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\2D\LoseSightWhenTargetsFallsOffThePlatform.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
@@ -108,20 +111,21 @@
     <Compile Include="Assets\Scripts\Random\RandomEnemySystem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\MixingCameraBlend.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemAttributeList.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemOnObjectShop.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemOnObject.cs" />
     <Compile Include="Assets\Scripts\Collision\DragonTerrorBringerCollision.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\EquipmentSystem.cs" />
     <Compile Include="Assets\Scripts\Collision\InnCollision.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\DragInventory.cs" />
     <Compile Include="Assets\Scripts\EventManager\IEventHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Items\ItemDataBaseList.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
     <Compile Include="Assets\Scripts\Player\player1mech.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\Items\EquipeItems.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\Inventory.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
+    <Compile Include="Assets\Scripts\Player\Inventory\EquipmentItem.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovementNoCamera.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCamOnPlay.cs" />
@@ -136,8 +140,7 @@
     <Compile Include="Assets\Scripts\Manager\GameManagerPlay.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
-    <Compile Include="Assets\InventoryMaster\Scripts\Inventory\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Player\Inventory\EquipmentItem.cs" />
+    <Compile Include="Assets\Scripts\Player\player2mech.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />
@@ -151,7 +154,6 @@
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\ScreenCutoutShader.shader" />
     <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Flowers_Shader.shader" />
     <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
-    <None Include="Assets\InventoryMaster\menfou\readme.txt" />
     <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_Toon.shader" />
     <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Rock_Shader.shader" />
     <None Include="Assets\MedievalTownExteriors\Readme FIRST!.txt" />

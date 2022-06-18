@@ -12,6 +12,9 @@ TagManager:
   - DraggingItem
   - ItemIcon
   - Player2
+  - Monster1
+  - Monster2
+  - Monster3
   layers:
   - Default
   - TransparentFX

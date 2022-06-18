@@ -22,7 +22,9 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] GameObject m_Player2Monster3;
 
     List<GameObject> m_Enemy;
-    [SerializeField] ProgressBar pbHealth, pbMana;
+    [SerializeField] ProgressBar PbHealthMech1;
+    [SerializeField] ProgressBar PbHealthMech2;
+    [SerializeField] ProgressBar pbHealthMonster1, pbHealthMonster2, pbHealthMonster3;
     [SerializeField] ProgressBarRound pbClassOne, pbClassTwo;
     [SerializeField] float framerate=0.5f;
     [SerializeField] float classOneSpeed;
@@ -163,7 +165,7 @@ public class GameManagerFight : MonoBehaviour
 
         if(pbClassTwo.Val == 100 || pbClassTwo.Val == 100)
         {
-            if(pbClassTwo.Val == 100)
+            if(pbClassOne.Val == 100)
             {
                 
                 m_Choice1.SetActive(true);
@@ -172,7 +174,7 @@ public class GameManagerFight : MonoBehaviour
                 m_Player1Monster3.SetActive(true);
 
             }
-            else
+            else if (pbClassTwo.Val == 100)
             {
                 m_Choice2.SetActive(true);
                 m_Player2Monster1.SetActive(true);
@@ -184,8 +186,8 @@ public class GameManagerFight : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("Difficult?") == 0)
             {
-                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer"))*2);
-                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2"))*2);
+                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer"))*1);
+                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2"))*1);
             }
             else if (PlayerPrefs.GetInt("Difficult?") == 1)
             {
@@ -197,10 +199,15 @@ public class GameManagerFight : MonoBehaviour
                 PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")) * 0.5f);
                 PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")) * 0.5f);
             }
-            
-
+            if(PbHealthMech1.Val == 0 && PbHealthMech1.Val ==0)
+            {
+                GameOver();
+            }
+            else if (pbHealthMonster1.Val == 0 && pbHealthMonster2.Val == 0 && pbHealthMonster3.Val == 0 )
+            {
+                Victory();
+            }
         }
-        Debug.Log(pbClassTwo.Val);
     }
 
     public void SubscribeEvents()
@@ -293,15 +300,15 @@ public class GameManagerFight : MonoBehaviour
         if(PlayerPrefs.GetFloat("JaugeMecha1") >= 100) 
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().attack();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().stopAttack();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().DamageToMonster1();
             PlayerPrefs.SetFloat("JaugeMecha1", 0);
             m_Choice1.SetActive(false);
 
         }
         else
         {
-            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().attack();
-            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().stopAttack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().attack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().DamageToMonster1();
             PlayerPrefs.SetFloat("JaugeMecha2", 0);
             m_Choice2.SetActive(false);
         }
@@ -313,14 +320,15 @@ public class GameManagerFight : MonoBehaviour
         if (PlayerPrefs.GetFloat("JaugeMecha1") >= 100)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().attack();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().stopAttack();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().DamageToMonster2();
+
             PlayerPrefs.SetFloat("JaugeMecha1", 0);
             m_Choice1.SetActive(false);
         }
         else
         {
-            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().attack();
-            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().stopAttack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().attack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().DamageToMonster2();
             PlayerPrefs.SetFloat("JaugeMecha2", 0);
             m_Choice2.SetActive(false);
         }
@@ -331,14 +339,14 @@ public class GameManagerFight : MonoBehaviour
         if (PlayerPrefs.GetFloat("JaugeMecha1") >= 100)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().attack();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().stopAttack();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().DamageToMonster3();
             PlayerPrefs.SetFloat("JaugeMecha1", 0);
             m_Choice1.SetActive(false);
         }
         else
         {
-            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().attack();
-            GameObject.FindGameObjectWithTag("Player2").GetComponent<player1mech>().stopAttack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().attack();
+            GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().DamageToMonster3();
             PlayerPrefs.SetFloat("JaugeMecha2", 0);
             m_Choice2.SetActive(false);
         }

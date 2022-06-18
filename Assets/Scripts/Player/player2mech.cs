@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player1mech : MonoBehaviour
+public class player2mech : MonoBehaviour
 {
     public int PlayerDamage = 10;
 
@@ -14,7 +14,6 @@ public class player1mech : MonoBehaviour
 
     static ItemDataBaseList inventoryItemList;
     Inventaire inventaire;
-    List<int> m_IdListe1;
     List<int> m_IdListe2;
 
 
@@ -76,15 +75,6 @@ public class player1mech : MonoBehaviour
         }
     }
 
-    List<int> Liste1Load()
-    {
-        string filePath = Application.persistentDataPath + "/AllInventory.json";
-        string data = System.IO.File.ReadAllText(filePath);
-        inventaire = JsonUtility.FromJson<Inventaire>(data);
-
-        m_IdListe1 = inventaire.equip1;
-        return m_IdListe1;
-    }
 
     List<int> Liste2Load()
     {
@@ -98,8 +88,8 @@ public class player1mech : MonoBehaviour
 
     int DamageWeapon()
     {
-        m_IdListe1 = Liste1Load();
-        int Id = m_IdListe1[6];
+        m_IdListe2 = Liste2Load();
+        int Id = m_IdListe2[6];
         if (Id == 0)
         {
             return 0;

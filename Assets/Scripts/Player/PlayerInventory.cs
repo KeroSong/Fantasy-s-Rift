@@ -21,7 +21,6 @@ public class PlayerInventory : MonoBehaviour
     public void OnEnable()
     {
         Inventory.ItemEquip += OnGearItem;
-        Inventory.ItemConsumed += OnConsumeItem;
         Inventory.UnEquipItem += OnUnEquipItem;
 
         Inventory.ItemEquip += EquipWeapon;
@@ -31,7 +30,6 @@ public class PlayerInventory : MonoBehaviour
     public void OnDisable()
     {
         Inventory.ItemEquip -= OnGearItem;
-        Inventory.ItemConsumed -= OnConsumeItem;
         Inventory.UnEquipItem -= OnUnEquipItem;
 
         Inventory.UnEquipItem -= UnEquipWeapon;

@@ -79,6 +79,7 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
         if (!m_InventoryPanel.activeSelf)
         {
             m_InventoryPanel.SetActive(true);
+
         }
         else
         {
@@ -120,27 +121,5 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
     void OpenPanel(GameObject panel)
     {
         m_Panels.ForEach(item => { if (item != null) item.SetActive(panel == item); });
-    }
-
-    public void CloseInventory()
-    {
-        m_InventoryPanel.SetActive(false);
-    }
-
-    public void CloseEquipment()
-    {
-        m_EquipmentPanel.SetActive(false);
-        m_EquipmentPanel.transform.GetChild(0).gameObject.SetActive(false);
-        m_EquipmentPanel.transform.GetChild(1).gameObject.SetActive(false);
-    }
-
-    public void EquipeItem(int id)
-    {
-            this.LOG(id.ToString());
-        /*if (m_EquipmentPanel.isActiveAndEnabled)
-        {
-            //int id = item.GetComponent<ItemOnObject>().item.itemValue;
-            //RemoveItemToInventory(id);
-        }*/
     }
 }

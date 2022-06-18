@@ -7,11 +7,8 @@ using SDD.Events;
 
 public class InventoryItem : MonoBehaviour
 {
-    [SerializeField] GameObject m_EquipmentPanel;
-    [SerializeField] GameObject m_ShopPanel;
 
     static ItemDataBaseList inventoryItemList;
-    [SerializeField] Sprite image;
 
     Inventaire inventaire;
     List<int> m_IdListe;
@@ -19,35 +16,18 @@ public class InventoryItem : MonoBehaviour
     void Start()
     {
         inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
-
-        string filePath = Application.persistentDataPath + "/AllInventory.json";
-        string data = System.IO.File.ReadAllText(filePath);
-        inventaire = JsonUtility.FromJson<Inventaire>(data);
-
-        m_IdListe = inventaire.items;
     }
 
     void Update()
     {
+        m_IdListe = ListeLoad();
+
         if (PlayerPrefs.GetInt("IdItem") != 0)
         {
             AddItemToInventory();
         }
 
-        int i = 0;
-
-        foreach (int Id in m_IdListe)
-        {
-            if (Id == 0)
-            {
-                this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemIcon = image;
-            }
-            else
-            {
-                this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
-            }
-            i++;
-        }
+        Affichage(m_IdListe);
 
         int Gold = PlayerPrefs.GetInt("OrTotal");
 
@@ -62,8 +42,29 @@ public class InventoryItem : MonoBehaviour
         }
     }
 
-    void AddItemToInventory()
+    void Affichage(List<int> m_IdListe)
     {
+        int i = 0;
+
+        foreach (int Id in m_IdListe)
+        {
+            if (Id == 0)
+            {
+                this.transform.GetChild(1).GetChild(i).GetChild(0).transform.localPosition = new Vector3(1000,1000,0);
+            }
+            else
+            {
+                this.transform.GetChild(1).GetChild(i).GetChild(0).transform.localPosition = Vector3.zero;
+                this.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[Id];
+            }
+            i++;
+        }
+    }
+
+    public void AddItemToInventory()
+    {
+        m_IdListe = ListeLoad();
+
         int i = 0;
         foreach (int Id in m_IdListe)
         {
@@ -76,41 +77,18 @@ public class InventoryItem : MonoBehaviour
             i++;
         }
 
-        inventaire.items = m_IdListe;
-
-        string filePath = Application.persistentDataPath + "/AllInventory.json";
-        string data = JsonUtility.ToJson(inventaire);
-        System.IO.File.WriteAllText(filePath, data);
+        ListeSave(m_IdListe);
     }
 
-    void RemoveItemToInventory(int id)
+    public void RemoveItemToInventory(int IdItem, int IdEmplacement)
     {
-        int i = 0;
-        foreach (int Id in m_IdListe)
+        m_IdListe = ListeLoad();
+        if (m_IdListe[IdEmplacement] == IdItem)
         {
-            if (Id == id)
-            {
-                m_IdListe[i] = 0;
-                break;
-            }
-            i++;
+            m_IdListe[IdEmplacement] = 0;
         }
 
-        inventaire.items = m_IdListe;
-
-        string filePath = Application.persistentDataPath + "/AllInventory.json";
-        string data = JsonUtility.ToJson(inventaire);
-        System.IO.File.WriteAllText(filePath, data);
-    }
-
-    public void EquipeItem(int id)
-    {
-            this.LOG(id.ToString());
-        /*if (m_EquipmentPanel.isActiveAndEnabled)
-        {
-            //int id = item.GetComponent<ItemOnObject>().item.itemValue;
-            //RemoveItemToInventory(id);
-        }*/
+        ListeSave(m_IdListe);
     }
 
     void GainGold(int Gold)
@@ -132,6 +110,8 @@ public class InventoryItem : MonoBehaviour
 
     void LostGold(int Gold)
     {
+        m_IdListe = ListeLoad();
+
         if (Gold - PlayerPrefs.GetInt("LostGold") > 0)
         {
             Gold = Gold - PlayerPrefs.GetInt("LostGold");
@@ -142,6 +122,27 @@ public class InventoryItem : MonoBehaviour
         inventaire.items = m_IdListe;
         inventaire.Gold = PlayerPrefs.GetInt("OrTotal");
         
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
+        string data = JsonUtility.ToJson(inventaire);
+        System.IO.File.WriteAllText(filePath, data);
+    }
+
+    List<int> ListeLoad()
+    {
+        inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
+
+        string filePath = Application.persistentDataPath + "/AllInventory.json";
+        string data = System.IO.File.ReadAllText(filePath);
+        inventaire = JsonUtility.FromJson<Inventaire>(data);
+
+        m_IdListe = inventaire.items;
+        return m_IdListe;
+    }
+
+    void ListeSave(List<int> m_IdListe)
+    {
+        inventaire.items = m_IdListe;
+
         string filePath = Application.persistentDataPath + "/AllInventory.json";
         string data = JsonUtility.ToJson(inventaire);
         System.IO.File.WriteAllText(filePath, data);

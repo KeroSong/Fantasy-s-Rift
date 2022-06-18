@@ -5,16 +5,14 @@ public enum ItemType        //all ItemTypes...you can add some
 {
     None = 0,
     Weapon = 1,
-    Consumable = 2,
-    Head = 3,
-    Shoe = 4,
-    Chest = 5,
-    Necklace = 6,
-    Ring = 7,
-    Hands = 8,
-    Shield = 9,
-    Coin = 10,
-    Backpack = 11
-
+    Head = 2,
+    Shoe = 3,
+    Chest = 4,
+    Necklace = 5,
+    Ring = 6,
+    Hands = 7,
+    Shield = 8,
+    Coin = 9,
+    Backpack = 10
 }
 

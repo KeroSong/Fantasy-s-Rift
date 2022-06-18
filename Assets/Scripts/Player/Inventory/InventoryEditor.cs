@@ -80,19 +80,6 @@ public class InventoryEditor : Editor
             sizeOfInventoryGUI();
         }
         GUILayout.EndVertical();
-
-        if (!inv.characterSystem())
-        {
-            GUILayout.BeginVertical("Box");
-            showStackableItemsSettings = EditorGUILayout.Foldout(showStackableItemsSettings, "Stacking/Splitting");
-            if (showStackableItemsSettings)
-            {
-                stackableItemsSettings();
-                GUILayout.Space(20);
-            }
-            GUILayout.EndVertical();
-
-        }
         EditorGUI.indentLevel--;
         GUILayout.EndVertical();
 
@@ -100,7 +87,6 @@ public class InventoryEditor : Editor
         serializedObject.ApplyModifiedProperties();
         SceneView.RepaintAll();
         GUILayout.BeginVertical("Box");
-        addItemGUI();
         GUILayout.EndVertical();
 
     }
@@ -199,33 +185,4 @@ public class InventoryEditor : Editor
 
         EditorGUI.indentLevel--;
     }
-
-    void addItemGUI()                                                                                                       //add a item to the inventory through the inspector
-    {
-        if (!inv.characterSystem())
-        {
-            GUILayout.Label("Add an item:");
-            inv.setImportantVariables();                                                                                                            //space to the top gui element
-            EditorGUILayout.BeginHorizontal();                                                                                  //starting horizontal GUI elements
-            ItemDataBaseList inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");                            //loading the itemdatabase
-            string[] items = new string[inventoryItemList.itemList.Count];                                                      //create a string array in length of the itemcount
-            for (int i = 1; i < items.Length; i++)                                                                              //go through the item array
-            {
-                items[i] = inventoryItemList.itemList[i].itemName;                                                              //and paste all names into the array
-            }
-            itemID = EditorGUILayout.Popup("", itemID, items, EditorStyles.popup);                                              //create a popout with all itemnames in it and save the itemID of it
-            itemValue = EditorGUILayout.IntField("", itemValue, GUILayout.Width(40));
-            GUI.color = Color.green;                                                                                            //set the color of all following guielements to green
-            if (GUILayout.Button("Add Item"))                                                                                   //creating button with name "AddItem"
-            {                
-                inv.addItemToInventory(itemID, itemValue);                                                                      //and set the settings for possible stackedItems
-                inv.stackableSettings();
-            }
-            inv.OnUpdateItemList();
-
-            EditorGUILayout.EndHorizontal();                                                                                    //end the horizontal gui layout
-        }
-    }
-
-
 }

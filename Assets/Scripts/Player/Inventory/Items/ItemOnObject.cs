@@ -6,27 +6,29 @@ using UnityEngine.EventSystems;
 public class ItemOnObject : MonoBehaviour                   //Saves the Item in the slot
 {
     public Item item;                                       //Item 
-    private Text text;                                      //text for the itemValue
+    private Text textQuantity;                                      //text for the itemValue
+    private Text textId;
     private Image image;
 
     void Start()
     {
         image = transform.GetChild(0).GetComponent<Image>();
         transform.GetChild(0).GetComponent<Image>().sprite = item.itemIcon;                 //set the sprite of the Item 
-        text = transform.GetChild(1).GetComponent<Text>();                                  //get the text(itemValue GameObject) of the item
+        textQuantity = transform.GetChild(1).GetComponent<Text>();                                  //get the text(itemValue GameObject) of the item
+        textId = transform.GetChild(0).GetChild(0).GetComponent<Text>();
     }
 
     void Update()
     {
-        if (GetComponent<ConsumeItem>().item.itemID == 34)
+        if (GetComponent<ItemOnObject>().item.itemID == 34)
         {
-            text.text = "" + item.itemValue;
+            textQuantity.text = "" + item.itemValue;
         }
         else
         {
-            text.text = "" + item.maxStack;
+            textQuantity.text = "" + item.maxStack;
         }
+        textId.text = "" + item.itemID;
         image.sprite = item.itemIcon;
-        GetComponent<ConsumeItem>().item = item;
     }
 }

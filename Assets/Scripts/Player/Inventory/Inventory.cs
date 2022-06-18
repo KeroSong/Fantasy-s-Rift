@@ -83,7 +83,6 @@ public class Inventory : MonoBehaviour
 
     //event delegates for consuming, gearing
     public delegate void ItemDelegate(Item item);
-    public static event ItemDelegate ItemConsumed;
     public static event ItemDelegate ItemEquip;
     public static event ItemDelegate UnEquipItem;
 
@@ -166,15 +165,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-
-
-    public void ConsumeItem(Item item)
-    {
-        if (ItemConsumed != null)
-            ItemConsumed(item);
-    }
-
     public void EquiptItem(Item item)
     {
         if (ItemEquip != null)
@@ -249,7 +239,6 @@ public class Inventory : MonoBehaviour
             prefabPanel = Resources.Load("Prefabs/Panel - Inventory") as GameObject;
 
         setImportantVariables();
-        setDefaultSettings();
         adjustInventorySize();
         updateSlotAmount(width, height);
         updateSlotSize();
@@ -269,49 +258,6 @@ public class Inventory : MonoBehaviour
             }
         }
 
-    }
-
-    public bool characterSystem()
-    {
-        if (GetComponent<EquipmentSystem>() != null)
-            return true;
-        else
-            return false;
-    }
-
-
-    public void setDefaultSettings()
-    {
-        if (GetComponent<EquipmentSystem>() == null)
-        {
-            height = 5;
-            width = 5;
-
-            slotSize = 50;
-            iconSize = 45;
-
-            paddingBetweenX = 5;
-            paddingBetweenY = 5;
-            paddingTop = 35;
-            paddingBottom = 10;
-            paddingLeft = 10;
-            paddingRight = 10;
-        }
-        else
-        {
-            height = 4;
-            width = 2;
-
-            slotSize = 50;
-            iconSize = 45;
-
-            paddingBetweenX = 100;
-            paddingBetweenY = 20;
-            paddingTop = 35;
-            paddingBottom = 10;
-            paddingLeft = 10;
-            paddingRight = 10;
-        }
     }
 
     public void adjustInventorySize()
@@ -525,8 +471,6 @@ public class Inventory : MonoBehaviour
                 {
                     ItemsInInventory[i].itemValue = stack;
                     GameObject temp = getItemGameObject(ItemsInInventory[i]);
-                    if (temp != null && temp.GetComponent<ConsumeItem>().duplication != null)
-                        temp.GetComponent<ConsumeItem>().duplication.GetComponent<ItemOnObject>().item.itemValue = stack;
                     return true;
                 }
             }

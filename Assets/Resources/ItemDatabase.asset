@@ -18,7 +18,7 @@ MonoBehaviour:
     itemIcon: {fileID: 0}
     itemValue: 1
     itemType: 0
-    maxStack: 1
+    maxStack: 0
     indexItemInList: 999
     rarity: 0
     itemAttributes: []
@@ -26,7 +26,7 @@ MonoBehaviour:
     itemID: 1
     itemIcon: {fileID: 21300000, guid: ddc7f83956c1b9246be544da79db11d5, type: 3}
     itemValue: 10
-    itemType: 5
+    itemType: 4
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     itemID: 2
     itemIcon: {fileID: 21300000, guid: 4789bc89db353584088e0e3d8c847b53, type: 3}
     itemValue: 100
-    itemType: 5
+    itemType: 4
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
     itemID: 3
     itemIcon: {fileID: 21300000, guid: 2462597d0a66cb1468565a52c152298b, type: 3}
     itemValue: 1000
-    itemType: 5
+    itemType: 4
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     itemID: 4
     itemIcon: {fileID: 21300000, guid: ba9807ec06da8ef4a9184f7d8a889944, type: 3}
     itemValue: 10
-    itemType: 4
+    itemType: 3
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     itemID: 5
     itemIcon: {fileID: 21300000, guid: 76d55845b2cc35446a03a4ecae6f61c2, type: 3}
     itemValue: 100
-    itemType: 4
+    itemType: 3
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     itemID: 6
     itemIcon: {fileID: 21300000, guid: a053c76c32309864b9e7171d057a5743, type: 3}
     itemValue: 1000
-    itemType: 4
+    itemType: 3
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
     itemID: 7
     itemIcon: {fileID: 21300000, guid: 143c743beb587f44aa6b8b493083aec6, type: 3}
     itemValue: 10
-    itemType: 8
+    itemType: 7
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
     itemID: 8
     itemIcon: {fileID: 21300000, guid: 2eee0a0d81c1954478dbfb76ec1ef4ab, type: 3}
     itemValue: 100
-    itemType: 8
+    itemType: 7
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
     itemID: 9
     itemIcon: {fileID: 21300000, guid: 7a1825f8cd466904a8cbcd1e022686ce, type: 3}
     itemValue: 1000
-    itemType: 8
+    itemType: 7
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
     itemID: 10
     itemIcon: {fileID: 21300000, guid: 37ba67ef6d591874fbfe7e35215ea4ab, type: 3}
     itemValue: 10
-    itemType: 3
+    itemType: 2
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
     itemID: 11
     itemIcon: {fileID: 21300000, guid: 8ec988069eca78d4789ab0c839bb4301, type: 3}
     itemValue: 100
-    itemType: 3
+    itemType: 2
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
     itemID: 12
     itemIcon: {fileID: 21300000, guid: bebac69a9439c5049b6f823a15d13277, type: 3}
     itemValue: 1000
-    itemType: 3
+    itemType: 2
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
     itemID: 13
     itemIcon: {fileID: 21300000, guid: 7dfdde6c9c028344597fdd0d96f04063, type: 3}
     itemValue: 10
-    itemType: 3
+    itemType: 2
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
     itemID: 14
     itemIcon: {fileID: 21300000, guid: 121234e4af7e9234a9d3692c91b62496, type: 3}
     itemValue: 100
-    itemType: 3
+    itemType: 2
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
     itemID: 15
     itemIcon: {fileID: 21300000, guid: 7097c6686f5d94b4896fe6afc322c4f6, type: 3}
     itemValue: 1000
-    itemType: 3
+    itemType: 2
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
     itemID: 16
     itemIcon: {fileID: 21300000, guid: ea4b110edce8bcf499a8de72b139f091, type: 3}
     itemValue: 10
-    itemType: 9
+    itemType: 8
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
     itemID: 17
     itemIcon: {fileID: 21300000, guid: e1b4b83357c6aa947813ff17d8488ea1, type: 3}
     itemValue: 100
-    itemType: 9
+    itemType: 8
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
     itemID: 18
     itemIcon: {fileID: 21300000, guid: 56b27fd799a0a4446a1b8d07308c7659, type: 3}
     itemValue: 1000
-    itemType: 9
+    itemType: 8
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     itemID: 19
     itemIcon: {fileID: 21300000, guid: 21d7333567120774aa3b91f5c20fc5ed, type: 3}
     itemValue: 10
-    itemType: 7
+    itemType: 6
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
     itemID: 20
     itemIcon: {fileID: 21300000, guid: 7ad013a4fbde21b43a1384e80fc8bef5, type: 3}
     itemValue: 100
-    itemType: 7
+    itemType: 6
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
     itemID: 21
     itemIcon: {fileID: 21300000, guid: 3ebf0a67c04d5294b822cdff2bc4c1f9, type: 3}
     itemValue: 1000
-    itemType: 7
+    itemType: 6
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
     itemID: 22
     itemIcon: {fileID: 21300000, guid: bc9037f19b41b4a4f80ea00e1d47ee7d, type: 3}
     itemValue: 1
-    itemType: 6
+    itemType: 5
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
     itemID: 23
     itemIcon: {fileID: 21300000, guid: 3d34669f0fcab4b479871c19db25081a, type: 3}
     itemValue: 1
-    itemType: 6
+    itemType: 5
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
     itemID: 24
     itemIcon: {fileID: 21300000, guid: 7f49d60ddf5a1924984be6025b8f92a6, type: 3}
     itemValue: 1
-    itemType: 6
+    itemType: 5
     maxStack: 1
     indexItemInList: 999
     rarity: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
     itemID: 34
     itemIcon: {fileID: 21300000, guid: 700663f8514d3a84e8dd6f9140b9a552, type: 3}
     itemValue: 0
-    itemType: 10
+    itemType: 9
     maxStack: 9999
     indexItemInList: 999
     rarity: 0

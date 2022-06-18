@@ -6,11 +6,6 @@ using SDD.Events;
 
 public class Save : MonoBehaviour
 {
-    [SerializeField] GameObject m_InventoryPanel;
-    [SerializeField] GameObject m_EquipmentPanel;
-    static InventoryItem inventory;
-    static EquipmentItem equipment;
-
     public Scene scene = new Scene();
     public Inventaire inventaire = new Inventaire();
 
@@ -53,6 +48,9 @@ public class Save : MonoBehaviour
         scene.player.sexe = PlayerPrefs.GetInt("sexe");
         scene.player.classe = PlayerPrefs.GetInt("classe");
         scene.player.health = PlayerPrefs.GetInt("Santé");
+        scene.player.healthAI1 = PlayerPrefs.GetInt("Santé_AI1");
+        scene.player.healthAI2 = PlayerPrefs.GetInt("Santé_AI2");
+        scene.player.healthAI3 = PlayerPrefs.GetInt("Santé_AI3");
 
         scene.mecha1.head = PlayerPrefs.GetInt("Mecha1Tete");
         scene.mecha1.body = PlayerPrefs.GetInt("Mecha1Corps");
@@ -81,6 +79,9 @@ public class Save : MonoBehaviour
             PlayerPrefs.SetInt("sexe", scene.player.sexe);
             PlayerPrefs.SetInt("classe", scene.player.classe);
             PlayerPrefs.SetInt("Santé", scene.player.health);
+            PlayerPrefs.GetInt("Santé_AI1", scene.player.healthAI1);
+            PlayerPrefs.GetInt("Santé_AI2", scene.player.healthAI2);
+            PlayerPrefs.GetInt("Santé_AI3", scene.player.healthAI3);
 
             PlayerPrefs.SetInt("Mecha1Tete", scene.mecha1.head);
             PlayerPrefs.SetInt("Mecha1Corps", scene.mecha1.body);
@@ -124,6 +125,9 @@ public class SavePlayer
     public int sexe;
     public int classe;
     public int health;
+    public int healthAI1;
+    public int healthAI2;
+    public int healthAI3;
 }
 
 public class Mecha

@@ -21,17 +21,6 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
         m_Panels = new List<GameObject>() {m_InventoryPanel, m_EquipmentPanel, m_ShopPanel, m_InnPanel};
     }
 
-    /*void Update()
-    {
-            this.LOG("cou");
-        for (int i = 0; i < 25; i++)
-        {
-            int test = m_InventoryPanel.transform.GetChild(1).GetChild(i).GetChild(0).GetComponent<ItemOnObject>().item.itemID;
-            this.LOG(test.ToString());
-            this.LOG("cou");
-        }
-    }*/
-
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<GamePauseEvent>(GamePause);

@@ -14,9 +14,21 @@ public class GameManagerPlay : MonoBehaviour
     [SerializeField] GameObject m_WomanArcher;
     [SerializeField] GameObject m_WomanWizard;
 
+    [SerializeField] GameObject m_DragonSoulEater;
+    [SerializeField] GameObject m_ImageDragonSoulEater;
+    [SerializeField] GameObject m_DragonTheNightmare;
+    [SerializeField] GameObject m_ImageDragonTheNightmare;
+    [SerializeField] GameObject m_DragonTerrorBringer;
+    [SerializeField] GameObject m_ImageDragonTerrorBringer;
+    [SerializeField] GameObject m_DragonUsurper;
+    [SerializeField] GameObject m_ImageDragonUsurper;
+
     [SerializeField] GameObject m_MapCamera;
 
     List<GameObject> m_Characters;
+
+    Dragon dragon;
+    List<bool> m_ListeDragon;
 
     private static GameManagerPlay m_Instance;
     public static GameManagerPlay Instance { get {
@@ -27,12 +39,6 @@ public class GameManagerPlay : MonoBehaviour
     public bool IsPlaying { get { return m_State == GAMESTATE.play; } }
     public bool IsInventory { get { return m_State == GAMESTATE.inventory; } }
     public bool IsEquipment { get { return m_State == GAMESTATE.equipment; } }
-
-    //int m_Score;
-    //[SerializeField] int m_VictoryScore;
-
-    //float m_CountdownTimer;
-    //[SerializeField] float m_GameDuration;
 
     void SetState(GAMESTATE newState)
     {
@@ -126,11 +132,13 @@ public class GameManagerPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_ListeDragon = ListeLoad();
+
         if(IsPlaying || IsInventory || IsEquipment)
         {
-            /*SetScoreAndTimer(m_Score,Mathf.Max(m_CountdownTimer - Time.deltaTime, 0));
-            if (m_CountdownTimer == 0)
-                GameOver();*/
+            PlayerPrefs.SetFloat("PositionX", (float)Player.transform.position.x);
+            PlayerPrefs.SetFloat("PositionY", (float)Player.transform.position.y);
+            PlayerPrefs.SetFloat("PositionZ", (float)Player.transform.position.z);
 
             if (Input.GetKeyDown("p"))
             {
@@ -151,10 +159,27 @@ public class GameManagerPlay : MonoBehaviour
             {
                 Map();
             }
+        }
 
-            PlayerPrefs.SetFloat("PositionX", (float)Player.transform.position.x);
-            PlayerPrefs.SetFloat("PositionY", (float)Player.transform.position.y);
-            PlayerPrefs.SetFloat("PositionZ", (float)Player.transform.position.z);
+        if (m_ListeDragon[0])
+        {
+            Destroy(m_DragonSoulEater.GetComponent<Collider>());
+            Destroy(m_ImageDragonSoulEater);
+        }
+        if (m_ListeDragon[1])
+        {
+            Destroy(m_DragonTheNightmare.GetComponent<Collider>());
+            Destroy(m_ImageDragonTheNightmare);
+        }
+        if (m_ListeDragon[2])
+        {
+            Destroy(m_DragonTerrorBringer.GetComponent<Collider>());
+            Destroy(m_ImageDragonTerrorBringer);
+        }
+        if (m_ListeDragon[3])
+        {
+            Destroy(m_DragonUsurper.GetComponent<Collider>());
+            Destroy(m_ImageDragonUsurper);
         }
     }
 
@@ -282,5 +307,24 @@ public class GameManagerPlay : MonoBehaviour
         {
             m_MapCamera.SetActive(false);
         }
+    }
+
+    List<bool> ListeLoad()
+    {
+        string filePath = Application.persistentDataPath + "/Dragon.json";
+        string data = System.IO.File.ReadAllText(filePath);
+        dragon = JsonUtility.FromJson<Dragon>(data);
+
+        List<bool> m_Liste = dragon.listDragon;
+        return m_Liste;
+    }
+
+    void ListeSave(List<bool> m_Liste)
+    {
+        dragon.listDragon = m_Liste;
+
+        string filePath = Application.persistentDataPath + "/Dragon.json";
+        string data = JsonUtility.ToJson(dragon);
+        System.IO.File.WriteAllText(filePath, data);
     }
 }

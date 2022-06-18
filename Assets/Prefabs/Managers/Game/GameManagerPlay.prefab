@@ -51,3 +51,8 @@ MonoBehaviour:
   m_WomanWarrior: {fileID: 0}
   m_WomanArcher: {fileID: 0}
   m_WomanWizard: {fileID: 0}
+  m_DragonSoulEater: {fileID: 5956299194778751492, guid: 721cc1e67b875e74c9a69d89db10a572, type: 3}
+  m_DragonTheNightmare: {fileID: 8075228739913223487, guid: aad5925a368e6f446aa14123cedafe39, type: 3}
+  m_DragonTerrorBringer: {fileID: 8955546197278956721, guid: 86380f163f79e054ca2e4f8a96024a90, type: 3}
+  m_DragonUsurper: {fileID: 4661230072937407989, guid: c78412fa98917c149ab2e63170c5cb0f, type: 3}
+  m_MapCamera: {fileID: 0}

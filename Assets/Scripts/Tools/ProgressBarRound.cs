@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ProgressBarRound : MonoBehaviour
 {
     [SerializeField] string MechNumber;
+    [SerializeField] GameObject gameManager;
     Image bar;
     Text txt;
 
@@ -37,8 +38,9 @@ public class ProgressBarRound : MonoBehaviour
     // Update is called once per frame
     void UpdateValue()
     {
-        
-        bar.fillAmount = val / 100;
+        if(gameManager.GetComponent<GameManagerFight>().IsFighting){
+            bar.fillAmount = val / 100;
+        }
     }
 
     private void Update()

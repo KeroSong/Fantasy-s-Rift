@@ -20,18 +20,31 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] GameObject m_Player2Monster1;
     [SerializeField] GameObject m_Player2Monster2;
     [SerializeField] GameObject m_Player2Monster3;
+    [SerializeField] GameObject m_MechWarrior;
+    [SerializeField] GameObject m_MechArcher;
+    [SerializeField] GameObject m_MechWizard;
+    List<GameObject> m_ListMeck;
 
     List<GameObject> m_Enemy;
     [SerializeField] ProgressBar PbHealthMech1;
     [SerializeField] ProgressBar PbHealthMech2;
     [SerializeField] ProgressBar pbHealthMonster1, pbHealthMonster2, pbHealthMonster3;
+    [SerializeField] GameObject HealthMonster1, HealthMonster2, HealthMonster3;
+    [SerializeField] ProgressBarRound ProgressRoundMonster1, ProgressRoundMonster2, ProgressRoundMonster3;
     [SerializeField] ProgressBarRound pbClassOne, pbClassTwo;
+    [SerializeField] float MonsterSpeed = 1;
     [SerializeField] float framerate=0.5f;
     [SerializeField] float classOneSpeed;
     [SerializeField] float classTwoSpeed;
     List<GameObject> m_Buttons;
 
     private static GameManagerFight m_Instance;
+
+    public float Monster1;
+    public float Monster2;
+    public float Monster3;
+
+    public bool IsFighting { get { return m_State == GAMESTATE.fight; } }
     public static GameManagerFight Instance { get {
             //if (m_Instance == null) m_Instance = CreateInstance(); // Impossible dans Unity
             return m_Instance; } }
@@ -80,8 +93,11 @@ public class GameManagerFight : MonoBehaviour
         if (m_Instance == null) m_Instance = this;
         else Destroy(gameObject);
 
+
+
         m_Enemy = new List<GameObject>() {m_Goblin1, m_Goblin2, m_Goblin3, m_DragonSoulEater, m_DragonTheNightmare, m_DragonTerrorBringer, m_DragonUsurper};
         m_Buttons = new List<GameObject>() { m_Player1Monster1, m_Player1Monster2, m_Player1Monster3, m_Player2Monster1, m_Player2Monster2, m_Player2Monster3 };
+        m_ListMeck = new List<GameObject>() { m_MechWarrior, m_MechArcher, m_MechWizard };
     }
 
     // Start is called before the first frame update
@@ -90,10 +106,13 @@ public class GameManagerFight : MonoBehaviour
         
         PlayerPrefs.SetFloat("JaugeMecha1", 0);
         PlayerPrefs.SetFloat("JaugeMecha2", 0);
+        PlayerPrefs.SetFloat("Monster1", 0);
+        PlayerPrefs.SetFloat("Monster2", 0);
+        PlayerPrefs.SetFloat("Monster3", 0);
 
         SetState(GAMESTATE.fight);
-        StartCoroutine(RoundOne());
-        StartCoroutine(RoundTwo());
+        //StartCoroutine(RoundOne());
+        //StartCoroutine(RoundTwo());
         if (PlayerPrefs.GetInt("classe") == 0)
         {
             //guerrier
@@ -123,6 +142,9 @@ public class GameManagerFight : MonoBehaviour
         if (PlayerPrefs.GetString("Ennemi") == "Gobelin")
         {
             EnemyAppears(null);
+            HealthMonster1.SetActive(true);
+            HealthMonster2.SetActive(true);
+            HealthMonster3.SetActive(true);
             m_Goblin1.SetActive(true);
             m_Goblin2.SetActive(true);
             m_Goblin3.SetActive(true);
@@ -131,83 +153,130 @@ public class GameManagerFight : MonoBehaviour
         {
             this.LOG(PlayerPrefs.GetString("Ennemi").ToString());
             EnemyAppears(m_DragonSoulEater);
+            HealthMonster1.SetActive(true);
         }
         else if (PlayerPrefs.GetString("Ennemi") == "TheNightmare")
         {
             EnemyAppears(m_DragonTheNightmare);
+            HealthMonster1.SetActive(true);
         }
         else if (PlayerPrefs.GetString("Ennemi") == "TerrorBringer")
         {
             EnemyAppears(m_DragonTerrorBringer);
+            HealthMonster1.SetActive(true);
         }
         else
         {
             EnemyAppears(m_DragonUsurper);
         }
         ButtonAttack(null);
-
+        if (PlayerPrefs.GetInt("classe") == 0)
+        {
+            Meck(m_MechWarrior);
+        }
+        else if (PlayerPrefs.GetInt("classe") == 1)
+        {
+            Meck(m_MechArcher);
+        }
+        else
+        {
+            Meck(m_MechWizard);
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
-        {
-            EventManager.Instance.Raise(new PauseHasBeenPressEvent());
-        }
-
-        float jaugeMecha1 = PlayerPrefs.GetFloat("JaugeMecha1");
-        float jaugeMecha2 = PlayerPrefs.GetFloat("JaugeMecha2");
-
-        pbClassOne.Val = jaugeMecha1;
-        pbClassTwo.Val = jaugeMecha2;
-
-        if(pbClassTwo.Val == 100 || pbClassTwo.Val == 100)
-        {
-            if(pbClassOne.Val == 100)
+        if (IsFighting) { 
+            if (Input.GetKeyDown("p"))
             {
+                EventManager.Instance.Raise(new PauseHasBeenPressEvent());
+            }
+
+            float jaugeMecha1 = PlayerPrefs.GetFloat("JaugeMecha1");
+            float jaugeMecha2 = PlayerPrefs.GetFloat("JaugeMecha2");
+
+            float jaugeMonster1 = PlayerPrefs.GetFloat("Monster1");
+            float jaugeMonster2 = PlayerPrefs.GetFloat("Monster2");
+            float jaugeMonster3 = PlayerPrefs.GetFloat("Monster3");
+
+            pbClassOne.Val = jaugeMecha1;
+            pbClassTwo.Val = jaugeMecha2;
+            ProgressRoundMonster1.Val = jaugeMonster1;
+            ProgressRoundMonster2.Val = jaugeMonster2;
+            ProgressRoundMonster3.Val = jaugeMonster3;
+
+
+            if (pbClassOne.Val == 100 || pbClassTwo.Val == 100 || ProgressRoundMonster1.Val == 100 || ProgressRoundMonster2.Val == 100 || ProgressRoundMonster3.Val ==100)
+            {
+                if(pbClassOne.Val == 100)
+                {
                 
-                m_Choice1.SetActive(true);
-                m_Player1Monster1.SetActive(true);
-                m_Player1Monster2.SetActive(true);
-                m_Player1Monster3.SetActive(true);
+                    m_Choice1.SetActive(true);
+                    m_Player1Monster1.SetActive(true);
+                    m_Player1Monster2.SetActive(true);
+                    m_Player1Monster3.SetActive(true);
 
-            }
-            else if (pbClassTwo.Val == 100)
-            {
-                m_Choice2.SetActive(true);
-                m_Player2Monster1.SetActive(true);
-                m_Player2Monster2.SetActive(true);
-                m_Player2Monster3.SetActive(true);
-            }
-        }
-        else
-        {
-            if (PlayerPrefs.GetInt("Difficult?") == 0)
-            {
-                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer"))*1);
-                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2"))*1);
-            }
-            else if (PlayerPrefs.GetInt("Difficult?") == 1)
-            {
-                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")));
-                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")));
+                }
+                else if (pbClassTwo.Val == 100)
+                {
+                    m_Choice2.SetActive(true);
+                    m_Player2Monster1.SetActive(true);
+                    m_Player2Monster2.SetActive(true);
+                    m_Player2Monster3.SetActive(true);
+                }
+                else if (ProgressRoundMonster1.Val == 100)
+                {
+                    GameObject.FindGameObjectWithTag("Monster1").GetComponent<IAFight>().attack();
+                    PlayerPrefs.SetFloat("Monster1", 0);
+                }
+                else if (ProgressRoundMonster2.Val == 100)
+                {
+                    GameObject.FindGameObjectWithTag("Monster2").GetComponent<IAFight>().attack();
+                    PlayerPrefs.SetFloat("Monster2", 0);
+                }
+                else if (ProgressRoundMonster3.Val == 100)
+                {
+                    GameObject.FindGameObjectWithTag("Monster3").GetComponent<IAFight>().attack();
+                    PlayerPrefs.SetFloat("Monster2", 0);
+                }
             }
             else
             {
-                PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")) * 0.5f);
-                PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")) * 0.5f);
-            }
-            if(PbHealthMech1.Val == 0 && PbHealthMech1.Val ==0)
-            {
-                GameOver();
-            }
-            else if (pbHealthMonster1.Val == 0 && pbHealthMonster2.Val == 0 && pbHealthMonster3.Val == 0 )
-            {
-                Victory();
+                if (PlayerPrefs.GetInt("Difficulté") == 0)
+                {
+                    PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer"))*1);
+                    PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2"))*1);
+                }
+                else if (PlayerPrefs.GetInt("Difficulté") == 1)
+                {
+                    PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")));
+                    PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")));
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat("JaugeMecha1", (jaugeMecha1 + PlayerPrefs.GetFloat("VitesseJaugePlayer")) * 0.5f);
+                    PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")) * 0.5f);
+                }
+
+                PlayerPrefs.SetFloat("Monster1", (jaugeMonster1 + MonsterSpeed));
+                PlayerPrefs.SetFloat("Monster2", (jaugeMonster2 + MonsterSpeed));
+                PlayerPrefs.SetFloat("Monster3", (jaugeMonster3 + MonsterSpeed));
+                ProgressRoundMonster1.Val += MonsterSpeed;
+                ProgressRoundMonster1.Val += MonsterSpeed;
+
+                if (PbHealthMech1.Val == 0 && PbHealthMech1.Val ==0)
+                {
+                    GameOver();
+                }
+                else if (pbHealthMonster1.Val == 0 && pbHealthMonster2.Val == 0 && pbHealthMonster3.Val == 0 )
+                {
+                    Victory();
+                }
             }
         }
+
     }
 
     public void SubscribeEvents()
@@ -350,6 +419,11 @@ public class GameManagerFight : MonoBehaviour
             PlayerPrefs.SetFloat("JaugeMecha2", 0);
             m_Choice2.SetActive(false);
         }
+    }
+
+    void Meck(GameObject meck)
+    {
+        m_ListMeck.ForEach(item => { if (item != null) item.SetActive(meck == item); });
     }
 
     void Load()

@@ -39,6 +39,7 @@ public class IAFight : MonoBehaviour
         if(x== 0) {
             IADamage -= Armor1();
             PbHealthMech1.Val -= IADamage;
+            Debug.Log(x);
             if (PbHealthMech1.Val == 0)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
@@ -56,6 +57,12 @@ public class IAFight : MonoBehaviour
             }
         }
     }
+
+    public void attack()
+    {
+        MonsterAnimator.SetTrigger("attack");
+    }
+
     public void isDead()
     {
         MonsterAnimator.SetTrigger("dead");

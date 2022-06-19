@@ -36,20 +36,8 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void UpdateValue()
     {
-        txt.text = val*5 + "%";
+        txt.text = val*5 + "PV";
         bar.fillAmount = val / 100;
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.KeypadMinus))
-        {
-            Val--;
-        }
-        if (Input.GetKey(KeyCode.KeypadPlus))
-        {
-            Val++;
-
-        }
-    }
 }

@@ -148,9 +148,9 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
 
 
 
-    public void ContinuePartyHasBeenClicked()
+    public void ContinuePartieHasBeenClicked()
     {
-        EventManager.Instance.Raise(new ContinuePartyButtonClickedEvent());
+        EventManager.Instance.Raise(new ContinuePartieButtonClickedEvent());
     }
 
     public void LoadHasBeenClicked()

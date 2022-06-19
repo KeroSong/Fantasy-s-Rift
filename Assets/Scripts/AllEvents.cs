@@ -12,7 +12,7 @@ public class GameMenuEvent : SDD.Events.Event
 public class GameLoadEvent : SDD.Events.Event
 {
 }
-public class GameNewPartyEvent : SDD.Events.Event
+public class GameNewGameEvent : SDD.Events.Event
 {
 }
 public class GameSelectPlayerEvent : SDD.Events.Event
@@ -66,10 +66,10 @@ public class GameEndEvent : SDD.Events.Event
 #endregion
 
 #region MenuManager Events
-public class ContinuePartyButtonClickedEvent : SDD.Events.Event
+public class ContinuePartieButtonClickedEvent : SDD.Events.Event
 {
 }
-public class NewPartyButtonClickedEvent : SDD.Events.Event
+public class NewGameButtonClickedEvent : SDD.Events.Event
 {
 }
 public class SettingsButtonClickedEvent : SDD.Events.Event
@@ -90,7 +90,7 @@ public class QuitButtonClickedEvent : SDD.Events.Event
 public class SaveButtonClickedEvent : SDD.Events.Event
 {
 }
-public class SavePartyButtonClickedEvent : SDD.Events.Event
+public class SavePartieButtonClickedEvent : SDD.Events.Event
 {
 }
 public class LoadButtonClickedEvent : SDD.Events.Event

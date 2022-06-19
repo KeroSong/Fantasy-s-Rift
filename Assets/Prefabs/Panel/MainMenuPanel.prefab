@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 4225547112841434067}
   - component: {fileID: 785276333143770899}
   m_Layer: 5
-  m_Name: ContinuePartyBouton
+  m_Name: ContinuePartieBouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 2817617773777268533}
   - component: {fileID: 8991659592502098169}
   m_Layer: 5
-  m_Name: NewPartyBouton
+  m_Name: NewPartieBouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

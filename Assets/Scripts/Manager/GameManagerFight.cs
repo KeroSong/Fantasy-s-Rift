@@ -277,7 +277,7 @@ public class GameManagerFight : MonoBehaviour
 
     public void SubscribeEvents()
     {
-        EventManager.Instance.AddListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
+        EventManager.Instance.AddListener<ContinuePartieButtonClickedEvent>(ContinuPartyButtonClicked);
         EventManager.Instance.AddListener<FightButtonClickedEvent>(FightButtonClicked);
         EventManager.Instance.AddListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
@@ -291,7 +291,7 @@ public class GameManagerFight : MonoBehaviour
 
     public void UnsubscribeEvents()
     {
-        EventManager.Instance.RemoveListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
+        EventManager.Instance.RemoveListener<ContinuePartieButtonClickedEvent>(ContinuPartyButtonClicked);
         EventManager.Instance.RemoveListener<FightButtonClickedEvent>(FightButtonClicked);
         EventManager.Instance.RemoveListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
@@ -315,7 +315,7 @@ public class GameManagerFight : MonoBehaviour
 
 
 
-    void ContinuPartyButtonClicked(ContinuePartyButtonClickedEvent e)
+    void ContinuPartyButtonClicked(ContinuePartieButtonClickedEvent e)
     {
         Load();
     }

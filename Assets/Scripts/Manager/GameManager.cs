@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
                 EventManager.Instance.Raise(new GameLoadEvent());
                 break;
             case GAMESTATE.menuPlayer:
-                EventManager.Instance.Raise(new GameNewPartyEvent());
+                EventManager.Instance.Raise(new GameNewGameEvent());
                 break;
             case GAMESTATE.selectPlayer:
                 EventManager.Instance.Raise(new GameSelectPlayerEvent());
@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
 
     public void SubscribeEvents()
     {
-        EventManager.Instance.AddListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
-        EventManager.Instance.AddListener<NewPartyButtonClickedEvent>(NewPartyClicked);
+        EventManager.Instance.AddListener<ContinuePartieButtonClickedEvent>(ContinuPartieButtonClicked);
+        EventManager.Instance.AddListener<NewGameButtonClickedEvent>(NewGameClicked);
         EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitClicked);
         EventManager.Instance.AddListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
 
     public void UnsubscribeEvents()
     {
-        EventManager.Instance.RemoveListener<ContinuePartyButtonClickedEvent>(ContinuPartyButtonClicked);
-        EventManager.Instance.RemoveListener<NewPartyButtonClickedEvent>(NewPartyClicked);
+        EventManager.Instance.RemoveListener<ContinuePartieButtonClickedEvent>(ContinuPartieButtonClicked);
+        EventManager.Instance.RemoveListener<NewGameButtonClickedEvent>(NewGameClicked);
         EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
         EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitClicked);
         EventManager.Instance.RemoveListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
@@ -89,12 +89,12 @@ public class GameManager : MonoBehaviour
         UnsubscribeEvents();
     }
 
-    void ContinuPartyButtonClicked(ContinuePartyButtonClickedEvent e)
+    void ContinuPartieButtonClicked(ContinuePartieButtonClickedEvent e)
     {
         Load();
     }
 
-    void NewPartyClicked(NewPartyButtonClickedEvent e)
+    void NewGameClicked(NewGameButtonClickedEvent e)
     {
         NewParty();
     }

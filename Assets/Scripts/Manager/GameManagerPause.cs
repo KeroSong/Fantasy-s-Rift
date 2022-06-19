@@ -55,7 +55,7 @@ public class GameManagerPause : MonoBehaviour
 
     public void SubscribeEvents()
     {
-        EventManager.Instance.AddListener<SavePartyButtonClickedEvent>(SaveButtonClicked);
+        EventManager.Instance.AddListener<SavePartieButtonClickedEvent>(SaveButtonClicked);
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.AddListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
@@ -65,7 +65,7 @@ public class GameManagerPause : MonoBehaviour
 
     public void UnsubscribeEvents()
     {
-        EventManager.Instance.RemoveListener<SavePartyButtonClickedEvent>(SaveButtonClicked);
+        EventManager.Instance.RemoveListener<SavePartieButtonClickedEvent>(SaveButtonClicked);
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
         EventManager.Instance.RemoveListener<ConfirmedButtonClickedEvent>(ConfirmedButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
@@ -83,7 +83,7 @@ public class GameManagerPause : MonoBehaviour
         UnsubscribeEvents();
     }
 
-    void SaveButtonClicked(SavePartyButtonClickedEvent e)
+    void SaveButtonClicked(SavePartieButtonClickedEvent e)
     {
         Save();
     }

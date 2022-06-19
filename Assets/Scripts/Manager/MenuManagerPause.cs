@@ -128,9 +128,9 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
 
     
 
-    public void SavePartyHasBeenClicked()
+    public void SavePartieHasBeenClicked()
     {
-        EventManager.Instance.Raise(new SavePartyButtonClickedEvent());
+        EventManager.Instance.Raise(new SavePartieButtonClickedEvent());
     }
 
     public void LoadHasBeenClicked()

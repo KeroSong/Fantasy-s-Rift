@@ -67,7 +67,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
     {
         EventManager.Instance.AddListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.AddListener<GameLoadEvent>(GameLoad);
-        EventManager.Instance.AddListener<GameNewPartyEvent>(GameNewParty);
+        EventManager.Instance.AddListener<GameNewGameEvent>(GameNewGame);
         EventManager.Instance.AddListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
@@ -77,7 +77,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
     {
         EventManager.Instance.RemoveListener<GameMenuEvent>(GameMenu);
         EventManager.Instance.RemoveListener<GameLoadEvent>(GameLoad);
-        EventManager.Instance.RemoveListener<GameNewPartyEvent>(GameNewParty);
+        EventManager.Instance.RemoveListener<GameNewGameEvent>(GameNewGame);
         EventManager.Instance.RemoveListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
@@ -105,7 +105,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         OpenPanel(m_LoadPanel);
     }
 
-    void GameNewParty(GameNewPartyEvent e)
+    void GameNewGame(GameNewGameEvent e)
     {
         audioData.Play(0);
         OpenPanel(m_PlayerSexePanel);
@@ -138,14 +138,14 @@ public class MenuManager : MonoBehaviour,IEventHandler
 
     
 
-    public void ContinuePartyHasBeenClicked()
+    public void ContinuePartieHasBeenClicked()
     {
-        EventManager.Instance.Raise(new ContinuePartyButtonClickedEvent());
+        EventManager.Instance.Raise(new ContinuePartieButtonClickedEvent());
     }
 
-    public void NewPartyHasBeenClicked()
+    public void NewGameHasBeenClicked()
     {
-        EventManager.Instance.Raise(new NewPartyButtonClickedEvent());
+        EventManager.Instance.Raise(new NewGameButtonClickedEvent());
     }
 
     public void SettingsHasBeenClicked()

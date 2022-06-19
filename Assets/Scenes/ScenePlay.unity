@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -253,6 +253,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPlay
       objectReference: {fileID: 0}
+    - target: {fileID: 844909590284405307, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Text
+      value: 500PV
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564512051834059902, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Color.b
+      value: 0.15294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564512051834059902, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Color.g
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564512051834059902, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Color.r
+      value: 0.16862746
+      objectReference: {fileID: 0}
     - target: {fileID: 3031259025704777986, guid: b137a7715801bc44d93c1795a575debe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -452,6 +468,14 @@ PrefabInstance:
     - target: {fileID: 3056855535450862042, guid: b137a7715801bc44d93c1795a575debe, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3322701043382633538, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Text
+      value: 500PV
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743197075170544190, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Name
+      value: ProgressBarMecha1
       objectReference: {fileID: 0}
     - target: {fileID: 5929123355271976573, guid: b137a7715801bc44d93c1795a575debe, type: 3}
       propertyPath: m_IsActive
@@ -672,6 +696,22 @@ PrefabInstance:
     - target: {fileID: 7179098652218163940, guid: b137a7715801bc44d93c1795a575debe, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239002789306369095, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Name
+      value: ProgressBarMech2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329134394508825457, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329134394508825457, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329134394508825457, guid: b137a7715801bc44d93c1795a575debe, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8180723448821994910, guid: b137a7715801bc44d93c1795a575debe, type: 3}
       propertyPath: m_Name
@@ -1902,11 +1942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667518219719141085, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000002197635
+      value: -0.00000002197635
       objectReference: {fileID: 0}
     - target: {fileID: 3667518219719141085, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000010447928
+      value: 0.000000010447928
       objectReference: {fileID: 0}
     - target: {fileID: 3667518219860045049, guid: 191b0dca3368e4146bb2deb9e12a3775, type: 3}
       propertyPath: m_XDamping

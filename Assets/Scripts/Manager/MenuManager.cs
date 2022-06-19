@@ -7,8 +7,11 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using SDD.Events;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class MenuManager : MonoBehaviour,IEventHandler
 {
+    AudioSource audioData;
     [SerializeField] GameObject m_MainMenuPanel;
     [SerializeField] GameObject m_LoadPanel;
     [SerializeField] GameObject m_PlayerSexePanel;
@@ -33,6 +36,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         m_Resolutions = Screen.resolutions.Select(resolution => new Resolution {width = resolution.width, height = resolution.height}).Distinct().ToArray();
         m_ResolutionDropdown.ClearOptions();
 
@@ -96,28 +100,33 @@ public class MenuManager : MonoBehaviour,IEventHandler
 
     void GameLoad(GameLoadEvent e)
     {
+        audioData.Play(0);
         Destroy(m_LoadPanel.GetComponent<Image>());
         OpenPanel(m_LoadPanel);
     }
 
     void GameNewParty(GameNewPartyEvent e)
     {
+        audioData.Play(0);
         OpenPanel(m_PlayerSexePanel);
     }
 
     void GameSetting(GameSettingsEvent e)
     {
+        audioData.Play(0);
         Destroy(m_SettingsPanel.GetComponent<Image>());
         OpenPanel(m_SettingsPanel);
     }
 
     void GameSelectPlayer(GameSelectPlayerEvent e)
     {
+        audioData.Play(0);
         OpenPanel(m_PlayerClassPanel);
     }
 
     void GamePlay(GamePlayEvent e)
     {
+        audioData.Play(0);
         OpenPanel(null);
         SceneManager.LoadScene(m_ScenePlay);
     }

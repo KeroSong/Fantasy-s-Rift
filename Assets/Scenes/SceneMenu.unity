@@ -186,10 +186,10 @@ AudioSource:
   m_GameObject: {fileID: 736778348}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2be1cada580f92545af136448d207c61, type: 2}
   m_audioClip: {fileID: 8300000, guid: a5b3cfe3e297971469e144f087f44d45, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -352,6 +352,14 @@ PrefabInstance:
       propertyPath: m_WarriorImage
       value: 
       objectReference: {fileID: 697920260}
+    - target: {fileID: 6116027819322910313, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 435cc1e5b8af96b469669bec30d6bad9, type: 3}
+    - target: {fileID: 6116027819322910313, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6933593609270124968, guid: 1af0e999ab7151e4a80c2537767a5afe, type: 3}
       propertyPath: m_LoadPanel
       value: 

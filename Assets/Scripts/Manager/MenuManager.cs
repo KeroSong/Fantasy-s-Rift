@@ -18,9 +18,6 @@ public class MenuManager : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_PlayerClassPanel;
     [SerializeField] GameObject m_SettingsPanel;
 
-    [SerializeField] int m_ScenePlay;
-    [SerializeField] int m_SceneFight;
-
     Resolution[] m_Resolutions;
     [SerializeField] Dropdown m_ResolutionDropdown;
     [SerializeField] Slider m_DifficultySlider;
@@ -71,6 +68,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
+        EventManager.Instance.AddListener<GameEndEvent>(GameEnd);
     }
 
     public void UnsubscribeEvents()
@@ -81,6 +79,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameSelectPlayerEvent>(GameSelectPlayer);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
+        EventManager.Instance.RemoveListener<GameEndEvent>(GameEnd);
     }
 
     private void OnEnable()
@@ -127,8 +126,12 @@ public class MenuManager : MonoBehaviour,IEventHandler
     void GamePlay(GamePlayEvent e)
     {
         audioData.Play(0);
-        OpenPanel(null);
-        SceneManager.LoadScene(m_ScenePlay);
+        SceneManager.LoadScene(1);
+    }
+
+    void GameEnd(GameEndEvent e)
+    {
+        SceneManager.LoadScene(4);
     }
 
     void OpenPanel(GameObject panel)
@@ -151,6 +154,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
     public void SettingsHasBeenClicked()
     {
         EventManager.Instance.Raise(new SettingsButtonClickedEvent());
+    }
+
+    public void CreditHasBeenClicked()
+    {
+        EventManager.Instance.Raise(new CreditButtonClickedEvent());
     }
 
     public void QuitHasBeenClicked()

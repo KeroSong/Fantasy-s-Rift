@@ -16,9 +16,6 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_GameOverPanel;
     [SerializeField] GameObject m_VictoryFightPanel;
 
-    [SerializeField] int m_ScenePlay;
-    [SerializeField] int m_SceneMenu;
-
     Resolution[] m_Resolutions;
     [SerializeField] Dropdown m_ResolutionDropdown;
     [SerializeField] Slider m_DifficultySlider;
@@ -113,7 +110,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
 
     void GameMenu(GameMenuEvent e)
     {
-        SceneManager.LoadScene(m_SceneMenu);
+        SceneManager.LoadScene(0);
     }
 
     void GameSetting(GameSettingsEvent e)
@@ -138,7 +135,7 @@ public class MenuManagerFight : MonoBehaviour,IEventHandler
 
     void GamePlay(GamePlayEvent e)
     {
-        SceneManager.LoadScene(m_ScenePlay);
+        SceneManager.LoadScene(1);
     }
 
     void OpenPanel(GameObject panel)

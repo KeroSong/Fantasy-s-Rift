@@ -686,7 +686,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 418299661586883206, guid: 8f54af18665d8c344a8396a366713198, type: 3}
         m_TargetAssemblyTypeName: MenuManagerPause, Assembly-CSharp
-        m_MethodName: SavePartyHasBeenClicked
+        m_MethodName: SavePartieHasBeenClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

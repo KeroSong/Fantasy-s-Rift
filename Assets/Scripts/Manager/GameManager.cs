@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.settings:
                 EventManager.Instance.Raise(new GameSettingsEvent());
                 break;
+            case GAMESTATE.end:
+                EventManager.Instance.Raise(new GameEndEvent());
+                break;
             case GAMESTATE.quit:
                 EventManager.Instance.Raise(new GameQuitEvent());
                 break;
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.AddListener<ContinuePartieButtonClickedEvent>(ContinuPartieButtonClicked);
         EventManager.Instance.AddListener<NewGameButtonClickedEvent>(NewGameClicked);
         EventManager.Instance.AddListener<SettingsButtonClickedEvent>(SettingsClicked);
+        EventManager.Instance.AddListener<CreditButtonClickedEvent>(CreditClicked);
         EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitClicked);
         EventManager.Instance.AddListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
@@ -73,6 +77,7 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.RemoveListener<ContinuePartieButtonClickedEvent>(ContinuPartieButtonClicked);
         EventManager.Instance.RemoveListener<NewGameButtonClickedEvent>(NewGameClicked);
         EventManager.Instance.RemoveListener<SettingsButtonClickedEvent>(SettingsClicked);
+        EventManager.Instance.RemoveListener<CreditButtonClickedEvent>(CreditClicked);
         EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitClicked);
         EventManager.Instance.RemoveListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
         EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
@@ -102,6 +107,11 @@ public class GameManager : MonoBehaviour
     void SettingsClicked(SettingsButtonClickedEvent e)
     {
         Settings();
+    }
+
+    void CreditClicked(CreditButtonClickedEvent e)
+    {
+        End();
     }
 
     void QuitClicked(QuitButtonClickedEvent e)
@@ -137,6 +147,11 @@ public class GameManager : MonoBehaviour
     void Settings()
     {
         SetState(GAMESTATE.settings);
+    }
+
+    void End()
+    {
+        SetState(GAMESTATE.end);
     }
 
     void SelectPlayer()

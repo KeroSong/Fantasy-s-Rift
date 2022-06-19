@@ -32,7 +32,6 @@ public class GameManagerPlay : MonoBehaviour
 
     private static GameManagerPlay m_Instance;
     public static GameManagerPlay Instance { get {
-            //if (m_Instance == null) m_Instance = CreateInstance(); // Impossible dans Unity
             return m_Instance; } }
 
     GAMESTATE m_State;

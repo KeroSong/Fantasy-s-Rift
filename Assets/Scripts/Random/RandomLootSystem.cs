@@ -18,7 +18,7 @@ public class RandomLootSystem : MonoBehaviour
         this.transform.GetChild(5).GetChild(0).GetChild(0).GetComponent<ItemOnObject>().item.itemValue = Gold;
         this.transform.GetChild(5).GetChild(1).GetChild(0).GetComponent<ItemOnObject>().item = inventoryItemList.itemList[RandomId];
 
-        PlayerPrefs.SetInt("Gold", Gold);
+        PlayerPrefs.SetInt("GainGold", Gold);
         PlayerPrefs.SetInt("IdItem", RandomId);
     }
 }

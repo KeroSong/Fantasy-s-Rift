@@ -686,7 +686,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 249282775590731703, guid: 824da1470152ec7438ed88f64f774750, type: 3}
         m_TargetAssemblyTypeName: MenuManagerFight, Assembly-CSharp
-        m_MethodName: ContinuePartyHasBeenClicked
+        m_MethodName: ContinuePartieHasBeenClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

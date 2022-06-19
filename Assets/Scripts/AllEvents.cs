@@ -75,6 +75,9 @@ public class NewGameButtonClickedEvent : SDD.Events.Event
 public class SettingsButtonClickedEvent : SDD.Events.Event
 {
 }
+public class CreditButtonClickedEvent : SDD.Events.Event
+{
+}
 public class SelectPlayerButtonClickedEvent : SDD.Events.Event
 {
 }

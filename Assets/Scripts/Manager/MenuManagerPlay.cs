@@ -11,10 +11,6 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_ShopPanel;
     [SerializeField] GameObject m_InnPanel;
     
-    [SerializeField] int m_ScenePause;
-    [SerializeField] int m_SceneFight;
-    [SerializeField] int m_SceneEnd;
-    
     List<GameObject> m_Panels;
 
     private void Awake()
@@ -58,12 +54,12 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
 
     void GamePause(GamePauseEvent e)
     {
-        SceneManager.LoadScene(m_ScenePause);
+        SceneManager.LoadScene(2);
     }
 
     void GameFight(GameFightEvent e)
     {
-        SceneManager.LoadScene(m_SceneFight);
+        SceneManager.LoadScene(3);
     }
 
     void GameInventory(GameInventoryEvent e)
@@ -112,7 +108,7 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
 
     void GameEnd(GameEndEvent e)
     {
-        SceneManager.LoadScene(m_SceneEnd);
+        SceneManager.LoadScene(4);
     }
 
     void OpenPanel(GameObject panel)

@@ -14,9 +14,6 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_ConfirmedPanel;
     [SerializeField] GameObject m_SettingsPanel;
 
-    [SerializeField] int m_ScenePlay;
-    [SerializeField] int m_SceneMenu;
-
     Resolution[] m_Resolutions;
     [SerializeField] Dropdown m_ResolutionDropdown;
     [SerializeField] Slider m_DifficultySlider;
@@ -96,7 +93,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     void GamePlay(GamePlayEvent e)
     {
         OpenPanel(null);
-        SceneManager.LoadScene(m_ScenePlay);
+        SceneManager.LoadScene(1);
     }
 
     void GameConfirmed(GameConfirmedEvent e)
@@ -107,7 +104,7 @@ public class MenuManagerPause : MonoBehaviour,IEventHandler
     void GameMenu(GameMenuEvent e)
     {
         OpenPanel(null);
-        SceneManager.LoadScene(m_SceneMenu);
+        SceneManager.LoadScene(0);
     }
 
     void GameSetting(GameSettingsEvent e)

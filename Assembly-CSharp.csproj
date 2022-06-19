@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\Player\Inventory\SetInventory.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Collision\ShopCollision.cs" />
-    <Compile Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Scripts\PT_Create_Prefab.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManagerFight.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManagerPause.cs" />
@@ -147,9 +146,9 @@
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\FadeOut.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_PBR.shader" />
+    <None Include="Assets\Shaders\PT_Medieval_Armors_Shader_PBR.shader" />
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\ScreenCutoutShader.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_Toon.shader" />
+    <None Include="Assets\Shaders\PT_Medieval_Armors_Shader_Toon.shader" />
     <None Include="Assets\MedievalTownExteriors\Readme FIRST!.txt" />
   </ItemGroup>
   <ItemGroup>

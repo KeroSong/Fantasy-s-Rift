@@ -7,7 +7,6 @@ using SDD.Events;
 
 public class InventoryItem : MonoBehaviour
 {
-
     static ItemDataBaseList inventoryItemList;
 
     Inventaire inventaire;

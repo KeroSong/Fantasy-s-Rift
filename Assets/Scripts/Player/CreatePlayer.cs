@@ -114,6 +114,6 @@ public class CreatePlayer : MonoBehaviour
     {
         PlayerPrefs.SetInt("classe", 2);
         PlayerPrefs.SetInt("Santé", 10);
-        PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.5);
+        PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.65);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, inventory, equipment, save, fight, confirmed, shop, inn, gameover, victoryFight}
+public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, inventory, equipment, save, fight, confirmed, shop, inn, gameover, victoryFight, end}
 
 public class GameManager : MonoBehaviour
 {

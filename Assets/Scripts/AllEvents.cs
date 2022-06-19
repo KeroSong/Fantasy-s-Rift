@@ -60,14 +60,9 @@ public class GameShopEvent : SDD.Events.Event
 public class GameInnEvent : SDD.Events.Event
 {
 }
-/*public class GameStatisticsChangedEvent : SDD.Events.Event
+public class GameEndEvent : SDD.Events.Event
 {
-	//public int eBestScore { get; set; }
-	public int eScore { get; set; }
-	public float eTimer { get; set; }
-	//public int eNLives { get; set; }
-	//public int eNEnemiesLeftBeforeVictory { get; set; }
-}*/
+}
 #endregion
 
 #region MenuManager Events
@@ -119,15 +114,6 @@ public class Button2Event : SDD.Events.Event
 public class Button3Event : SDD.Events.Event
 {
 }
-/*public class EscapeButtonClickedEvent : SDD.Events.Event
-{
-}
-public class ResumeButtonClickedEvent : SDD.Events.Event
-{
-}
-public class ReplayButtonClickedEvent : SDD.Events.Event
-{
-}*/
 #endregion
 
 #region Collision Events
@@ -153,10 +139,3 @@ public class InnCollisionEvent : SDD.Events.Event
 {
 }
 #endregion
-
-/*#region Score Events
-public class ScoreHasBeenGainedEvent:SDD.Events.Event
-{
-	public int eScore;
-}
-#endregion*/

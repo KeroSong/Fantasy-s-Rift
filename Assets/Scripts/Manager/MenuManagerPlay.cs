@@ -10,10 +10,11 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
     [SerializeField] GameObject m_EquipmentPanel;
     [SerializeField] GameObject m_ShopPanel;
     [SerializeField] GameObject m_InnPanel;
-
+    
     [SerializeField] int m_ScenePause;
     [SerializeField] int m_SceneFight;
-
+    [SerializeField] int m_SceneEnd;
+    
     List<GameObject> m_Panels;
 
     private void Awake()
@@ -30,6 +31,7 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GameShopEvent>(GameShop);
         EventManager.Instance.AddListener<GameInnEvent>(GameInn);
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
+        EventManager.Instance.AddListener<GameEndEvent>(GameEnd);
     }
 
     public void UnsubscribeEvents()
@@ -41,6 +43,7 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GameShopEvent>(GameShop);
         EventManager.Instance.RemoveListener<GameInnEvent>(GameInn);
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
+        EventManager.Instance.RemoveListener<GameEndEvent>(GameEnd);
     }
 
     private void OnEnable()
@@ -105,6 +108,11 @@ public class MenuManagerPlay : MonoBehaviour,IEventHandler
     void GamePlay(GamePlayEvent e)
     {
         OpenPanel(null);
+    }
+
+    void GameEnd(GameEndEvent e)
+    {
+        SceneManager.LoadScene(m_SceneEnd);
     }
 
     void OpenPanel(GameObject panel)

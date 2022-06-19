@@ -66,11 +66,13 @@ public class GameManagerPlay : MonoBehaviour
             case GAMESTATE.inn:
                 EventManager.Instance.Raise(new GameInnEvent());
                 break;
+            case GAMESTATE.end:
+                EventManager.Instance.Raise(new GameEndEvent());
+                break;
             default:
                 break;
         }
     }
-
     void SelectCharacter(GameObject character)
     {
         m_Characters.ForEach(item => { if (item != null) item.SetActive(character == item); });
@@ -181,6 +183,17 @@ public class GameManagerPlay : MonoBehaviour
             Destroy(m_DragonUsurper.GetComponent<Collider>());
             Destroy(m_ImageDragonUsurper);
         }
+        int i = 0;
+        foreach(bool allDragonDead in m_ListeDragon)
+        {
+            if (allDragonDead == true)
+            i++;
+        }
+        if (i==4)
+        {
+            End();
+        }
+
     }
 
     public void SubscribeEvents()
@@ -307,6 +320,11 @@ public class GameManagerPlay : MonoBehaviour
         {
             m_MapCamera.SetActive(false);
         }
+    }
+
+    void End()
+    {
+        SetState(GAMESTATE.end);
     }
 
     List<bool> ListeLoad()

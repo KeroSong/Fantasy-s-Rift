@@ -25,7 +25,7 @@ MonoBehaviour:
   - itemName: "Armure l\xE9g\xE8re"
     itemID: 1
     itemIcon: {fileID: 21300000, guid: ddc7f83956c1b9246be544da79db11d5, type: 3}
-    itemValue: 10
+    itemValue: 30
     itemType: 4
     maxStack: 1
     indexItemInList: 999
@@ -47,7 +47,7 @@ MonoBehaviour:
   - itemName: Armure lourde
     itemID: 3
     itemIcon: {fileID: 21300000, guid: 2462597d0a66cb1468565a52c152298b, type: 3}
-    itemValue: 1000
+    itemValue: 200
     itemType: 4
     maxStack: 1
     indexItemInList: 999
@@ -58,7 +58,7 @@ MonoBehaviour:
   - itemName: "Chaussure l\xE9g\xE8re"
     itemID: 4
     itemIcon: {fileID: 21300000, guid: ba9807ec06da8ef4a9184f7d8a889944, type: 3}
-    itemValue: 10
+    itemValue: 20
     itemType: 3
     maxStack: 1
     indexItemInList: 999
@@ -69,7 +69,7 @@ MonoBehaviour:
   - itemName: "Chaussure interm\xE9diaire"
     itemID: 5
     itemIcon: {fileID: 21300000, guid: 76d55845b2cc35446a03a4ecae6f61c2, type: 3}
-    itemValue: 100
+    itemValue: 60
     itemType: 3
     maxStack: 1
     indexItemInList: 999
@@ -80,7 +80,7 @@ MonoBehaviour:
   - itemName: Chaussure lourde
     itemID: 6
     itemIcon: {fileID: 21300000, guid: a053c76c32309864b9e7171d057a5743, type: 3}
-    itemValue: 1000
+    itemValue: 180
     itemType: 3
     maxStack: 1
     indexItemInList: 999
@@ -91,7 +91,7 @@ MonoBehaviour:
   - itemName: "Gant l\xE9ger"
     itemID: 7
     itemIcon: {fileID: 21300000, guid: 143c743beb587f44aa6b8b493083aec6, type: 3}
-    itemValue: 10
+    itemValue: 20
     itemType: 7
     maxStack: 1
     indexItemInList: 999
@@ -102,7 +102,7 @@ MonoBehaviour:
   - itemName: "Gant interm\xE9diaire"
     itemID: 8
     itemIcon: {fileID: 21300000, guid: 2eee0a0d81c1954478dbfb76ec1ef4ab, type: 3}
-    itemValue: 100
+    itemValue: 60
     itemType: 7
     maxStack: 1
     indexItemInList: 999
@@ -113,7 +113,7 @@ MonoBehaviour:
   - itemName: Gant lourd
     itemID: 9
     itemIcon: {fileID: 21300000, guid: 7a1825f8cd466904a8cbcd1e022686ce, type: 3}
-    itemValue: 1000
+    itemValue: 180
     itemType: 7
     maxStack: 1
     indexItemInList: 999
@@ -124,7 +124,7 @@ MonoBehaviour:
   - itemName: "Casque l\xE9ger"
     itemID: 10
     itemIcon: {fileID: 21300000, guid: 37ba67ef6d591874fbfe7e35215ea4ab, type: 3}
-    itemValue: 10
+    itemValue: 20
     itemType: 2
     maxStack: 1
     indexItemInList: 999
@@ -135,7 +135,7 @@ MonoBehaviour:
   - itemName: "Casque interm\xE9diaire"
     itemID: 11
     itemIcon: {fileID: 21300000, guid: 8ec988069eca78d4789ab0c839bb4301, type: 3}
-    itemValue: 100
+    itemValue: 60
     itemType: 2
     maxStack: 1
     indexItemInList: 999
@@ -146,7 +146,7 @@ MonoBehaviour:
   - itemName: Casque lourd
     itemID: 12
     itemIcon: {fileID: 21300000, guid: bebac69a9439c5049b6f823a15d13277, type: 3}
-    itemValue: 1000
+    itemValue: 180
     itemType: 2
     maxStack: 1
     indexItemInList: 999
@@ -168,7 +168,7 @@ MonoBehaviour:
   - itemName: "Chapeau interm\xE9diaire"
     itemID: 14
     itemIcon: {fileID: 21300000, guid: 121234e4af7e9234a9d3692c91b62496, type: 3}
-    itemValue: 100
+    itemValue: 50
     itemType: 2
     maxStack: 1
     indexItemInList: 999
@@ -179,7 +179,7 @@ MonoBehaviour:
   - itemName: Chapeau lourd
     itemID: 15
     itemIcon: {fileID: 21300000, guid: 7097c6686f5d94b4896fe6afc322c4f6, type: 3}
-    itemValue: 1000
+    itemValue: 150
     itemType: 2
     maxStack: 1
     indexItemInList: 999
@@ -201,7 +201,7 @@ MonoBehaviour:
   - itemName: Bouclier en acier
     itemID: 17
     itemIcon: {fileID: 21300000, guid: e1b4b83357c6aa947813ff17d8488ea1, type: 3}
-    itemValue: 100
+    itemValue: 80
     itemType: 8
     maxStack: 1
     indexItemInList: 999
@@ -212,7 +212,7 @@ MonoBehaviour:
   - itemName: Bouclier en or
     itemID: 18
     itemIcon: {fileID: 21300000, guid: 56b27fd799a0a4446a1b8d07308c7659, type: 3}
-    itemValue: 1000
+    itemValue: 240
     itemType: 8
     maxStack: 1
     indexItemInList: 999
@@ -223,7 +223,7 @@ MonoBehaviour:
   - itemName: Bague en acier
     itemID: 19
     itemIcon: {fileID: 21300000, guid: 21d7333567120774aa3b91f5c20fc5ed, type: 3}
-    itemValue: 10
+    itemValue: 40
     itemType: 6
     maxStack: 1
     indexItemInList: 999
@@ -234,7 +234,7 @@ MonoBehaviour:
   - itemName: Bague en or
     itemID: 20
     itemIcon: {fileID: 21300000, guid: 7ad013a4fbde21b43a1384e80fc8bef5, type: 3}
-    itemValue: 100
+    itemValue: 120
     itemType: 6
     maxStack: 1
     indexItemInList: 999
@@ -256,7 +256,7 @@ MonoBehaviour:
   - itemName: Collier
     itemID: 22
     itemIcon: {fileID: 21300000, guid: bc9037f19b41b4a4f80ea00e1d47ee7d, type: 3}
-    itemValue: 1
+    itemValue: 25
     itemType: 5
     maxStack: 1
     indexItemInList: 999
@@ -265,7 +265,7 @@ MonoBehaviour:
   - itemName: Collier
     itemID: 23
     itemIcon: {fileID: 21300000, guid: 3d34669f0fcab4b479871c19db25081a, type: 3}
-    itemValue: 1
+    itemValue: 125
     itemType: 5
     maxStack: 1
     indexItemInList: 999
@@ -274,7 +274,7 @@ MonoBehaviour:
   - itemName: Collier
     itemID: 24
     itemIcon: {fileID: 21300000, guid: 7f49d60ddf5a1924984be6025b8f92a6, type: 3}
-    itemValue: 1
+    itemValue: 170
     itemType: 5
     maxStack: 1
     indexItemInList: 999
@@ -316,7 +316,7 @@ MonoBehaviour:
   - itemName: Arc en bois
     itemID: 28
     itemIcon: {fileID: 21300000, guid: cfecd810720dca74eb43855561b9b21c, type: 3}
-    itemValue: 10
+    itemValue: 30
     itemType: 1
     maxStack: 1
     indexItemInList: 999
@@ -327,7 +327,7 @@ MonoBehaviour:
   - itemName: Arc en fer
     itemID: 29
     itemIcon: {fileID: 21300000, guid: 64a8a5d9da30c1a48a6503ed3eb6c84c, type: 3}
-    itemValue: 100
+    itemValue: 90
     itemType: 1
     maxStack: 1
     indexItemInList: 999
@@ -338,7 +338,7 @@ MonoBehaviour:
   - itemName: Arc en or
     itemID: 30
     itemIcon: {fileID: 21300000, guid: fc20adad6cd3c69429ba14fd88a9b968, type: 3}
-    itemValue: 1000
+    itemValue: 270
     itemType: 1
     maxStack: 1
     indexItemInList: 999
@@ -349,7 +349,7 @@ MonoBehaviour:
   - itemName: "\xC9p\xE9e en acier"
     itemID: 31
     itemIcon: {fileID: 21300000, guid: eb14e7582988c9049b93ac039dec5b5a, type: 3}
-    itemValue: 10
+    itemValue: 90
     itemType: 1
     maxStack: 1
     indexItemInList: 999
@@ -360,7 +360,7 @@ MonoBehaviour:
   - itemName: "\xC9p\xE9e en fer"
     itemID: 32
     itemIcon: {fileID: 21300000, guid: 69abff16f8605ac42b5a90914100d0e6, type: 3}
-    itemValue: 100
+    itemValue: 30
     itemType: 1
     maxStack: 1
     indexItemInList: 999
@@ -371,7 +371,7 @@ MonoBehaviour:
   - itemName: "\xC9p\xE9e en or"
     itemID: 33
     itemIcon: {fileID: 21300000, guid: 7fa3e8671a1178146a0d4e5d58d48eee, type: 3}
-    itemValue: 1000
+    itemValue: 280
     itemType: 1
     maxStack: 1
     indexItemInList: 999

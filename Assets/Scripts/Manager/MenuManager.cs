@@ -69,6 +69,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.AddListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.AddListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.AddListener<GameEndEvent>(GameEnd);
+        EventManager.Instance.AddListener<GameCineEvent>(GameCine);
     }
 
     public void UnsubscribeEvents()
@@ -80,6 +81,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
         EventManager.Instance.RemoveListener<GamePlayEvent>(GamePlay);
         EventManager.Instance.RemoveListener<GameSettingsEvent>(GameSetting);
         EventManager.Instance.RemoveListener<GameEndEvent>(GameEnd);
+        EventManager.Instance.RemoveListener<GameCineEvent>(GameCine);
     }
 
     private void OnEnable()
@@ -134,6 +136,11 @@ public class MenuManager : MonoBehaviour,IEventHandler
         SceneManager.LoadScene(4);
     }
 
+    void GameCine(GameCineEvent e)
+    {
+        SceneManager.LoadScene(5);
+    }
+
     void OpenPanel(GameObject panel)
     {
         m_Panels.ForEach(item => { if (item != null) item.SetActive(panel == item); });
@@ -178,7 +185,7 @@ public class MenuManager : MonoBehaviour,IEventHandler
 
     public void ClassButtonHasBeenClicked()
     {
-        EventManager.Instance.Raise(new PlayButtonClickedEvent());
+        EventManager.Instance.Raise(new CineButtonClickedEvent());
     }
 
     public void MenuButtonHasBeenClicked()

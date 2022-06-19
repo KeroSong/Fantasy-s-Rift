@@ -25,6 +25,9 @@ public class GameManagerPlay : MonoBehaviour
 
     [SerializeField] GameObject m_MapCamera;
 
+    [SerializeField] ProgressBar PbHealthMech1;
+    [SerializeField] ProgressBar PbHealthMech2;
+
     List<GameObject> m_Characters;
 
     Dragon dragon;
@@ -193,6 +196,8 @@ public class GameManagerPlay : MonoBehaviour
             End();
         }
 
+        PbHealthMech1.Val -= PlayerPrefs.GetInt("Santé") + PlayerPrefs.GetInt("Santé_AI1");
+        PbHealthMech2.Val -= PlayerPrefs.GetInt("Santé_AI2") + PlayerPrefs.GetInt("Santé_AI3");
     }
 
     public void SubscribeEvents()
@@ -334,5 +339,14 @@ public class GameManagerPlay : MonoBehaviour
 
         List<bool> m_Liste = dragon.listDragon;
         return m_Liste;
+    }
+
+    void ListeSave(List<bool> m_Liste)
+    {
+        dragon.listDragon = m_Liste;
+
+        string filePath = Application.persistentDataPath + "/Dragon.json";
+        string data = JsonUtility.ToJson(dragon);
+        System.IO.File.WriteAllText(filePath, data);
     }
 }

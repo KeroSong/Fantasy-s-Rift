@@ -26,7 +26,7 @@ public class IAFight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventoryItemList = (ItemDataBaseList)Resources.Load("ItemDatabase");
     }
 
     // Update is called once per frame
@@ -38,11 +38,24 @@ public class IAFight : MonoBehaviour
     public void DamageToPlayer()
     {
         int x = Random.Range(0, 2);
-        if(x== 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().dead == false) {
+        if(x == 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().dead == false)
+        {
             IADamage -= Armor1();
             PbHealthMech1.Val -= IADamage;
+            if (IADamage <= PlayerPrefs.GetFloat("Santé"))
+            {
+                PlayerPrefs.SetFloat("Santé", PlayerPrefs.GetFloat("Santé") - IADamage);
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("Santé", 0);
+                PlayerPrefs.SetFloat("Santé_AI1", PlayerPrefs.GetFloat("Santé_AI1") - IADamage);
+            }
+
             if (PbHealthMech1.Val == 0)
             {
+                IADamage -= PlayerPrefs.GetFloat("Santé");
+                PlayerPrefs.SetFloat("Santé_AI1", 0);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
             }
         }
@@ -50,10 +63,20 @@ public class IAFight : MonoBehaviour
         {
             IADamage -= Armor2();
             PbHealthMech2.Val -= IADamage;
+            if (IADamage <= PlayerPrefs.GetFloat("Santé_AI2"))
+            {
+                PlayerPrefs.SetFloat("Santé_AI2", PlayerPrefs.GetFloat("Santé_AI2") - IADamage);
+            }
+            else
+            {
+                IADamage -= PlayerPrefs.GetFloat("Santé_AI2");
+                PlayerPrefs.SetFloat("Santé_AI2", 0);
+                PlayerPrefs.SetFloat("Santé_AI3", PlayerPrefs.GetFloat("Santé_AI3") - IADamage);
+            }
 
             if (PbHealthMech2.Val == 0)
             {
-
+                PlayerPrefs.SetFloat("Santé_AI3", 0);
                 GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().isDead();
             }
         }
@@ -61,8 +84,20 @@ public class IAFight : MonoBehaviour
         {
             IADamage -= Armor1();
             PbHealthMech1.Val -= IADamage;
+            if (IADamage <= PlayerPrefs.GetFloat("Santé"))
+            {
+                PlayerPrefs.SetFloat("Santé", PlayerPrefs.GetFloat("Santé") - IADamage);
+            }
+            else
+            {
+                IADamage -= PlayerPrefs.GetFloat("Santé");
+                PlayerPrefs.SetFloat("Santé", 0);
+                PlayerPrefs.SetFloat("Santé_AI1", PlayerPrefs.GetFloat("Santé_AI1") - IADamage);
+            }
+
             if (PbHealthMech1.Val == 0)
             {
+                PlayerPrefs.SetFloat("Santé_AI1", 0);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
             }
         }
@@ -105,16 +140,16 @@ public class IAFight : MonoBehaviour
         m_IdListe1 = Liste1Load();
         int armor = 0;
         int i = 0;
-        foreach ( int Id in m_IdListe1) { 
+        foreach ( int Id in m_IdListe1)
+        { 
             if (Id != 0 && i !=6)
             {
                 Item item = inventoryItemList.itemList[Id];
                 armor += item.itemAttributes[0].attributeValue;
-
             }
             i++;
         }
-        return armor;
+        return armor/10;
     }
 
     int Armor2()
@@ -132,6 +167,6 @@ public class IAFight : MonoBehaviour
             }
             i++;
         }
-        return armor;
+        return armor/10;
     }
 }

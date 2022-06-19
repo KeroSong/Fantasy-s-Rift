@@ -23,7 +23,7 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] GameObject m_MechWarrior;
     [SerializeField] GameObject m_MechArcher;
     [SerializeField] GameObject m_MechWizard;
-    List<GameObject> m_ListMeck;
+    List<GameObject> m_ListMech;
 
     List<GameObject> m_Enemy;
     [SerializeField] ProgressBar PbHealthMech1;
@@ -41,6 +41,8 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] float classOneSpeed;
     [SerializeField] float classTwoSpeed;
     List<GameObject> m_Buttons;
+
+    Dragon dragon;
 
     private static GameManagerFight m_Instance;
 
@@ -97,7 +99,7 @@ public class GameManagerFight : MonoBehaviour
 
         m_Enemy = new List<GameObject>() {m_Goblin1, m_Goblin2, m_Goblin3, m_DragonSoulEater, m_DragonTheNightmare, m_DragonTerrorBringer, m_DragonUsurper};
         m_Buttons = new List<GameObject>() { m_Player1Monster1, m_Player1Monster2, m_Player1Monster3, m_Player2Monster1, m_Player2Monster2, m_Player2Monster3 };
-        m_ListMeck = new List<GameObject>() { m_MechWarrior, m_MechArcher, m_MechWizard };
+        m_ListMech = new List<GameObject>() { m_MechWarrior, m_MechArcher, m_MechWizard };
     }
 
     // Start is called before the first frame update
@@ -111,32 +113,17 @@ public class GameManagerFight : MonoBehaviour
         PlayerPrefs.SetFloat("Monster3", 0);
 
         SetState(GAMESTATE.fight);
-        //StartCoroutine(RoundOne());
-        //StartCoroutine(RoundTwo());
         if (PlayerPrefs.GetInt("classe") == 0)
         {
-            //guerrier
+            Mech(m_MechWarrior);
         }
         else if (PlayerPrefs.GetInt("classe") == 1)
         {
-            //archer
+            Mech(m_MechArcher);
         }
         else
         {
-            //mage
-        }
-
-        if (PlayerPrefs.GetInt("classe") == 0)
-        {
-            //guerrier
-        }
-        else if (PlayerPrefs.GetInt("classe") == 1)
-        {
-            //archer
-        }
-        else
-        {
-            //mage
+            Mech(m_MechWizard);
         }
 
         if (PlayerPrefs.GetString("Ennemi") == "Gobelin")
@@ -151,7 +138,6 @@ public class GameManagerFight : MonoBehaviour
         }
         else if (PlayerPrefs.GetString("Ennemi") == "SoulEater")
         {
-            this.LOG(PlayerPrefs.GetString("Ennemi").ToString());
             EnemyAppears(m_DragonSoulEater);
             HealthMonster1.SetActive(true);
         }
@@ -171,19 +157,6 @@ public class GameManagerFight : MonoBehaviour
             HealthMonster1.SetActive(true);
         }
         ButtonAttack(null);
-        if (PlayerPrefs.GetInt("classe") == 0)
-        {
-            Meck(m_MechWarrior);
-        }
-        else if (PlayerPrefs.GetInt("classe") == 1)
-        {
-            Meck(m_MechArcher);
-        }
-        else
-        {
-            Meck(m_MechWizard);
-        }
-
     }
 
     // Update is called once per frame
@@ -333,6 +306,27 @@ public class GameManagerFight : MonoBehaviour
                 }
                 else if (pbHealthMonster1.Val == 0 && pbHealthMonster2.Val == 0 && pbHealthMonster3.Val == 0 )
                 {
+                    if (!(PlayerPrefs.GetString("Ennemi") == "Gobelin"))
+                    {
+                        List<bool> list = ListeLoad();
+                        if (PlayerPrefs.GetString("Ennemi") == "SoulEater")
+                        {
+                            list[0]=true;
+                        }
+                        else if (PlayerPrefs.GetString("Ennemi") == "TheNightmare")
+                        {
+                            list[1]=true;
+                        }
+                        else if (PlayerPrefs.GetString("Ennemi") == "TerrorBringer")
+                        {
+                            list[2]=true;
+                        }
+                        else
+                        {
+                            list[3]=true;
+                        }
+                        ListeSave(list);
+                    }
                     Victory();
                 }
             }
@@ -425,6 +419,11 @@ public class GameManagerFight : MonoBehaviour
         m_Buttons.ForEach(item => { if (item != null) item.SetActive(button == item); });
     }
 
+    void Mech(GameObject mech)
+    {
+        m_ListMech.ForEach(item => { if (item != null) item.SetActive(mech == item); });
+    }
+
     void Button1(Button1Event e)
     {
         if(PlayerPrefs.GetFloat("JaugeMecha1") >= 100) 
@@ -480,11 +479,6 @@ public class GameManagerFight : MonoBehaviour
             PlayerPrefs.SetFloat("JaugeMecha2", 0);
             m_Choice2.SetActive(false);
         }
-    }
-
-    void Meck(GameObject meck)
-    {
-        m_ListMeck.ForEach(item => { if (item != null) item.SetActive(meck == item); });
     }
 
     void Load()
@@ -554,4 +548,22 @@ public class GameManagerFight : MonoBehaviour
         GameOver();*/
     }
 
+    List<bool> ListeLoad()
+    {
+        string filePath = Application.persistentDataPath + "/Dragon.json";
+        string data = System.IO.File.ReadAllText(filePath);
+        dragon = JsonUtility.FromJson<Dragon>(data);
+
+        List<bool> m_Liste = dragon.listDragon;
+        return m_Liste;
+    }
+
+    void ListeSave(List<bool> m_Liste)
+    {
+        dragon.listDragon = m_Liste;
+
+        string filePath = Application.persistentDataPath + "/Dragon.json";
+        string data = JsonUtility.ToJson(dragon);
+        System.IO.File.WriteAllText(filePath, data);
+    }
 }

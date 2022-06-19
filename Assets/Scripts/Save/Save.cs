@@ -9,12 +9,6 @@ public class Save : MonoBehaviour
     public Scene scene = new Scene();
     public Inventaire inventaire = new Inventaire();
 
-    void Start()
-    {
-
-        this.LOG("coucou update");
-    }
-
     public void SubscribeEvents()
     {
         EventManager.Instance.AddListener<SaveButtonClickedEvent>(SaveButtonClicked);

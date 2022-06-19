@@ -29,7 +29,7 @@ public class CreatePlayer : MonoBehaviour
         PlayerPrefs.SetFloat("PositionX", (float)0.37);
         PlayerPrefs.SetFloat("PositionY", (float)11.93);
         PlayerPrefs.SetFloat("PositionZ", (float)10.4);
-        PlayerPrefs.SetInt("Santé", 20);
+        PlayerPrefs.SetFloat("Santé", 20);
         PlayerPrefs.SetString("Nom", "Henry");
         PlayerPrefs.SetInt("sexe", 0);
         PlayerPrefs.SetInt("classe", 0);
@@ -42,7 +42,7 @@ public class CreatePlayer : MonoBehaviour
 
     void SetAI1()
     {
-        PlayerPrefs.SetInt("Santé_AI1", 20);
+        PlayerPrefs.SetFloat("Santé_AI1", 20);
         PlayerPrefs.SetString("Nom_AI1", "Henry");
         PlayerPrefs.SetInt("sexe_AI1", 0);
         PlayerPrefs.SetInt("classe_AI1", 0);
@@ -51,7 +51,7 @@ public class CreatePlayer : MonoBehaviour
 
     void SetAI2()
     {
-        PlayerPrefs.SetInt("Santé_AI2", 15);
+        PlayerPrefs.SetFloat("Santé_AI2", 15);
         PlayerPrefs.SetString("Nom_AI2", "Henry");
         PlayerPrefs.SetInt("sexe_AI2", 1);
         PlayerPrefs.SetInt("classe_AI2", 1);
@@ -60,7 +60,7 @@ public class CreatePlayer : MonoBehaviour
 
     void SetAI3()
     {
-        PlayerPrefs.SetInt("Santé_AI3", 10);
+        PlayerPrefs.SetFloat("Santé_AI3", 10);
         PlayerPrefs.SetString("Nom_AI3", "Henry");
         PlayerPrefs.SetInt("sexe_AI3", 1);
         PlayerPrefs.SetInt("classe_AI3", 2);
@@ -106,14 +106,14 @@ public class CreatePlayer : MonoBehaviour
     public void ArcherHasBeenClicked()
     {
         PlayerPrefs.SetInt("classe", 1);
-        PlayerPrefs.SetInt("Santé", 15);
+        PlayerPrefs.SetFloat("Santé", 15);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)1);
     }
 
     public void WizardHasBeenClicked()
     {
         PlayerPrefs.SetInt("classe", 2);
-        PlayerPrefs.SetInt("Santé", 10);
+        PlayerPrefs.SetFloat("Santé", 10);
         PlayerPrefs.SetFloat("VitesseJaugePlayer", (float)0.65);
     }
 }

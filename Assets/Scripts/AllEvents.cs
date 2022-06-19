@@ -63,6 +63,9 @@ public class GameInnEvent : SDD.Events.Event
 public class GameEndEvent : SDD.Events.Event
 {
 }
+public class GameCineEvent : SDD.Events.Event
+{
+}
 #endregion
 
 #region MenuManager Events
@@ -106,6 +109,9 @@ public class MainMenuButtonClickedEvent : SDD.Events.Event
 {
 }
 public class ConfirmedButtonClickedEvent : SDD.Events.Event
+{
+}
+public class CineButtonClickedEvent : SDD.Events.Event
 {
 }
 public class Button1Event : SDD.Events.Event

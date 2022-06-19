@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SDD.Events;
 
-public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, inventory, equipment, save, fight, confirmed, shop, inn, gameover, victoryFight, end}
+public enum GAMESTATE {menu, load, menuPlayer, selectPlayer, play, settings, quit, pause, inventory, equipment, save, fight, confirmed, shop, inn, gameover, victoryFight, end, cine}
 
 public class GameManager : MonoBehaviour
 {
@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
             case GAMESTATE.selectPlayer:
                 EventManager.Instance.Raise(new GameSelectPlayerEvent());
                 break;
-            case GAMESTATE.play:
-                EventManager.Instance.Raise(new GamePlayEvent());
+            case GAMESTATE.cine:
+                EventManager.Instance.Raise(new GameCineEvent());
                 break;
             case GAMESTATE.settings:
                 EventManager.Instance.Raise(new GameSettingsEvent());
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.AddListener<CreditButtonClickedEvent>(CreditClicked);
         EventManager.Instance.AddListener<QuitButtonClickedEvent>(QuitClicked);
         EventManager.Instance.AddListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
-        EventManager.Instance.AddListener<PlayButtonClickedEvent>(PlayButtonClicked);
+        EventManager.Instance.AddListener<CineButtonClickedEvent>(CineButtonClicked);
         EventManager.Instance.AddListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
     }
 
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.RemoveListener<CreditButtonClickedEvent>(CreditClicked);
         EventManager.Instance.RemoveListener<QuitButtonClickedEvent>(QuitClicked);
         EventManager.Instance.RemoveListener<SelectPlayerButtonClickedEvent>(SelectPlayerButtonClicked);
-        EventManager.Instance.RemoveListener<PlayButtonClickedEvent>(PlayButtonClicked);
+        EventManager.Instance.RemoveListener<CineButtonClickedEvent>(CineButtonClicked);
         EventManager.Instance.RemoveListener<MainMenuButtonClickedEvent>(MainMenuButtonClicked);
     }
 
@@ -124,9 +124,9 @@ public class GameManager : MonoBehaviour
         SelectPlayer();
     }
 
-    void PlayButtonClicked(PlayButtonClickedEvent e)
+    void CineButtonClicked(CineButtonClickedEvent e)
     {
-        Play();
+        Cine();
     }
 
     void MainMenuButtonClicked(MainMenuButtonClickedEvent e)
@@ -159,9 +159,9 @@ public class GameManager : MonoBehaviour
         SetState(GAMESTATE.selectPlayer);
     }
 
-    void Play()
+    void Cine()
     {
-        SetState(GAMESTATE.play);
+        SetState(GAMESTATE.cine);
     }
 
     void Menu()

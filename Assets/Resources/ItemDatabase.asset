@@ -252,8 +252,8 @@ MonoBehaviour:
     rarity: 0
     itemAttributes:
     - attributeName: Armor
-      attributeValue: 5
-  - itemName: Collier
+      attributeValue: 10
+  - itemName: Collier de battaille
     itemID: 22
     itemIcon: {fileID: 21300000, guid: bc9037f19b41b4a4f80ea00e1d47ee7d, type: 3}
     itemValue: 25
@@ -261,8 +261,10 @@ MonoBehaviour:
     maxStack: 1
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
-  - itemName: Collier
+    itemAttributes:
+    - attributeName: Armor
+      attributeValue: 1
+  - itemName: Collier de survie
     itemID: 23
     itemIcon: {fileID: 21300000, guid: 3d34669f0fcab4b479871c19db25081a, type: 3}
     itemValue: 125
@@ -270,8 +272,10 @@ MonoBehaviour:
     maxStack: 1
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
-  - itemName: Collier
+    itemAttributes:
+    - attributeName: Armor
+      attributeValue: 3
+  - itemName: "Collier des \xE9toiles"
     itemID: 24
     itemIcon: {fileID: 21300000, guid: 7f49d60ddf5a1924984be6025b8f92a6, type: 3}
     itemValue: 170
@@ -279,7 +283,9 @@ MonoBehaviour:
     maxStack: 1
     indexItemInList: 999
     rarity: 0
-    itemAttributes: []
+    itemAttributes:
+    - attributeName: Armor
+      attributeValue: 6
   - itemName: Sort de feu
     itemID: 25
     itemIcon: {fileID: 21300000, guid: d95029087960b3a469b3b4d80fcb7d22, type: 3}
@@ -382,7 +388,7 @@ MonoBehaviour:
   - itemName: Or
     itemID: 34
     itemIcon: {fileID: 21300000, guid: 700663f8514d3a84e8dd6f9140b9a552, type: 3}
-    itemValue: 0
+    itemValue: 32
     itemType: 9
     maxStack: 9999
     indexItemInList: 999

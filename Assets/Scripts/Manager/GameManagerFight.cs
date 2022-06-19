@@ -30,6 +30,7 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] ProgressBar PbHealthMech2;
     [SerializeField] ProgressBar pbHealthMonster1, pbHealthMonster2, pbHealthMonster3;
     [SerializeField] GameObject HealthMonster1, HealthMonster2, HealthMonster3;
+    [SerializeField] GameObject RoundMech1, RoundMech2;
     [SerializeField] ProgressBarRound ProgressRoundMonster1, ProgressRoundMonster2, ProgressRoundMonster3;
     [SerializeField] ProgressBarRound pbClassOne, pbClassTwo;
     [SerializeField] float Monster1Speed = 1;
@@ -212,17 +213,57 @@ public class GameManagerFight : MonoBehaviour
                 {
                 
                     m_Choice1.SetActive(true);
-                    m_Player1Monster1.SetActive(true);
-                    m_Player1Monster2.SetActive(true);
-                    m_Player1Monster3.SetActive(true);
+                    if(GameObject.FindGameObjectWithTag("Monster1").GetComponent<IAFight>().dead == false) { 
+                        m_Player1Monster1.SetActive(true);
+                    }
+                    else
+                    {
+                        m_Player1Monster1.SetActive(false);
+                    }
+                    if (GameObject.FindGameObjectWithTag("Monster2").GetComponent<IAFight>().dead == false)
+                    {
+                        m_Player1Monster2.SetActive(true);
+                    }
+                    else
+                    {
+                        m_Player1Monster2.SetActive(false);
+                    }
+                    if (GameObject.FindGameObjectWithTag("Monster3").GetComponent<IAFight>().dead == false) { 
+                        m_Player1Monster3.SetActive(true);
+                    }
+                    else
+                    {
+                        m_Player1Monster3.SetActive(false);
+                    }
 
                 }
                 else if (pbClassTwo.Val == 100 && GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().dead == false)
                 {
                     m_Choice2.SetActive(true);
-                    m_Player2Monster1.SetActive(true);
-                    m_Player2Monster2.SetActive(true);
-                    m_Player2Monster3.SetActive(true);
+                    if (GameObject.FindGameObjectWithTag("Monster1").GetComponent<IAFight>().dead == false)
+                    {
+                        m_Player2Monster1.SetActive(true);
+                    }
+                    else
+                    {
+                        m_Player2Monster1.SetActive(false);
+                    }
+                    if (GameObject.FindGameObjectWithTag("Monster2").GetComponent<IAFight>().dead == false)
+                    {
+                        m_Player2Monster2.SetActive(true);
+                    }
+                    else
+                    {
+                        m_Player2Monster2.SetActive(false);
+                    }
+                    if (GameObject.FindGameObjectWithTag("Monster3").GetComponent<IAFight>().dead == false)
+                    {
+                        m_Player2Monster3.SetActive(true);
+                    }
+                    else
+                    {
+                        m_Player2Monster3.SetActive(false);
+                    }
                 }
                 else if (ProgressRoundMonster1.Val == 100)
                 {
@@ -238,6 +279,16 @@ public class GameManagerFight : MonoBehaviour
                 {
                     GameObject.FindGameObjectWithTag("Monster3").GetComponent<IAFight>().attack();
                     PlayerPrefs.SetFloat("Monster3", 0);
+                }
+                else if(GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().dead == true)
+                {
+                    PlayerPrefs.SetFloat("JaugeMecha1", 0);
+                    RoundMech1.SetActive(false);
+                }
+                else if (GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().dead == true)
+                {
+                    PlayerPrefs.SetFloat("JaugeMecha2", 0);
+                    RoundMech2.SetActive(false);
                 }
             }
             else
@@ -262,7 +313,7 @@ public class GameManagerFight : MonoBehaviour
                 PlayerPrefs.SetFloat("Monster2", (jaugeMonster2 + Monster2Speed));
                 PlayerPrefs.SetFloat("Monster3", (jaugeMonster3 + Monster3Speed));
 
-                if (PbHealthMech1.Val == 0 && PbHealthMech1.Val ==0)
+                if (PbHealthMech1.Val == 0 && PbHealthMech2.Val == 0)
                 {
                     GameOver();
                 }

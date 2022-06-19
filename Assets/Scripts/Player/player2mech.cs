@@ -46,7 +46,7 @@ public class player2mech : MonoBehaviour
     {
         MechAnimator.SetTrigger("dead");
         dead = true;
-        GetComponent<player1mech>().enabled = false;
+        GetComponent<player2mech>().enabled = false;
     }
 
     public void DamageToMonster1()

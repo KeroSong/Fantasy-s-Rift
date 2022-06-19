@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5483268940993064534, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
   m_PrefabInstance: {fileID: 1810724613}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1647466201}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916a0cb1b4ca3664b84e5fff9e18e6ba, type: 3}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1349529346597523613, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
   m_PrefabInstance: {fileID: 1810724613}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2017206457}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916a0cb1b4ca3664b84e5fff9e18e6ba, type: 3}
@@ -166,6 +166,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4697462222530522531, guid: 2b45351a1d3e8084eb1024b76a8bd91a, type: 3}
   m_PrefabInstance: {fileID: 1412366183553064879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &213658145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213658142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
 --- !u!114 &272648263 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7694151693974011745, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -213,6 +229,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 322418848}
     - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: RoundMech1
+      value: 
+      objectReference: {fileID: 2017206457}
+    - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: RoundMech2
+      value: 
+      objectReference: {fileID: 1647466201}
+    - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
       propertyPath: pbClassOne
       value: 
       objectReference: {fileID: 87861256}
@@ -221,6 +245,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 87861255}
     - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: HealthMech1
+      value: 
+      objectReference: {fileID: 2017206457}
+    - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: HealthMech2
+      value: 
+      objectReference: {fileID: 1647466201}
+    - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
       propertyPath: m_MechArcher
       value: 
       objectReference: {fileID: 1770558339}
@@ -228,6 +260,14 @@ PrefabInstance:
       propertyPath: m_MechWizard
       value: 
       objectReference: {fileID: 2038565038}
+    - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: Monster1Speed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
+      propertyPath: Monster3Speed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6870757172595662007, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
       propertyPath: PbHealthMech1
       value: 
@@ -426,6 +466,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2546517819257927371, guid: 1e431ed24d3ab544dadc022bf76cdb24, type: 3}
   m_PrefabInstance: {fileID: 6834895769804698356}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &322418851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322418848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
 --- !u!1 &328179764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6421176349148829752, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -441,6 +497,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4731065804283829218, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
   m_PrefabInstance: {fileID: 1810724613}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &359674752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6255015988485489996, guid: 1204f2fb6711c3d4881dbd3c1bbebe14, type: 3}
+  m_PrefabInstance: {fileID: 6253320716323189265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &359674756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359674752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25ec490d405a654383834a126d31b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDamage: 10
+  PbHealthMonster1: {fileID: 301510941}
+  PbHealthMonster2: {fileID: 1875422800}
+  PbHealthMonster3: {fileID: 1570953440}
+  dead: 0
 --- !u!1 &369002153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6693382179041431953, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -743,6 +821,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7932205104957248113, guid: 2b45351a1d3e8084eb1024b76a8bd91a, type: 3}
   m_PrefabInstance: {fileID: 1412366183553064879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &567472516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567472513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10000
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
 --- !u!1 &578797255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5587589444619541722, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -753,21 +847,86 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8057439318134599355, guid: 2b45351a1d3e8084eb1024b76a8bd91a, type: 3}
   m_PrefabInstance: {fileID: 1412366183553064879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &599146662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599146659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
 --- !u!1 &674529618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7172336787603589902, guid: 2b45351a1d3e8084eb1024b76a8bd91a, type: 3}
   m_PrefabInstance: {fileID: 1412366183553064879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &674529621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674529618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
 --- !u!1 &816658055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7686593589945362973, guid: 98ff823b1f8ca714ea9e210df0581462, type: 3}
   m_PrefabInstance: {fileID: 1666654219386691641}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &816658058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816658055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
 --- !u!1 &911692468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2106502580469388608, guid: 40dcc5a8fa53265418a86625f52ffe9c, type: 3}
   m_PrefabInstance: {fileID: 2107081445869398314}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &911692472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911692468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ce9974033fbc54a8e2a29bc8abd902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDamage: 10
+  PbHealthMonster1: {fileID: 301510941}
+  PbHealthMonster2: {fileID: 1875422800}
+  PbHealthMonster3: {fileID: 1570953440}
+  dead: 0
 --- !u!114 &1142407478 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7187466966740719900, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -846,6 +1005,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1252432441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6255082854937017066, guid: 1204f2fb6711c3d4881dbd3c1bbebe14, type: 3}
+  m_PrefabInstance: {fileID: 6253320716323189265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1252432445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252432441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25ec490d405a654383834a126d31b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDamage: 10
+  PbHealthMonster1: {fileID: 301510941}
+  PbHealthMonster2: {fileID: 1875422800}
+  PbHealthMonster3: {fileID: 1570953440}
+  dead: 0
 --- !u!114 &1372262453 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8676536709709525907, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
@@ -893,11 +1074,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2843738168821289748, guid: 00d1142c95d8a14489ad4af2b4bd1558, type: 3}
   m_PrefabInstance: {fileID: 292927243}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1647466201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1858681789703059729, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+  m_PrefabInstance: {fileID: 1810724613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1770558339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2106521894439346637, guid: 40dcc5a8fa53265418a86625f52ffe9c, type: 3}
   m_PrefabInstance: {fileID: 2107081445869398314}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1770558343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770558339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ce9974033fbc54a8e2a29bc8abd902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDamage: 10
+  PbHealthMonster1: {fileID: 301510941}
+  PbHealthMonster2: {fileID: 1875422800}
+  PbHealthMonster3: {fileID: 1570953440}
+  dead: 0
 --- !u!1 &1796348711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2310844273784387175, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -1410,6 +1613,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136dd660719ef224aa7af1df9b0732ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1930548334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6255030982100841585, guid: 1204f2fb6711c3d4881dbd3c1bbebe14, type: 3}
+  m_PrefabInstance: {fileID: 6253320716323189265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1930548338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930548334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25ec490d405a654383834a126d31b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDamage: 10
+  PbHealthMonster1: {fileID: 301510941}
+  PbHealthMonster2: {fileID: 1875422800}
+  PbHealthMonster3: {fileID: 1570953440}
+  dead: 0
 --- !u!1 &1981117764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2392124382870440556, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
@@ -1420,11 +1645,49 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5992531342714839336, guid: 2b45351a1d3e8084eb1024b76a8bd91a, type: 3}
   m_PrefabInstance: {fileID: 1412366183553064879}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1986098706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986098703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4caf110965b14c45acf8dcd87f778d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IADamage: 10
+  PbHealthMech1: {fileID: 87861258}
+  PbHealthMech2: {fileID: 272648263}
+  dead: 0
+--- !u!1 &2017206457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2579332154342726336, guid: 74338be0ae5202e458a755b4f093c595, type: 3}
+  m_PrefabInstance: {fileID: 1810724613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2038565038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2106310036192262726, guid: 40dcc5a8fa53265418a86625f52ffe9c, type: 3}
   m_PrefabInstance: {fileID: 2107081445869398314}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038565042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038565038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ce9974033fbc54a8e2a29bc8abd902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDamage: 10
+  PbHealthMonster1: {fileID: 301510941}
+  PbHealthMonster2: {fileID: 1875422800}
+  PbHealthMonster3: {fileID: 1570953440}
+  dead: 0
 --- !u!1001 &1412366183553064879
 PrefabInstance:
   m_ObjectHideFlags: 0

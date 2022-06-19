@@ -11,6 +11,8 @@ public class IAFight : MonoBehaviour
 
     Animator MonsterAnimator;
 
+    public bool dead = false;
+
     static ItemDataBaseList inventoryItemList;
     Inventaire inventaire;
     List<int> m_IdListe1;
@@ -36,16 +38,15 @@ public class IAFight : MonoBehaviour
     public void DamageToPlayer()
     {
         int x = Random.Range(0, 2);
-        if(x== 0) {
+        if(x== 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().dead == false) {
             IADamage -= Armor1();
             PbHealthMech1.Val -= IADamage;
-            Debug.Log(x);
             if (PbHealthMech1.Val == 0)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
             }
         }
-        else
+        else if(GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().dead == false)
         {
             IADamage -= Armor2();
             PbHealthMech2.Val -= IADamage;
@@ -54,6 +55,15 @@ public class IAFight : MonoBehaviour
             {
 
                 GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().isDead();
+            }
+        }
+        else
+        {
+            IADamage -= Armor1();
+            PbHealthMech1.Val -= IADamage;
+            if (PbHealthMech1.Val == 0)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().isDead();
             }
         }
     }
@@ -66,6 +76,7 @@ public class IAFight : MonoBehaviour
     public void isDead()
     {
         MonsterAnimator.SetTrigger("dead");
+        dead = true;
         GetComponent<IAFight>().enabled = false;
     }
 

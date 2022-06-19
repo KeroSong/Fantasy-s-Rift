@@ -146,18 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Plants_Shader.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Weapons\Sources\Shaders\PT_Medieval_Weapons_Shader_Toon.shader" />
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\FadeOutNearbyObjects\FadeOut.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Weapons\Sources\Shaders\PT_Medieval_Weapons_Shader_PBR.shader" />
     <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_PBR.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Opaque_Shader.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Foliage_Shader.shader" />
     <None Include="Assets\Samples\Cinemachine\2.8.4\Cinemachine Example Scenes\Scenes\Anywhere Door\ScreenCutoutShader.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Vegetation_Flowers_Shader.shader" />
-    <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
     <None Include="Assets\Polytope Studio\Lowpoly Medieval Characters\Sources\Modular_Armors\Shaders\PT_Medieval_Armors_Shader_Toon.shader" />
-    <None Include="Assets\Polytope Studio\Lowpoly Medieval Environments\Sources\Shaders\PT_Rock_Shader.shader" />
     <None Include="Assets\MedievalTownExteriors\Readme FIRST!.txt" />
   </ItemGroup>
   <ItemGroup>

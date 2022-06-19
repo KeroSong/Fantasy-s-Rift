@@ -32,17 +32,15 @@ public class GameManagerFight : MonoBehaviour
     [SerializeField] GameObject HealthMonster1, HealthMonster2, HealthMonster3;
     [SerializeField] ProgressBarRound ProgressRoundMonster1, ProgressRoundMonster2, ProgressRoundMonster3;
     [SerializeField] ProgressBarRound pbClassOne, pbClassTwo;
-    [SerializeField] float MonsterSpeed = 1;
+    [SerializeField] float Monster1Speed = 1;
+    [SerializeField] float Monster2Speed = 0.5f;
+    [SerializeField] float Monster3Speed = 0.7f;
     [SerializeField] float framerate=0.5f;
     [SerializeField] float classOneSpeed;
     [SerializeField] float classTwoSpeed;
     List<GameObject> m_Buttons;
 
     private static GameManagerFight m_Instance;
-
-    public float Monster1;
-    public float Monster2;
-    public float Monster3;
 
     public bool IsFighting { get { return m_State == GAMESTATE.fight; } }
     public static GameManagerFight Instance { get {
@@ -210,7 +208,7 @@ public class GameManagerFight : MonoBehaviour
 
             if (pbClassOne.Val == 100 || pbClassTwo.Val == 100 || ProgressRoundMonster1.Val == 100 || ProgressRoundMonster2.Val == 100 || ProgressRoundMonster3.Val ==100)
             {
-                if(pbClassOne.Val == 100)
+                if(pbClassOne.Val == 100 && GameObject.FindGameObjectWithTag("Player").GetComponent<player1mech>().dead == false)
                 {
                 
                     m_Choice1.SetActive(true);
@@ -219,7 +217,7 @@ public class GameManagerFight : MonoBehaviour
                     m_Player1Monster3.SetActive(true);
 
                 }
-                else if (pbClassTwo.Val == 100)
+                else if (pbClassTwo.Val == 100 && GameObject.FindGameObjectWithTag("Player2").GetComponent<player2mech>().dead == false)
                 {
                     m_Choice2.SetActive(true);
                     m_Player2Monster1.SetActive(true);
@@ -239,7 +237,7 @@ public class GameManagerFight : MonoBehaviour
                 else if (ProgressRoundMonster3.Val == 100)
                 {
                     GameObject.FindGameObjectWithTag("Monster3").GetComponent<IAFight>().attack();
-                    PlayerPrefs.SetFloat("Monster2", 0);
+                    PlayerPrefs.SetFloat("Monster3", 0);
                 }
             }
             else
@@ -260,11 +258,9 @@ public class GameManagerFight : MonoBehaviour
                     PlayerPrefs.SetFloat("JaugeMecha2", (jaugeMecha2 + PlayerPrefs.GetFloat("VitesseJaugeAI2")) * 0.5f);
                 }
 
-                PlayerPrefs.SetFloat("Monster1", (jaugeMonster1 + MonsterSpeed));
-                PlayerPrefs.SetFloat("Monster2", (jaugeMonster2 + MonsterSpeed));
-                PlayerPrefs.SetFloat("Monster3", (jaugeMonster3 + MonsterSpeed));
-                ProgressRoundMonster1.Val += MonsterSpeed;
-                ProgressRoundMonster1.Val += MonsterSpeed;
+                PlayerPrefs.SetFloat("Monster1", (jaugeMonster1 + Monster1Speed));
+                PlayerPrefs.SetFloat("Monster2", (jaugeMonster2 + Monster2Speed));
+                PlayerPrefs.SetFloat("Monster3", (jaugeMonster3 + Monster3Speed));
 
                 if (PbHealthMech1.Val == 0 && PbHealthMech1.Val ==0)
                 {

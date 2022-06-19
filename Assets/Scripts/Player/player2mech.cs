@@ -16,6 +16,8 @@ public class player2mech : MonoBehaviour
     Inventaire inventaire;
     List<int> m_IdListe2;
 
+    public bool dead = false;
+
     /*test*/
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class player2mech : MonoBehaviour
     public void isDead()
     {
         MechAnimator.SetTrigger("dead");
+        dead = true;
         GetComponent<player1mech>().enabled = false;
     }
 

@@ -12,6 +12,8 @@ public class player1mech : MonoBehaviour
     [SerializeField] ProgressBar PbHealthMonster3;
     Animator MechAnimator;
 
+    public bool dead = false;
+
     static ItemDataBaseList inventoryItemList;
     Inventaire inventaire;
     List<int> m_IdListe1;
@@ -44,6 +46,7 @@ public class player1mech : MonoBehaviour
     public void isDead()
     {
         MechAnimator.SetTrigger("dead");
+        dead = true;
         GetComponent<player1mech>().enabled = false;
     }
 

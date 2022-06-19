@@ -664,9 +664,33 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1580280047544975177, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.b
+      value: 0.79391074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580280047544975177, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1763714149148308667, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: m_Color.g
       value: 0.73846674
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832200847198455623, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.49904776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219792500042144202, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219792500042144202, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.330823
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219792500042144202, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3066809678480768567, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -687,6 +711,14 @@ PrefabInstance:
     - target: {fileID: 3066809678480768567, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391897407324339350, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391897407324339350, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4444228739084577973, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -736,6 +768,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MenuButtonHasBeenClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 5761158826944909115, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761158826944909115, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6924040114875053152, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: m_Name
       value: CanvasMenu
@@ -759,6 +799,22 @@ PrefabInstance:
     - target: {fileID: 7060600705026568639, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062419669520506323, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062419669520506323, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246684433224027493, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246684433224027493, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8484994945250730825, guid: d5623570f2eba7e45b400dbe0b86bfaa, type: 3}
       propertyPath: m_Pivot.x

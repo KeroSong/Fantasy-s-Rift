@@ -656,6 +656,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9723e2dd524764c48a5be23767b923f2, type: 2}
+    - target: {fileID: 2718963049573625555, guid: e47b6e47df88a6543ae3cd3aa70df58e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718963049573625555, guid: e47b6e47df88a6543ae3cd3aa70df58e, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5272172528691410857, guid: e47b6e47df88a6543ae3cd3aa70df58e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

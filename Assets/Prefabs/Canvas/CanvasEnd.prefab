@@ -95,9 +95,9 @@ MonoBehaviour:
     91.7\xB0E</b></SIZE> - <i>RISK OF RAIN</i>\r\n<i>BY CHRIS CHRISTODOULOU</i>\r\n\r\n<SIZE=90><b>-
     ANIMATION -</b></SIZE>\r\n\r\n<SIZE=75><b>LOW POLY HUMAN</b></SIZE>\r\n<i>TO
     CREATE OUR CHARACTER MOVES</i>\r\n<i>BY BLINK</i>\r\n\r\n\r\n<SIZE=120><b>CREDITS</b></SIZE>\r\n\r\n<SIZE=90><b>PROGRAMMING</b></SIZE>\r\nFLAVIEN
-    GAUTIER\r\nHENRIQUE DONG\r\nGASPARD CHARLES\r\n\r\n<SIZE=90><b>MUSIC</b></SIZE>\r\nGASPARD
-    CHARLES\r\n\r\n<SIZE=90><b>GRAPHIC</b></SIZE>\r\nFLAVIEN GAUTIER\r\nHENRIQUE
-    DONG\r\n\r\n\r\n\n\n\n\n\n\n\n\n\nTHANK YOU FOR PLAYING OUR GAME"
+    GAUTIER\r\nHENRIQUE DONG\r\n\r\n<SIZE=90><b>MUSIC</b></SIZE>\r\nGASPARD CHARLES\r\n\r\n<SIZE=90><b>GRAPHIC</b></SIZE>\r\nFLAVIEN
+    GAUTIER\r\nHENRIQUE DONG\r\nGASPARD CHARLES\r\n\r\n\r\n\n\n\n\n\n\n\n\n\nTHANK
+    YOU FOR PLAYING OUR GAME"
 --- !u!1 &567141440712676117
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8327081657237140773}
   - {fileID: 5272172528691410857}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -333,6 +334,82 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &6208067757267499458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8327081657237140773}
+  - component: {fileID: 7954785567428023668}
+  - component: {fileID: 4942535666780392682}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8327081657237140773
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208067757267499458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 567141440712676105}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -11.976013, y: 5.987976}
+  m_SizeDelta: {x: 191.6172, y: 203.5933}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7954785567428023668
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208067757267499458}
+  m_CullTransparentMesh: 1
+--- !u!114 &4942535666780392682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208067757267499458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8212450843726388573
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +523,7 @@ RectTransform:
   - {fileID: 7873115821647910093}
   - {fileID: 3279862806697242182}
   m_Father: {fileID: 567141440712676105}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}

@@ -335,13 +335,4 @@ public class GameManagerPlay : MonoBehaviour
         List<bool> m_Liste = dragon.listDragon;
         return m_Liste;
     }
-
-    void ListeSave(List<bool> m_Liste)
-    {
-        dragon.listDragon = m_Liste;
-
-        string filePath = Application.persistentDataPath + "/Dragon.json";
-        string data = JsonUtility.ToJson(dragon);
-        System.IO.File.WriteAllText(filePath, data);
-    }
 }
